@@ -1,0 +1,63 @@
+C:\QUALIVISION\SRC\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\QUALIVISION\SRC\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\QUALIVISION\SRC\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\QUALIVISION\SRC\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\QUALIVISION\SRC\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\QUALIVISION\SRC\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\Users\Samuele\Desktop\Projects\generalCab\22-34 LAGO\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\Users\Samuele\Desktop\Projects\generalCab\22-34 LAGO\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\Users\Samuele\Desktop\Projects\generalCab\22-34 LAGO\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\Users\Samuele\Desktop\Projects\generalCab\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\Users\Samuele\Desktop\Projects\generalCab\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\Users\Samuele\Desktop\Projects\generalCab\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\qualivision\22-34 LAGO\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\qualivision\22-34 LAGO\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\qualivision\22-34 LAGO\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\qualivision\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\qualivision\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\qualivision\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\qualivision\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\Users\Samuele\Desktop\Projects\generalCab\22-34 LAGO\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\qualivision\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\qualivision\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\qualivision\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\qualivision\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\qualivision\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\qualivision\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\qualivision\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\Users\Samuele\Desktop\Projects\generalCab\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\Users\Samuele\Desktop\Projects\generalCab\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\Users\Samuele\Desktop\Projects\generalCab\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\Users\Samuele\Desktop\Projects\generalCab\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\Users\Samuele\Desktop\Projects\generalCab\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\Users\Samuele\Desktop\Projects\generalCab\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\qualivision\QVLEGS_Sorgenti_NEW\Export\bin\Debug\Export.exe.config
+C:\qualivision\QVLEGS_Sorgenti_NEW\Export\bin\Debug\Export.exe
+C:\qualivision\QVLEGS_Sorgenti_NEW\Export\bin\Debug\Export.pdb
+C:\qualivision\QVLEGS_Sorgenti_NEW\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\qualivision\QVLEGS_Sorgenti_NEW\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\qualivision\QVLEGS_Sorgenti_NEW\Export\obj\Debug\Export.exe
+C:\qualivision\QVLEGS_Sorgenti_NEW\Export\obj\Debug\Export.pdb
+C:\Users\Samuele\Desktop\Projects\generalCab\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\qualivision\SRC\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\Users\Samuele\Desktop\Nuova cartella\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\Users\Samuele\Desktop\Nuova cartella\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\Users\Samuele\Desktop\Nuova cartella\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\Users\Samuele\Desktop\Nuova cartella\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\Users\Samuele\Desktop\Nuova cartella\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\Users\Samuele\Desktop\Nuova cartella\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\Users\Samuele\Desktop\Nuova cartella\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\Users\Alessandro\Desktop\PROGETTI\GENERALCAB\GIOSTRA\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\Users\Alessandro\Desktop\PROGETTI\GENERALCAB\GIOSTRA\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\Users\Alessandro\Desktop\PROGETTI\GENERALCAB\GIOSTRA\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\Users\Alessandro\Desktop\PROGETTI\GENERALCAB\GIOSTRA\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\Users\Alessandro\Desktop\PROGETTI\GENERALCAB\GIOSTRA\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\Users\Alessandro\Desktop\PROGETTI\GENERALCAB\GIOSTRA\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\Users\Alessandro\Desktop\PROGETTI\GENERALCAB\GIOSTRA\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb

@@ -1,0 +1,81 @@
+/* Per evitare potenziali problemi di perdita di dati, si consiglia di esaminare dettagliatamente lo script prima di eseguirlo al di fuori del contesto di Progettazione database.*/
+BEGIN TRANSACTION
+SET QUOTED_IDENTIFIER ON
+SET ARITHABORT ON
+SET NUMERIC_ROUNDABORT OFF
+SET CONCAT_NULL_YIELDS_NULL ON
+SET ANSI_NULLS ON
+SET ANSI_PADDING ON
+SET ANSI_WARNINGS ON
+COMMIT
+BEGIN TRANSACTION
+GO
+ALTER TABLE dbo.TabStoricoStatisticheContatori
+	DROP CONSTRAINT DF_TabStoricoStatisticheContatori_TEST_COLORE_2_KO
+GO
+ALTER TABLE dbo.TabStoricoStatisticheContatori
+	DROP CONSTRAINT DF_TabStoricoStatisticheContatori_TEST_DIMENSIONE_LATO_KO
+GO
+ALTER TABLE dbo.TabStoricoStatisticheContatori
+	DROP CONSTRAINT DF_TabStoricoStatisticheContatori_TEST_RAKE_DIMENSIONE_LATO_KO
+GO
+CREATE TABLE dbo.Tmp_TabStoricoStatisticheContatori
+	(
+	IdStazione int NOT NULL,
+	DataRiferimentoTurno date NOT NULL,
+	NomeTurno smallint NOT NULL,
+	IdFormato varchar(50) NOT NULL,
+	TimeStamp datetime NOT NULL,
+	TOT int NOT NULL,
+	ALG_KO int NOT NULL,
+	ALLINEAMENTO_KO int NOT NULL,
+	TEST_INTEGRITA_KO int NOT NULL,
+	TEST_DIMENSIONE_KO int NOT NULL,
+	TEST_CREPE_KO int NOT NULL,
+	TEST_DISEGNI_KO int NOT NULL,
+	TEST_COLORE_KO int NOT NULL,
+	TEST_COLORE_2_KO int NOT NULL,
+	TEST_SBORDAMENTO_KO int NOT NULL,
+	TEST_ALTEZZA_KO int NOT NULL,
+	TEST_DIMENSIONE_LATO_KO int NOT NULL,
+	TEST_RAKE_DIMENSIONE_LATO_KO int NOT NULL,
+	CNT_KO_CAM1 int NOT NULL,
+	CNT_KO_CAM2 int NOT NULL,
+	CNT_KO_CAM3 int NOT NULL,
+	CNT_KO_CAM4 int NOT NULL,
+	CNT_KO_CAM5 int NOT NULL
+	)  ON [PRIMARY]
+GO
+ALTER TABLE dbo.Tmp_TabStoricoStatisticheContatori SET (LOCK_ESCALATION = TABLE)
+GO
+ALTER TABLE dbo.Tmp_TabStoricoStatisticheContatori ADD CONSTRAINT
+	DF_TabStoricoStatisticheContatori_IdStazione DEFAULT 0 FOR IdStazione
+GO
+ALTER TABLE dbo.Tmp_TabStoricoStatisticheContatori ADD CONSTRAINT
+	DF_TabStoricoStatisticheContatori_TEST_COLORE_2_KO DEFAULT ((0)) FOR TEST_COLORE_2_KO
+GO
+ALTER TABLE dbo.Tmp_TabStoricoStatisticheContatori ADD CONSTRAINT
+	DF_TabStoricoStatisticheContatori_TEST_DIMENSIONE_LATO_KO DEFAULT ((0)) FOR TEST_DIMENSIONE_LATO_KO
+GO
+ALTER TABLE dbo.Tmp_TabStoricoStatisticheContatori ADD CONSTRAINT
+	DF_TabStoricoStatisticheContatori_TEST_RAKE_DIMENSIONE_LATO_KO DEFAULT ((0)) FOR TEST_RAKE_DIMENSIONE_LATO_KO
+GO
+IF EXISTS(SELECT * FROM dbo.TabStoricoStatisticheContatori)
+	 EXEC('INSERT INTO dbo.Tmp_TabStoricoStatisticheContatori (DataRiferimentoTurno, NomeTurno, IdFormato, TimeStamp, TOT, ALG_KO, ALLINEAMENTO_KO, TEST_INTEGRITA_KO, TEST_DIMENSIONE_KO, TEST_CREPE_KO, TEST_DISEGNI_KO, TEST_COLORE_KO, TEST_COLORE_2_KO, TEST_SBORDAMENTO_KO, TEST_ALTEZZA_KO, TEST_DIMENSIONE_LATO_KO, TEST_RAKE_DIMENSIONE_LATO_KO, CNT_KO_CAM1, CNT_KO_CAM2, CNT_KO_CAM3, CNT_KO_CAM4, CNT_KO_CAM5)
+		SELECT DataRiferimentoTurno, NomeTurno, IdFormato, TimeStamp, TOT, ALG_KO, ALLINEAMENTO_KO, TEST_INTEGRITA_KO, TEST_DIMENSIONE_KO, TEST_CREPE_KO, TEST_DISEGNI_KO, TEST_COLORE_KO, TEST_COLORE_2_KO, TEST_SBORDAMENTO_KO, TEST_ALTEZZA_KO, TEST_DIMENSIONE_LATO_KO, TEST_RAKE_DIMENSIONE_LATO_KO, CNT_KO_CAM1, CNT_KO_CAM2, CNT_KO_CAM3, CNT_KO_CAM4, CNT_KO_CAM5 FROM dbo.TabStoricoStatisticheContatori WITH (HOLDLOCK TABLOCKX)')
+GO
+DROP TABLE dbo.TabStoricoStatisticheContatori
+GO
+EXECUTE sp_rename N'dbo.Tmp_TabStoricoStatisticheContatori', N'TabStoricoStatisticheContatori', 'OBJECT' 
+GO
+ALTER TABLE dbo.TabStoricoStatisticheContatori ADD CONSTRAINT
+	PK_TabStoricoStatistiche_1 PRIMARY KEY CLUSTERED 
+	(
+	IdStazione,
+	DataRiferimentoTurno,
+	NomeTurno,
+	IdFormato,
+	TimeStamp
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO

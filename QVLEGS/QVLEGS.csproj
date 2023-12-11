@@ -1,0 +1,1629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FFBF835-9083-44FD-B935-E0B7C24253FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QVLEGS</RootNamespace>
+    <AssemblyName>QVLEGS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WIN64;_Simulazione</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;_Simulazione</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>video_camera.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyModbus">
+      <HintPath>..\DLL\EasyModbus.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnetxl">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\MVTec\HALCON-18.11-Steady\bin\dotnet35\halcondotnetxl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algoritmi\Algoritmo.cs" />
+    <Compile Include="Algoritmi\AlgoritmoMask.cs" />
+    <Compile Include="Algoritmi\AlgoritmoGMM.cs" />
+    <Compile Include="Algoritmi\AlgoritmoWizard.cs" />
+    <Compile Include="Algoritmi\AlgoritmoLavoro.cs" />
+    <Compile Include="Class\Manager\AdLink\AdLinkPCI.cs" />
+    <Compile Include="Class\Manager\AdLink\Dask.cs" />
+    <Compile Include="Class\Manager\AppManager.cs" />
+    <Compile Include="Class\Core\CoreBase.cs" />
+    <Compile Include="Class\Core\Core.cs" />
+    <Compile Include="Class\Core\CoreRegolazioni.cs" />
+    <Compile Include="Class\Manager\FrameGrabber\FrameGrabberManager.cs" />
+    <Compile Include="Class\Manager\Gardasoft\GardasoftManager.cs" />
+    <Compile Include="Class\NewImageDelegate.cs" />
+    <Compile Include="Controls\NotificationPanelDgv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NotificationPanelDgv.designer.cs">
+      <DependentUpon>NotificationPanelDgv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCCheckbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCCheckbox.designer.cs">
+      <DependentUpon>UCCheckbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLogMulti2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCLogMulti2.Designer.cs">
+      <DependentUpon>UCLogMulti2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLogMulti3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCLogMulti3.Designer.cs">
+      <DependentUpon>UCLogMulti3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataType\Formati\Cam1_Foto2Param.cs" />
+    <Compile Include="DataType\Formati\Cam1_Foto1Param.cs" />
+    <Compile Include="DataType\Formati\Cam5_Foto1Param.cs" />
+    <Compile Include="DataType\Formati\Cam5_Foto2Param.cs" />
+    <Compile Include="DataType\Formati\Cam4_Foto1Param.cs" />
+    <Compile Include="DataType\Formati\Cam3_Foto2Param.cs" />
+    <Compile Include="DataType\Formati\Cam3_Foto1Param.cs" />
+    <Compile Include="DataType\Formati\Cam2_Foto1Param.cs" />
+    <Compile Include="DataType\Formati\ROI\CircleParam.cs" />
+    <Compile Include="DataType\PrevImageData.cs" />
+    <Compile Include="Forms\FormInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInfo.designer.cs">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRicette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRicette.Designer.cs">
+      <DependentUpon>FormRicette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfacce\IFrameGrabberManager.cs" />
+    <Compile Include="Class\Manager\Tcp\TcpIpCommunicationClient.cs" />
+    <Compile Include="Class\Manager\GestioneContatori.cs" />
+    <Compile Include="Class\Manager\GraficiSoglieManager.cs" />
+    <Compile Include="Class\Manager\ComunicazioneManager.cs" />
+    <Compile Include="Class\Manager\ExceptionManager.cs" />
+    <Compile Include="Class\Manager\LoginLogoutManager.cs" />
+    <Compile Include="Class\Manager\SchedaIO.cs" />
+    <Compile Include="Controls\StringEventArgs.cs" />
+    <Compile Include="Controls\FormNumericInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormNumericInput.designer.cs">
+      <DependentUpon>FormNumericInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormStringInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormStringInput.designer.cs">
+      <DependentUpon>FormStringInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLogSingolo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCLogSingolo.Designer.cs">
+      <DependentUpon>UCLogSingolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLogMulti5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCLogMulti5.Designer.cs">
+      <DependentUpon>UCLogMulti5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UCTabControl.designer.cs">
+      <DependentUpon>UCTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCTastieraMaiuscola.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCTastieraMaiuscola.designer.cs">
+      <DependentUpon>UCTastieraMaiuscola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCTastieraMinuscola.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCTastieraMinuscola.designer.cs">
+      <DependentUpon>UCTastieraMinuscola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCTastieraNumerica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCTastieraNumerica.designer.cs">
+      <DependentUpon>UCTastieraNumerica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCTrackBarBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCTrackBarBase.designer.cs">
+      <DependentUpon>UCTrackBarBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCTrackBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCTrackBar.designer.cs">
+      <DependentUpon>UCTrackBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataType\Formati\Integrita4Param.cs" />
+    <Compile Include="DataType\JpegCompression.cs" />
+    <Compile Include="DataType\TipoAlgoritmo.cs" />
+    <Compile Include="DataType\Utenti\Livello.cs" />
+    <Compile Include="DataType\StatisticheObjMisure.cs" />
+    <Compile Include="DataType\StatisticheObjContatori.cs" />
+    <Compile Include="DataType\Turni\StoricoTurni.cs" />
+    <Compile Include="DataType\Turni\Definizione_Turni.cs" />
+    <Compile Include="DataType\Formati\AllineamentoParam.cs" />
+    <Compile Include="DataType\Formati\IntegritaParam.cs" />
+    <Compile Include="DataType\Formati\Shape\CreateScaledShapeModelParam.cs" />
+    <Compile Include="DataType\ElaborateResult.cs" />
+    <Compile Include="DataType\Extension.cs" />
+    <Compile Include="DataType\Formati\Shape\FindScaledShapeModelParam.cs" />
+    <Compile Include="DataType\Formati\Formato.cs" />
+    <Compile Include="DataType\Formati\ROI\Rectangle1Param.cs" />
+    <Compile Include="DataType\Formati\ROI\Rectangle2Param.cs" />
+    <Compile Include="DataType\Formati\TemplateFormato.cs" />
+    <Compile Include="DataType\FrameGrabber\FrameGrabberConfig.cs" />
+    <Compile Include="DataType\FrameGrabber\FrameGrabberConfigOverride.cs" />
+    <Compile Include="DataType\FrameGrabber\FrameGrabberParam.cs" />
+    <Compile Include="DataType\StatisticheObj.cs" />
+    <Compile Include="DataType\TipoCamera.cs" />
+    <Compile Include="DataType\ImpostazioniCamera.cs" />
+    <Compile Include="DataType\Impostazioni.cs" />
+    <Compile Include="DataType\Formati\ParametriAlgoritmo.cs" />
+    <Compile Include="DataType\Formati\AllineamentoShapeParam.cs" />
+    <Compile Include="DataType\Turni\Turno_Attuale.cs" />
+    <Compile Include="DataType\Utenti\Utente.cs" />
+    <Compile Include="DBL\DBLBaseManager.cs" />
+    <Compile Include="DBL\FormatoManager.cs" />
+    <Compile Include="DBL\GestioneTurniManager.cs" />
+    <Compile Include="DBL\StatisticheManager.cs" />
+    <Compile Include="DBL\ImpostazioniManager.cs" />
+    <Compile Include="DBL\LinguaManager.cs" />
+    <Compile Include="DBL\UtenteProvider.cs" />
+    <Compile Include="Forms\Formati\FormCopiaFormato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Formati\FormCopiaFormato.designer.cs">
+      <DependentUpon>FormCopiaFormato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEsitoControlloNastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEsitoControlloNastro.designer.cs">
+      <DependentUpon>FormEsitoControlloNastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Turni\FrmAggiungiModificaTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Turni\FrmAggiungiModificaTurno.designer.cs">
+      <DependentUpon>FrmAggiungiModificaTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Turni\FrmGestioneTurni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Turni\FrmGestioneTurni.designer.cs">
+      <DependentUpon>FrmGestioneTurni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GMM\FormMasterGMM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GMM\FormMasterGMM.designer.cs">
+      <DependentUpon>FormMasterGMM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPrincipale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPrincipale.Designer.cs">
+      <DependentUpon>FormPrincipale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formati\FormAddFormato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Formati\FormAddFormato.designer.cs">
+      <DependentUpon>FormAddFormato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormImpostazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormImpostazioni.designer.cs">
+      <DependentUpon>FormImpostazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPassword.designer.cs">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSalvaFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSalvaFoto.designer.cs">
+      <DependentUpon>FormSalvaFoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSplash.designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCNotificationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCNotificationPanel.designer.cs">
+      <DependentUpon>UCNotificationPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utenti\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utenti\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utenti\FrmAggiungiModificaUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utenti\FrmAggiungiModificaUtente.designer.cs">
+      <DependentUpon>FrmAggiungiModificaUtente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utenti\FrmGestioneUtenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Utenti\FrmGestioneUtenti.designer.cs">
+      <DependentUpon>FrmGestioneUtenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GMM\FormWizardMaskCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GMM\FormWizardMaskCamera.designer.cs">
+      <DependentUpon>FormWizardMaskCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfacce\IUCPaginaOnLine.cs" />
+    <Compile Include="Interfacce\IUCPaginaLive.cs" />
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive2Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive2Cam.Designer.cs">
+      <DependentUpon>UCPaginaLive2Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive3Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive3Cam.Designer.cs">
+      <DependentUpon>UCPaginaLive3Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine2Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine2Cam.Designer.cs">
+      <DependentUpon>UCPaginaOnLine2Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine3Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine3Cam.Designer.cs">
+      <DependentUpon>UCPaginaOnLine3Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewLogDettaglio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewLogDettaglio.Designer.cs">
+      <DependentUpon>UCPaginaViewLogDettaglio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewSoglieCam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewSoglieCam.Designer.cs">
+      <DependentUpon>UCPaginaViewSoglieCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine5Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine5Cam.Designer.cs">
+      <DependentUpon>UCPaginaOnLine5Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine1Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaOnLine1Cam.Designer.cs">
+      <DependentUpon>UCPaginaOnLine1Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat4Dettaglio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat4Dettaglio.Designer.cs">
+      <DependentUpon>UCPaginaViewStat4Dettaglio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat4.Designer.cs">
+      <DependentUpon>UCPaginaViewStat4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat1Dettaglio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat1Dettaglio.Designer.cs">
+      <DependentUpon>UCPaginaViewStat1Dettaglio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat2Dettaglio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat2Dettaglio.Designer.cs">
+      <DependentUpon>UCPaginaViewStat2Dettaglio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat3Dettaglio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat3Dettaglio.Designer.cs">
+      <DependentUpon>UCPaginaViewStat3Dettaglio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaLog.designer.cs">
+      <DependentUpon>UCPaginaLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaMain.Designer.cs">
+      <DependentUpon>UCPaginaMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaOnLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaOnLine.Designer.cs">
+      <DependentUpon>UCPaginaOnLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive1Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive1Cam.Designer.cs">
+      <DependentUpon>UCPaginaLive1Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaLive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaLive.Designer.cs">
+      <DependentUpon>UCPaginaLive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam5_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam5_Foto2.Designer.cs">
+      <DependentUpon>UCEditAlgCam5_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam5_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam5_Foto1.Designer.cs">
+      <DependentUpon>UCEditAlgCam5_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam4_Foto1.Designer.cs">
+      <DependentUpon>UCEditAlgCam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam3_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam3_Foto2.Designer.cs">
+      <DependentUpon>UCEditAlgCam3_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam3_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam3_Foto1.Designer.cs">
+      <DependentUpon>UCEditAlgCam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam2_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam2_Foto1.Designer.cs">
+      <DependentUpon>UCEditAlgCam2_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam1_Foto2.Designer.cs">
+      <DependentUpon>UCEditAlgCam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam1_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditAlgCam1_Foto1.Designer.cs">
+      <DependentUpon>UCEditAlgCam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\FormFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\FormFeedback.Designer.cs">
+      <DependentUpon>FormFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\UCHWndCtrlManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utilities\UCHWndCtrlManager.Designer.cs">
+      <DependentUpon>UCHWndCtrlManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormScegliImgLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormScegliImgLog.Designer.cs">
+      <DependentUpon>FormScegliImgLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep4Cam1_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep4Cam1_Foto1.designer.cs">
+      <DependentUpon>UCStep4Cam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep3Cam1_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep3Cam1_Foto1.designer.cs">
+      <DependentUpon>UCStep3Cam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep2Cam1_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep2Cam1_Foto1.designer.cs">
+      <DependentUpon>UCStep2Cam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep10Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep10Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep10Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep11Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep11Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep11Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep12Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep12Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep12Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep13Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep13Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep13Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep14Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep14Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep14Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep15Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep15Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep15Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep16Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep16Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep16Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep17Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep17Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep17Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep18Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep18Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep18Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\UCStep3Cam2_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\UCStep3Cam2_Foto1.designer.cs">
+      <DependentUpon>UCStep3Cam2_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\UCStep2Cam2_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\UCStep2Cam2_Foto1.designer.cs">
+      <DependentUpon>UCStep2Cam2_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep6Cam3_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep6Cam3_Foto1.designer.cs">
+      <DependentUpon>UCStep6Cam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep1Cam3_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep1Cam3_Foto1.designer.cs">
+      <DependentUpon>UCStep1Cam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep5Cam3_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep5Cam3_Foto2.designer.cs">
+      <DependentUpon>UCStep5Cam3_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep1Cam3_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep1Cam3_Foto2.designer.cs">
+      <DependentUpon>UCStep1Cam3_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep4Cam3_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep4Cam3_Foto2.designer.cs">
+      <DependentUpon>UCStep4Cam3_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep3Cam3_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep3Cam3_Foto2.designer.cs">
+      <DependentUpon>UCStep3Cam3_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep2Cam3_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\UCStep2Cam3_Foto2.designer.cs">
+      <DependentUpon>UCStep2Cam3_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep4Cam3_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep4Cam3_Foto1.designer.cs">
+      <DependentUpon>UCStep4Cam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep5Cam3_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep5Cam3_Foto1.designer.cs">
+      <DependentUpon>UCStep5Cam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep3Cam3_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep3Cam3_Foto1.designer.cs">
+      <DependentUpon>UCStep3Cam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep12Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep12Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep12Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep10Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep10Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep10Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep11Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep11Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep11Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep14Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep14Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep14Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep13Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep13Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep13Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep15Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep15Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep15Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep9Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep9Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep9Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep8Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep8Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep8Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep7Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep7Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep7Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep1Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep1Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep1Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep2Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep2Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep2Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep6Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep6Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep6Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep5Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep5Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep5Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep4Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep4Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep4Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep3Cam4_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\UCStep3Cam4_Foto1.designer.cs">
+      <DependentUpon>UCStep3Cam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto2\UCStep1Cam5_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto2\UCStep1Cam5_Foto2.designer.cs">
+      <DependentUpon>UCStep1Cam5_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto1\UCStep1Cam5_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto1\UCStep1Cam5_Foto1.designer.cs">
+      <DependentUpon>UCStep1Cam5_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto2\WizardCam5_Foto2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto2\WizardCam5_Foto2.Designer.cs">
+      <DependentUpon>WizardCam5_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto1\WizardCam5_Foto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam5_Foto1\WizardCam5_Foto1.Designer.cs">
+      <DependentUpon>WizardCam5_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\WizardCam4_Foto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam4_Foto1\WizardCam4_Foto1.Designer.cs">
+      <DependentUpon>WizardCam4_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\WizardCam3_Foto2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto2\WizardCam3_Foto2.Designer.cs">
+      <DependentUpon>WizardCam3_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep2Cam3_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\UCStep2Cam3_Foto1.designer.cs">
+      <DependentUpon>UCStep2Cam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\WizardCam3_Foto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam3_Foto1\WizardCam3_Foto1.Designer.cs">
+      <DependentUpon>WizardCam3_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep1Cam1_Foto2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\UCStep1Cam1_Foto2.designer.cs">
+      <DependentUpon>UCStep1Cam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\WizardCam1_Foto2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto2\WizardCam1_Foto2.Designer.cs">
+      <DependentUpon>WizardCam1_Foto2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep5Cam1_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep5Cam1_Foto1.designer.cs">
+      <DependentUpon>UCStep5Cam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep6Cam1_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep6Cam1_Foto1.designer.cs">
+      <DependentUpon>UCStep6Cam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep1Cam1_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\UCStep1Cam1_Foto1.designer.cs">
+      <DependentUpon>UCStep1Cam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\WizardCam1_Foto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam1_Foto1\WizardCam1_Foto1.Designer.cs">
+      <DependentUpon>WizardCam1_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\UCStep1Cam2_Foto1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\UCStep1Cam2_Foto1.designer.cs">
+      <DependentUpon>UCStep1Cam2_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\WizardCam2_Foto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCam2_Foto1\WizardCam2_Foto1.Designer.cs">
+      <DependentUpon>WizardCam2_Foto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardAcq\WizardAcq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardAcq\WizardAcq.Designer.cs">
+      <DependentUpon>WizardAcq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCentraggio\WizardCentraggio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCentraggio\WizardCentraggio.Designer.cs">
+      <DependentUpon>WizardCentraggio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaEditRicettaCam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaEditRicettaCam.Designer.cs">
+      <DependentUpon>UCPaginaEditRicettaCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat3.Designer.cs">
+      <DependentUpon>UCPaginaViewStat3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat2.Designer.cs">
+      <DependentUpon>UCPaginaViewStat2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewStat1.Designer.cs">
+      <DependentUpon>UCPaginaViewStat1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewSoglie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewSoglie.Designer.cs">
+      <DependentUpon>UCPaginaViewSoglie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaViewLog.Designer.cs">
+      <DependentUpon>UCPaginaViewLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaDiagnostica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaDiagnostica.Designer.cs">
+      <DependentUpon>UCPaginaDiagnostica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaEditRicetta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaEditRicetta.Designer.cs">
+      <DependentUpon>UCPaginaEditRicetta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive5Cam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\SottoPagine\UCPaginaLive5Cam.Designer.cs">
+      <DependentUpon>UCPaginaLive5Cam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaRicette.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaRicette.Designer.cs">
+      <DependentUpon>UCPaginaRicette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaUtenti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaUtenti.Designer.cs">
+      <DependentUpon>UCPaginaUtenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\UCNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCNumericUpDown.designer.cs">
+      <DependentUpon>UCNumericUpDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditCentraggio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditCentraggio.Designer.cs">
+      <DependentUpon>UCEditCentraggio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditExpoGain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditAlgoritmo\UCEditExpoGain.Designer.cs">
+      <DependentUpon>UCEditExpoGain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCEditSoglia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCEditSoglia.Designer.cs">
+      <DependentUpon>UCEditSoglia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\CacheErrorObject.cs" />
+    <Compile Include="Utilities\CommonUtility.cs" />
+    <Compile Include="Utilities\HWndCtrlManager.cs" />
+    <Compile Include="Utilities\KeyBoardOsk.cs" />
+    <Compile Include="Utilities\ObjectToDisplay.cs" />
+    <Compile Include="Utilities\SimpleDirtyTracker.cs" />
+    <Compile Include="Wizard\WizardAcq\UCStepImageRef.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardAcq\UCStepImageRef.designer.cs">
+      <DependentUpon>UCStepImageRef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardAcq\UCStepRoiMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardAcq\UCStepRoiMain.designer.cs">
+      <DependentUpon>UCStepRoiMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCentraggio\UCStepTestAllineamento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCentraggio\UCStepTestAllineamento.designer.cs">
+      <DependentUpon>UCStepTestAllineamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardAcq\UCStepAcq.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardAcq\UCStepAcq.designer.cs">
+      <DependentUpon>UCStepAcq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardCentraggio\UCStepTrainAllineamento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardCentraggio\UCStepTrainAllineamento.designer.cs">
+      <DependentUpon>UCStepTrainAllineamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm\FormWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm\FormWait.designer.cs">
+      <DependentUpon>FormWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm\WaitManager.cs" />
+    <EmbeddedResource Include="Controls\FormNumericInput.resx">
+      <DependentUpon>FormNumericInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FormStringInput.resx">
+      <DependentUpon>FormStringInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NotificationPanelDgv.resx">
+      <DependentUpon>NotificationPanelDgv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCCheckbox.resx">
+      <DependentUpon>UCCheckbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCLogMulti2.resx">
+      <DependentUpon>UCLogMulti2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCLogMulti3.resx">
+      <DependentUpon>UCLogMulti3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCLogSingolo.resx">
+      <DependentUpon>UCLogSingolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCLogMulti5.resx">
+      <DependentUpon>UCLogMulti5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCTabControl.resx">
+      <DependentUpon>UCTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCTastieraMaiuscola.resx">
+      <DependentUpon>UCTastieraMaiuscola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCTastieraMinuscola.resx">
+      <DependentUpon>UCTastieraMinuscola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCTastieraNumerica.resx">
+      <DependentUpon>UCTastieraNumerica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCTrackBarBase.resx">
+      <DependentUpon>UCTrackBarBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCTrackBar.resx">
+      <DependentUpon>UCTrackBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Formati\FormCopiaFormato.resx">
+      <DependentUpon>FormCopiaFormato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEsitoControlloNastro.resx">
+      <DependentUpon>FormEsitoControlloNastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInfo.resx">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRicette.resx">
+      <DependentUpon>FormRicette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Turni\FrmAggiungiModificaTurno.resx">
+      <DependentUpon>FrmAggiungiModificaTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Turni\FrmGestioneTurni.resx">
+      <DependentUpon>FrmGestioneTurni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GMM\FormMasterGMM.resx">
+      <DependentUpon>FormMasterGMM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPrincipale.resx">
+      <DependentUpon>FormPrincipale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Formati\FormAddFormato.resx">
+      <DependentUpon>FormAddFormato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormImpostazioni.resx">
+      <DependentUpon>FormImpostazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPassword.resx">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSalvaFoto.resx">
+      <DependentUpon>FormSalvaFoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCNotificationPanel.resx">
+      <DependentUpon>UCNotificationPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utenti\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utenti\FrmAggiungiModificaUtente.resx">
+      <DependentUpon>FrmAggiungiModificaUtente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Utenti\FrmGestioneUtenti.resx">
+      <DependentUpon>FrmGestioneUtenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GMM\FormWizardMaskCamera.resx">
+      <DependentUpon>FormWizardMaskCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaLive2Cam.resx">
+      <DependentUpon>UCPaginaLive2Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaLive3Cam.resx">
+      <DependentUpon>UCPaginaLive3Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaOnLine2Cam.resx">
+      <DependentUpon>UCPaginaOnLine2Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaOnLine3Cam.resx">
+      <DependentUpon>UCPaginaOnLine3Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewLogDettaglio.resx">
+      <DependentUpon>UCPaginaViewLogDettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewSoglieCam.resx">
+      <DependentUpon>UCPaginaViewSoglieCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat4Dettaglio.resx">
+      <DependentUpon>UCPaginaViewStat4Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat4.resx">
+      <DependentUpon>UCPaginaViewStat4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat1Dettaglio.resx">
+      <DependentUpon>UCPaginaViewStat1Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat2Dettaglio.resx">
+      <DependentUpon>UCPaginaViewStat2Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat3Dettaglio.resx">
+      <DependentUpon>UCPaginaViewStat3Dettaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\UCPaginaDiagnostica.resx">
+      <DependentUpon>UCPaginaDiagnostica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaOnLine5Cam.resx">
+      <DependentUpon>UCPaginaOnLine5Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaOnLine1Cam.resx">
+      <DependentUpon>UCPaginaOnLine1Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\UCPaginaLog.resx">
+      <DependentUpon>UCPaginaLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\UCPaginaMain.resx">
+      <DependentUpon>UCPaginaMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\UCPaginaOnLine.resx">
+      <DependentUpon>UCPaginaOnLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaLive1Cam.resx">
+      <DependentUpon>UCPaginaLive1Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\UCPaginaLive.resx">
+      <DependentUpon>UCPaginaLive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam5_Foto2.resx">
+      <DependentUpon>UCEditAlgCam5_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam5_Foto1.resx">
+      <DependentUpon>UCEditAlgCam5_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam4_Foto1.resx">
+      <DependentUpon>UCEditAlgCam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam3_Foto2.resx">
+      <DependentUpon>UCEditAlgCam3_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam3_Foto1.resx">
+      <DependentUpon>UCEditAlgCam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam2_Foto1.resx">
+      <DependentUpon>UCEditAlgCam2_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam1_Foto2.resx">
+      <DependentUpon>UCEditAlgCam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam1_Foto1.resx">
+      <DependentUpon>UCEditAlgCam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\FOrmFeedback.resx">
+      <DependentUpon>FormFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\UCHWndCtrlManager.resx">
+      <DependentUpon>UCHWndCtrlManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\FormScegliImgLog.resx">
+      <DependentUpon>FormScegliImgLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto1\UCStep4Cam1_Foto1.resx">
+      <DependentUpon>UCStep4Cam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto1\UCStep3Cam1_Foto1.resx">
+      <DependentUpon>UCStep3Cam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto1\UCStep2Cam1_Foto1.resx">
+      <DependentUpon>UCStep2Cam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep10Cam1_Foto2.resx">
+      <DependentUpon>UCStep10Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep11Cam1_Foto2.resx">
+      <DependentUpon>UCStep11Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep12Cam1_Foto2.resx">
+      <DependentUpon>UCStep12Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep13Cam1_Foto2.resx">
+      <DependentUpon>UCStep13Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep14Cam1_Foto2.resx">
+      <DependentUpon>UCStep14Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep15Cam1_Foto2.resx">
+      <DependentUpon>UCStep15Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep16Cam1_Foto2.resx">
+      <DependentUpon>UCStep16Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep17Cam1_Foto2.resx">
+      <DependentUpon>UCStep17Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep18Cam1_Foto2.resx">
+      <DependentUpon>UCStep18Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam2_Foto1\UCStep3Cam2_Foto1.resx">
+      <DependentUpon>UCStep3Cam2_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam2_Foto1\UCStep2Cam2_Foto1.resx">
+      <DependentUpon>UCStep2Cam2_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto1\UCStep6Cam3_Foto1.resx">
+      <DependentUpon>UCStep6Cam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto1\UCStep1Cam3_Foto1.resx">
+      <DependentUpon>UCStep1Cam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto2\UCStep5Cam3_Foto2.resx">
+      <DependentUpon>UCStep5Cam3_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto2\UCStep1Cam3_Foto2.resx">
+      <DependentUpon>UCStep1Cam3_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto2\UCStep4Cam3_Foto2.resx">
+      <DependentUpon>UCStep4Cam3_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto2\UCStep3Cam3_Foto2.resx">
+      <DependentUpon>UCStep3Cam3_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto2\UCStep2Cam3_Foto2.resx">
+      <DependentUpon>UCStep2Cam3_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto1\UCStep4Cam3_Foto1.resx">
+      <DependentUpon>UCStep4Cam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto1\UCStep5Cam3_Foto1.resx">
+      <DependentUpon>UCStep5Cam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto1\UCStep3Cam3_Foto1.resx">
+      <DependentUpon>UCStep3Cam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep12Cam4_Foto1.resx">
+      <DependentUpon>UCStep12Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep10Cam4_Foto1.resx">
+      <DependentUpon>UCStep10Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep11Cam4_Foto1.resx">
+      <DependentUpon>UCStep11Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep14Cam4_Foto1.resx">
+      <DependentUpon>UCStep14Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep13Cam4_Foto1.resx">
+      <DependentUpon>UCStep13Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep15Cam4_Foto1.resx">
+      <DependentUpon>UCStep15Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep9Cam4_Foto1.resx">
+      <DependentUpon>UCStep9Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep8Cam4_Foto1.resx">
+      <DependentUpon>UCStep8Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep7Cam4_Foto1.resx">
+      <DependentUpon>UCStep7Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep1Cam4_Foto1.resx">
+      <DependentUpon>UCStep1Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep2Cam4_Foto1.resx">
+      <DependentUpon>UCStep2Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep6Cam4_Foto1.resx">
+      <DependentUpon>UCStep6Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep5Cam4_Foto1.resx">
+      <DependentUpon>UCStep5Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep4Cam4_Foto1.resx">
+      <DependentUpon>UCStep4Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\UCStep3Cam4_Foto1.resx">
+      <DependentUpon>UCStep3Cam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam5_Foto2\UCStep1Cam5_Foto2.resx">
+      <DependentUpon>UCStep1Cam5_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam5_Foto1\UCStep1Cam5_Foto1.resx">
+      <DependentUpon>UCStep1Cam5_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam5_Foto2\WizardCam5_Foto2.resx">
+      <DependentUpon>WizardCam5_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam5_Foto1\WizardCam5_Foto1.resx">
+      <DependentUpon>WizardCam5_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam4_Foto1\WizardCam4_Foto1.resx">
+      <DependentUpon>WizardCam4_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto2\WizardCam3_Foto2.resx">
+      <DependentUpon>WizardCam3_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto1\UCStep2Cam3_Foto1.resx">
+      <DependentUpon>UCStep2Cam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam3_Foto1\WizardCam3_Foto1.resx">
+      <DependentUpon>WizardCam3_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\UCStep1Cam1_Foto2.resx">
+      <DependentUpon>UCStep1Cam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto2\WizardCam1_Foto2.resx">
+      <DependentUpon>WizardCam1_Foto2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto1\UCStep5Cam1_Foto1.resx">
+      <DependentUpon>UCStep5Cam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto1\UCStep6Cam1_Foto1.resx">
+      <DependentUpon>UCStep6Cam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto1\UCStep1Cam1_Foto1.resx">
+      <DependentUpon>UCStep1Cam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam1_Foto1\WizardCam1_Foto1.resx">
+      <DependentUpon>WizardCam1_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam2_Foto1\UCStep1Cam2_Foto1.resx">
+      <DependentUpon>UCStep1Cam2_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCam2_Foto1\WizardCam2_Foto1.resx">
+      <DependentUpon>WizardCam2_Foto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardAcq\WizardAcq.resx">
+      <DependentUpon>WizardAcq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCentraggio\WizardCentraggio.resx">
+      <DependentUpon>WizardCentraggio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaEditRicettaCam.resx">
+      <DependentUpon>UCPaginaEditRicettaCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat3.resx">
+      <DependentUpon>UCPaginaViewStat3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat2.resx">
+      <DependentUpon>UCPaginaViewStat2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewStat1.resx">
+      <DependentUpon>UCPaginaViewStat1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewSoglie.resx">
+      <DependentUpon>UCPaginaViewSoglie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaViewLog.resx">
+      <DependentUpon>UCPaginaViewLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaEditRicetta.resx">
+      <DependentUpon>UCPaginaEditRicetta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\SottoPagine\UCPaginaLive5Cam.resx">
+      <DependentUpon>UCPaginaLive5Cam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\UCPaginaRicette.resx">
+      <DependentUpon>UCPaginaRicette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Controls\UCNumericUpDown.resx">
+      <DependentUpon>UCNumericUpDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditCentraggio.resx">
+      <DependentUpon>UCEditCentraggio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditAlgoritmo\UCEditExpoGain.resx">
+      <DependentUpon>UCEditExpoGain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCEditSoglia.resx">
+      <DependentUpon>UCEditSoglia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardAcq\UCStepImageRef.resx">
+      <DependentUpon>UCStepImageRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardAcq\UCStepRoiMain.resx">
+      <DependentUpon>UCStepRoiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCentraggio\UCStepTestAllineamento.resx">
+      <DependentUpon>UCStepTestAllineamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardAcq\UCStepAcq.resx">
+      <DependentUpon>UCStepAcq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardCentraggio\UCStepTrainAllineamento.resx">
+      <DependentUpon>UCStepTrainAllineamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm\FormWait.resx">
+      <DependentUpon>FormWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\QVLEGS.Algoritmi.AlgoritmoGMM+TmpObjWizardClassificatore.datasource" />
+    <None Include="Properties\DataSources\QVLEGS.DataType.IntegritaParam+BlobCioccolatoDescrittore.datasource" />
+    <None Include="Properties\DataSources\QVLEGS.DataType.RakeDimensioneLatoParam+MisuraRakeDescrittore.datasource" />
+    <None Include="Properties\DataSources\QVLEGS.Pagine.SottoPagine.UCPaginaViewStat2+ObjCmb.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClientEEIP\ClientEEIP.csproj">
+      <Project>{080aec41-943f-403c-b09b-8ed52e85c22c}</Project>
+      <Name>ClientEEIP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TSWizard\TSWizards.csproj">
+      <Project>{dcf08909-ac8c-4e8d-a868-f54d5b888e43}</Project>
+      <Name>TSWizards</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewROI\vs2005\ViewROI.csproj">
+      <Project>{c4f5c5de-7ea8-47fe-8218-48138f48965f}</Project>
+      <Name>ViewROI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_fit_Size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-out_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_fit_Size1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgStart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_player_stop_1829.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgStop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgScattaFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgDisegna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgGomma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgImpara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgRettangolo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-in_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ricette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ricette_Piccola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgModifica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSalvaFoto.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Automation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chiudi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgApplica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgNuovo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSave.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgChiudi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index.png" />
+    <None Include="Resources\imgCerchio.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\task.png" />
+    <None Include="Resources\camera.png" />
+    <None Include="Resources\reloadPiccolo2.png" />
+    <None Include="Resources\img_integrita.png" />
+    <None Include="Resources\img_colore.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\img_crepe.png" />
+    <None Include="Resources\img_lato.png" />
+    <None Include="Resources\img_dimensioni.png" />
+    <None Include="Resources\img_centraggio.png" />
+    <None Include="Resources\img_altezza.png" />
+    <None Include="Resources\img_disegni.png" />
+    <None Include="Resources\img_impostazioni.png" />
+    <None Include="Resources\img_edit_ricette.png" />
+    <None Include="Resources\img_live.png" />
+    <None Include="Resources\img_ricette.png" />
+    <None Include="Resources\img_view.png" />
+    <None Include="Resources\camera_1.png" />
+    <None Include="Resources\camera_2.png" />
+    <None Include="Resources\camera_3.png" />
+    <None Include="Resources\camera_4.png" />
+    <None Include="Resources\camera_5.png" />
+    <None Include="Resources\btnAccedi.Image.png" />
+    <None Include="Resources\CancellaProgrammaToolStripMenuItem.Image.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\img.png" />
+    <None Include="Resources\img_ingrandisci.png" />
+    <None Include="Resources\img_text.png" />
+    <None Include="Resources\img_go_back.png" />
+    <None Include="Resources\img_log.png" />
+    <None Include="Resources\img_integrita_32.png" />
+    <None Include="Resources\img_disegni_32.png" />
+    <None Include="Resources\img_crepe_32.png" />
+    <None Include="Resources\img_dimensioni_32.png" />
+    <None Include="Resources\img_colore_32.png" />
+    <None Include="Resources\img_lato_32.png" />
+    <None Include="Resources\img_GMM.png" />
+    <None Include="Resources\img_diagnostica.png" />
+    <None Include="Resources\img_soglie.png" />
+    <None Include="Resources\menuSmall.png" />
+    <None Include="Resources\img_crepe_40.png" />
+    <None Include="Resources\img_disegni50.png" />
+    <None Include="Resources\img_go_backSmall.png" />
+    <None Include="Resources\iconfinder_icon-image_211677%281%29.png" />
+    <None Include="Resources\closeDark.png" />
+    <None Include="Resources\reduce_IconRed2.png" />
+    <None Include="Resources\biscottino.png" />
+    <None Include="Resources\integrita2.PNG" />
+    <None Include="Resources\integrita2_1.PNG" />
+    <None Include="Resources\integrita2_2.PNG" />
+    <None Include="Resources\integrita1.PNG" />
+    <None Include="Resources\centraggioBlob.PNG" />
+    <None Include="Resources\centraggioShape.PNG" />
+    <None Include="Resources\segmentazione.PNG" />
+    <None Include="Resources\colorPickerNastro.PNG" />
+    <None Include="Resources\Close1.png" />
+    <None Include="Resources\CloseSmall.png" />
+    <None Include="Resources\rettangolare.PNG" />
+    <None Include="Resources\rotondo.PNG" />
+    <None Include="Resources\integrita4.PNG" />
+    <None Include="Resources\imgCopia.png" />
+    <None Include="Resources\Scatola.png" />
+    <None Include="Resources\BeltDir.jpg" />
+    <None Include="Resources\img_3D.png" />
+    <None Include="Resources\colormap_icon&amp;16.png" />
+    <None Include="Resources\greyscalemap_icon&amp;16.png" />
+    <None Include="Resources\3d_icon&amp;16.png" />
+    <None Include="Resources\3d_mesh&amp;16.png" />
+    <None Include="Resources\3d_points&amp;16.png" />
+    <None Include="Resources\imgSearch.png" />
+    <None Include="Resources\Export_32x32.png" />
+    <None Include="Resources\checklist.png" />
+    <None Include="Resources\alarm_OFF.png" />
+    <None Include="Resources\alarm_ON.png" />
+    <None Include="Resources\reset_alarm.png" />
+    <None Include="Resources\logovettoriale_qualivision.png" />
+    <None Include="Resources\menuSmall_colored.png" />
+    <None Include="Resources\Cam1foto2_1.png" />
+    <None Include="Resources\Cam1foto2_2.png" />
+    <None Include="Resources\Cam1foto2_3.png" />
+    <None Include="Resources\Cam1foto2_4.png" />
+    <None Include="Resources\Cam1foto2_5.png" />
+    <None Include="Resources\Cam1foto2_6.png" />
+    <None Include="Resources\Cam1foto2_7.png" />
+    <None Include="Resources\Cam1foto2_8.png" />
+    <None Include="Resources\Cam1foto2_9.png" />
+    <None Include="Resources\Cam1foto2_10.png" />
+    <None Include="Resources\Cam1foto2_11.png" />
+    <None Include="Resources\Cam1foto2_12.png" />
+    <None Include="Resources\Cam1foto2_13.png" />
+    <None Include="Resources\Cam1foto2_14.png" />
+    <None Include="Resources\Cam1foto2_15.png" />
+    <None Include="Resources\Cam1foto2_16.png" />
+    <None Include="Resources\Cam1foto2_17.png" />
+    <None Include="Resources\Cam1foto2_18.png" />
+    <None Include="Resources\AcceptLime512x512.png" />
+    <None Include="Resources\iconaFolder.png" />
+    <None Include="Resources\logoTrasparente.png" />
+    <None Include="Resources\RiferimentoFeedback.png" />
+    <None Include="Resources\LoadFrom_32x32.png" />
+    <Content Include="video_camera.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

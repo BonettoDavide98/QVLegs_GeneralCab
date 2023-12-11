@@ -1,0 +1,9 @@
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\bin\Release\ClientEEIP.dll.config
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\bin\Release\ClientEEIP.dll
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\bin\Release\ClientEEIP.pdb
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\obj\Release\ClientEEIP.csprojAssemblyReference.cache
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\obj\Release\ClientEEIP.Properties.Resources.resources
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\obj\Release\ClientEEIP.csproj.GenerateResource.cache
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\obj\Release\ClientEEIP.csproj.CoreCompileInputs.cache
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\obj\Release\ClientEEIP.dll
+C:\PROGRAMMI_DEMO\QVLEGS\SRC\ClientEEIP\obj\Release\ClientEEIP.pdb
