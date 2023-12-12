@@ -933,8 +933,10 @@ GROUP BY Chiave;";
         {
             appendSelect = "Data";
             appendWhere = "";
+            if (comparisons[0] != null)
+                appendWhere += " AND Data" + comparisons[1];
 
-            switch(camera)
+            switch (camera)
             {
                 case"CAM0":
                     if (toggled[1])
@@ -1288,11 +1290,6 @@ GROUP BY Chiave;";
             {
                 appendWhere = appendWhere.Substring(5);
             }
-        }
-
-        public static string AddControlloData(DateTime dt)
-        {
-            return "Data > '" + dt.ToString("yyyy-MM-dd") + "T00:00:00.0000000'";
         }
     }
 }

@@ -194,12 +194,19 @@ namespace QVLEGS.Pagine
 
         private void LoadData(int idStazione, int numCam)
         {
-            string cam = "CAM" + idStazione.ToString();
-            if (numCam == 2)
+            try
             {
-                cam += "_2";
+                string cam = "CAM" + idStazione.ToString();
+                if (numCam == 2)
+                {
+                    cam += "_2";
+                }
+                dataGridView1.DataSource = DBL.StatisticheManager.GetStatisticheCAM(cam, GetToggled(), GetComparisons());
+            } catch
+            {
+                MessageBox.Show("Errore nei parametri immessi.");
             }
-            dataGridView1.DataSource = DBL.StatisticheManager.GetStatisticheCAM(cam, GetToggled(), GetComparisons());
+            
         }
 
         private bool[] GetToggled()
@@ -252,6 +259,10 @@ namespace QVLEGS.Pagine
             {
                 b.Text = "=";
             } else if(b.Text == "=")
+            {
+                b.Text = "<>";
+            }
+            else if (b.Text == "<>")
             {
                 b.Text = ">";
             }

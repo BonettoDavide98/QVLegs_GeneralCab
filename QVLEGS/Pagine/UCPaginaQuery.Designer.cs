@@ -153,13 +153,14 @@
             // 
             this.tableLayoutPanelToggles.AutoScroll = true;
             this.tableLayoutPanelToggles.ColumnCount = 4;
-            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanelToggles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelToggles.Location = new System.Drawing.Point(3, 109);
             this.tableLayoutPanelToggles.Name = "tableLayoutPanelToggles";
+            this.tableLayoutPanelToggles.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.tableLayoutPanelToggles.RowCount = 1;
             this.tableLayoutPanelToggles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelToggles.Size = new System.Drawing.Size(261, 594);
