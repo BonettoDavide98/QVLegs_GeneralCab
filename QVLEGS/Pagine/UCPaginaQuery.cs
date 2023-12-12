@@ -34,10 +34,10 @@ namespace QVLEGS.Pagine
 
                 if (appManager.GetIdStazione() % 2 == 1)
                 {
-                    btnCambiaCAM1.Visible = false;
+                    btnCambiaCAM2.Visible = false;
                 }
 
-                
+                CreateToggleRows(2);
 
                 LoadData(appManager.GetIdStazione(), 1, DBL.StatisticheManager.AddControlloData(DateTime.Parse(textBoxData.Text + " " + textBoxOra.Text)));
             }
@@ -49,7 +49,7 @@ namespace QVLEGS.Pagine
 
         private void CreateToggleRows(int numCam)
         {
-            //TODO CLEAR TABLELAYOUT
+            tableLayoutPanelToggles.Controls.Clear();
 
             List<string> nomiParametri = new List<string>();
 
@@ -152,26 +152,115 @@ namespace QVLEGS.Pagine
                     }
                     break;
             }
+
+            tableLayoutPanelToggles.RowCount++;
+
+            TableLayoutRowStyleCollection styles = tableLayoutPanelToggles.RowStyles;
+            foreach (RowStyle style in styles)
+            {
+                style.SizeType = SizeType.Absolute;
+                style.Height = 30;
+            }
+
+            for (int i = 0; i < nomiParametri.Count; i++)
+            {
+                Label lbl = new Label();
+                lbl.Text = nomiParametri[i];
+                lbl.Dock = DockStyle.Fill;
+                lbl.ForeColor = Color.White;
+                tableLayoutPanelToggles.Controls.Add(lbl, 0, i);
+
+                CheckBox chb = new CheckBox();
+                chb.Name = "chb" + i;
+                chb.Dock = DockStyle.Fill;
+                chb.Checked = true;
+                tableLayoutPanelToggles.Controls.Add(chb, 1, i);
+
+                Button btn = new Button();
+                btn.Name = "btn" + i;
+                btn.Dock = DockStyle.Fill;
+                btn.Click += btnToggleComparator_Click;
+                btn.BackColor = Color.White;
+                btn.Text = ">";
+                tableLayoutPanelToggles.Controls.Add(btn, 2, i);
+
+                TextBox txb = new TextBox();
+                txb.Name = "txb" + i;
+                txb.Dock = DockStyle.Fill;
+                tableLayoutPanelToggles.Controls.Add(txb, 3, i);
+            }
         }
 
-        private void LoadData(int idStazione, int numCam, string extraParameters = "")
+        private void LoadData(int idStazione, int numCam)
         {
             string cam = "CAM" + idStazione.ToString();
             if (numCam == 2)
             {
                 cam += "_2";
             }
-            dataGridView1.DataSource = DBL.StatisticheManager.GetStatisticheCAM(cam, extraParameters);
+            dataGridView1.DataSource = DBL.StatisticheManager.GetStatisticheCAM(cam, GetToggled(), GetComparisons());
+        }
+
+        private bool[] GetToggled()
+        {
+            bool[] toggled = new bool[tableLayoutPanelToggles.RowCount - 1];
+
+            for(int i = 0; i < tableLayoutPanelToggles.RowCount - 1; i++)
+            {
+                toggled[i] = ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, i)).Checked;
+            }
+
+            return toggled;
+        }
+
+        private string[] GetComparisons()
+        {
+            string[] comparisons = new string[tableLayoutPanelToggles.RowCount - 1];
+
+            for (int i = 0; i < tableLayoutPanelToggles.RowCount - 1; i++)
+            {
+                comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text;
+            }
+
+            return comparisons;
         }
 
         private void btnCambiaCAM1_Click(object sender, EventArgs e)
         {
-            LoadData(appManager.GetIdStazione(), 1, DBL.StatisticheManager.AddControlloData(DateTime.Parse(textBoxData.Text + " " + textBoxOra.Text)));
+            CreateToggleRows(1);
+            LoadData(appManager.GetIdStazione(), 1);
         }
 
         private void btnCambiaCAM2_Click(object sender, EventArgs e)
         {
-            LoadData(appManager.GetIdStazione(), 2, DBL.StatisticheManager.AddControlloData(DateTime.Parse(textBoxData.Text + " " + textBoxOra.Text)));
+            CreateToggleRows(2);
+            LoadData(appManager.GetIdStazione(), 2);
+        }
+
+        private void btnToggleComparator_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if(b.Text == ">")
+            {
+                b.Text = "<";
+            } else if(b.Text == "<")
+            {
+                b.Text = "==";
+            } else if(b.Text == "==")
+            {
+                b.Text = ">";
+            }
+        }
+
+        private void btnExecuteQuery_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -878,17 +878,21 @@ GROUP BY Chiave;";
             }
         }
 
-        public static DataTable GetStatisticheCAM(string camera, string extraArguments)
+        public static DataTable GetStatisticheCAM(string camera, bool[] toggled, string[] comparisons)
         {
             try
             {
                 DataTable dt = null;
-                string query = "SELECT * FROM " + camera;
+                string query = "SELECT ";
 
-                if(extraArguments != "")
-                {
-                    query += " WHERE " + extraArguments;
-                }
+                query += AppendToggled(toggled, camera);
+
+                query += " FROM " + camera;
+
+                //if(extraArguments != "")
+                //{
+                //    query += " WHERE " + extraArguments;
+                //}
 
                 query += ";";
                 using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
@@ -900,6 +904,77 @@ GROUP BY Chiave;";
             {
                 return null;
             }
+        }
+
+        private static string AppendToggled(bool[] toggled, string camera)
+        {
+            string output = "";
+
+            switch(camera)
+            {
+                case "CAM0":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[CondLatMpin1]";
+                    if (toggled[2])
+                        output += ",[CondLatMpin2]";
+                    if (toggled[3])
+                        output += ",[CondLatPpin1]";
+                    if (toggled[4])
+                        output += ",[CondLatPpin2]";
+                    if (toggled[5])
+                        output += ",[SpazzolaSX]";
+                    if (toggled[6])
+                        output += ",[SpazzolaDX]";
+                    if (toggled[7])
+                        output += ",[Diametro]";
+                    break;
+                case "CAM0_2":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[ThresholdNeroProtettorepin1]";
+                    if (toggled[2])
+                        output += ",[ThresholdBiancoProtettorepin1]";
+                    if (toggled[3])
+                        output += ",[ThresholdNeroProtettorepin2]";
+                    if (toggled[4])
+                        output += ",[ThresholdBiancoProtettorepin2]";
+                    if (toggled[5])
+                        output += ",[ThresholdNeroCondensatoreLatMpin1]";
+                    if (toggled[6])
+                        output += ",[ThresholdBiancoCondensatoreLatMpin1]";
+                    if (toggled[7])
+                        output += ",[ThresholdNeroCondensatoreLatMpin2]";
+                    if (toggled[8])
+                        output += ",[ThresholdBiancoCondensatoreLatMpin2]";
+                    if (toggled[9])
+                        output += ",[ThresholdNeroImpendenzaLatM]";
+                    if (toggled[10])
+                        output += ",[ThresholdBiancoImpendenzaLatM]";
+                    if (toggled[11])
+                        output += ",[ThresholdNeroVaristorepin1]";
+                    if (toggled[12])
+                        output += ",[ThresholdBiancoVaristorepin1]";
+                    if (toggled[13])
+                        output += ",[ThresholdNeroVaristorepin2]";
+                    if (toggled[14])
+                        output += ",[ThresholdBiancoVaristorepin2]";
+                    if (toggled[15])
+                        output += ",[ThresholdNeroCondensatoreLatPpin1]";
+                    if (toggled[16])
+                        output += ",[ThresholdBiancoCondensatoreLatPpin1]";
+                    if (toggled[17])
+                        output += ",[ThresholdNeroCondensatoreLatPpin2]";
+                    if (toggled[18])
+                        output += ",[ThresholdBiancoCondensatoreLatPpin2]";
+                    if (toggled[19])
+                        output += ",[ThresholdNeroImpendenzaLatP]";
+                    if (toggled[20])
+                        output += ",[ThresholdBiancoImpendenzaLatP]";
+                    break;
+            }
+
+            return output;
         }
 
         public static string AddControlloData(DateTime dt)
