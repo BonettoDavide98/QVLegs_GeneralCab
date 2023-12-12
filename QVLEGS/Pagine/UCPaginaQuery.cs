@@ -16,12 +16,11 @@ namespace QVLEGS.Pagine
         private DataType.Impostazioni impostazioni = null;
         private DBL.LinguaManager linguaManager = null;
 
+        int currentCam = 1;
+
         public UCPaginaQuery()
         {
             InitializeComponent();
-
-            textBoxData.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            textBoxOra.Text = "00:00:00";
         }
 
         public void Init(Class.AppManager appManager, DataType.Impostazioni impostazioni, DBL.LinguaManager linguaManager)
@@ -37,9 +36,9 @@ namespace QVLEGS.Pagine
                     btnCambiaCAM2.Visible = false;
                 }
 
-                CreateToggleRows(2);
+                CreateToggleRows(1);
 
-                LoadData(appManager.GetIdStazione(), 1, DBL.StatisticheManager.AddControlloData(DateTime.Parse(textBoxData.Text + " " + textBoxOra.Text)));
+                LoadData(appManager.GetIdStazione(), 1);
             }
             catch (Exception ex)
             {
@@ -189,6 +188,8 @@ namespace QVLEGS.Pagine
                 txb.Dock = DockStyle.Fill;
                 tableLayoutPanelToggles.Controls.Add(txb, 3, i);
             }
+
+            ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, 0)).Visible = false;
         }
 
         private void LoadData(int idStazione, int numCam)
@@ -219,7 +220,8 @@ namespace QVLEGS.Pagine
 
             for (int i = 0; i < tableLayoutPanelToggles.RowCount - 1; i++)
             {
-                comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text;
+                if(((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text.Length > 0)
+                    comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text;
             }
 
             return comparisons;
@@ -229,12 +231,14 @@ namespace QVLEGS.Pagine
         {
             CreateToggleRows(1);
             LoadData(appManager.GetIdStazione(), 1);
+            currentCam = 1;
         }
 
         private void btnCambiaCAM2_Click(object sender, EventArgs e)
         {
             CreateToggleRows(2);
             LoadData(appManager.GetIdStazione(), 2);
+            currentCam = 2;
         }
 
         private void btnToggleComparator_Click(object sender, EventArgs e)
@@ -246,8 +250,8 @@ namespace QVLEGS.Pagine
                 b.Text = "<";
             } else if(b.Text == "<")
             {
-                b.Text = "==";
-            } else if(b.Text == "==")
+                b.Text = "=";
+            } else if(b.Text == "=")
             {
                 b.Text = ">";
             }
@@ -255,7 +259,7 @@ namespace QVLEGS.Pagine
 
         private void btnExecuteQuery_Click(object sender, EventArgs e)
         {
-
+            LoadData(appManager.GetIdStazione(), currentCam);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

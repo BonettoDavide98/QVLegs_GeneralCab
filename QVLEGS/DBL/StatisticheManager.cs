@@ -883,16 +883,20 @@ GROUP BY Chiave;";
             try
             {
                 DataTable dt = null;
+                string appendSelect = "";
+                string appendWhere = "";
+                AppendToggled(toggled, comparisons, camera, out appendSelect, out appendWhere);
+
                 string query = "SELECT ";
 
-                query += AppendToggled(toggled, camera);
+                query += appendSelect;
 
                 query += " FROM " + camera;
 
-                //if(extraArguments != "")
-                //{
-                //    query += " WHERE " + extraArguments;
-                //}
+                if (appendWhere != "")
+                {
+                    query += " WHERE " + appendWhere;
+                }
 
                 query += ";";
                 using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
@@ -906,149 +910,282 @@ GROUP BY Chiave;";
             }
         }
 
-        private static string AppendToggled(bool[] toggled, string camera)
+        public static DataTable GetStatisticheCAM(string camera)
         {
-            string output = "";
+            try
+            {
+                DataTable dt = null;
+                string query = "SELECT * FROM " + camera + ";";
+                using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
+                {
+                    dt = mngr.FillDataTable(query);
+                }
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static void AppendToggled(bool[] toggled, string[] comparisons, string camera, out string appendSelect, out string appendWhere)
+        {
+            appendSelect = "Data";
+            appendWhere = "";
 
             switch(camera)
             {
                 case "CAM0":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[CondLatMpin1]";
+                    {
+                        appendSelect += ",[CondLatMpin1]";
+                        if(comparisons[1] != null)
+                            appendWhere += "CondLatMpin1 " + comparisons[1];
+                    }
                     if (toggled[2])
-                        output += ",[CondLatMpin2]";
+                    {
+                        appendSelect += ",[CondLatMpin2]";
+                        if (comparisons[2] != null)
+                            appendWhere += "CondLatMpin2 " + comparisons[2];
+                    }
                     if (toggled[3])
-                        output += ",[CondLatPpin1]";
+                    {
+                        appendSelect += ",[CondLatPpin1]";
+                        if (comparisons[3] != null)
+                            appendWhere += "CondLatPpin1 " + comparisons[3];
+                    }
                     if (toggled[4])
-                        output += ",[CondLatPpin2]";
+                    {
+                        appendSelect += ",[CondLatPpin2]";
+                        if (comparisons[4] != null)
+                            appendWhere += "CondLatPpin2 " + comparisons[4];
+                    }
                     if (toggled[5])
-                        output += ",[SpazzolaSX]";
+                    {
+                        appendSelect += ",[SpazzolaSX]";
+                        if (comparisons[5] != null)
+                            appendWhere += "SpazzolaSX " + comparisons[5];
+                    }
                     if (toggled[6])
-                        output += ",[SpazzolaDX]";
+                    {
+                        appendSelect += ",[SpazzolaDX]";
+                        if (comparisons[6] != null)
+                            appendWhere += "SpazzolaDX " + comparisons[6];
+                    }
                     if (toggled[7])
-                        output += ",[Diametro]";
+                    {
+                        appendSelect += ",[Diametro]";
+                        if (comparisons[7] != null)
+                            appendWhere += "Diametro " + comparisons[7];
+                    }
                     break;
                 case "CAM0_2":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[ThresholdNeroProtettorepin1]";
+                    {
+                        appendSelect += ",[ThresholdNeroProtettorepin1]";
+                    }
                     if (toggled[2])
-                        output += ",[ThresholdBiancoProtettorepin1]";
+                    {
+                        appendSelect += ",[ThresholdBiancoProtettorepin1]";
+                    }
                     if (toggled[3])
-                        output += ",[ThresholdNeroProtettorepin2]";
+                    {
+                        appendSelect += ",[ThresholdNeroProtettorepin2]";
+                    }
                     if (toggled[4])
-                        output += ",[ThresholdBiancoProtettorepin2]";
+                    {
+                        appendSelect += ",[ThresholdBiancoProtettorepin2]";
+                    }
                     if (toggled[5])
-                        output += ",[ThresholdNeroCondensatoreLatMpin1]";
+                    {
+                        appendSelect += ",[ThresholdNeroCondensatoreLatMpin1]";
+                    }
                     if (toggled[6])
-                        output += ",[ThresholdBiancoCondensatoreLatMpin1]";
+                    {
+                        appendSelect += ",[ThresholdBiancoCondensatoreLatMpin1]";
+                    }
                     if (toggled[7])
-                        output += ",[ThresholdNeroCondensatoreLatMpin2]";
+                    {
+                        appendSelect += ",[ThresholdNeroCondensatoreLatMpin2]";
+                    }
                     if (toggled[8])
-                        output += ",[ThresholdBiancoCondensatoreLatMpin2]";
+                    {
+                        appendSelect += ",[ThresholdBiancoCondensatoreLatMpin2]";
+                    }
                     if (toggled[9])
-                        output += ",[ThresholdNeroImpendenzaLatM]";
+                    {
+                        appendSelect += ",[ThresholdNeroImpendenzaLatM]";
+                    }
                     if (toggled[10])
-                        output += ",[ThresholdBiancoImpendenzaLatM]";
+                    {
+                        appendSelect += ",[ThresholdBiancoImpendenzaLatM]";
+                    }
                     if (toggled[11])
-                        output += ",[ThresholdNeroVaristorepin1]";
+                    {
+                        appendSelect += ",[ThresholdNeroVaristorepin1]";
+                    }
                     if (toggled[12])
-                        output += ",[ThresholdBiancoVaristorepin1]";
+                    {
+                        appendSelect += ",[ThresholdBiancoVaristorepin1]";
+                    }
                     if (toggled[13])
-                        output += ",[ThresholdNeroVaristorepin2]";
+                    {
+                        appendSelect += ",[ThresholdNeroVaristorepin2]";
+                    }
                     if (toggled[14])
-                        output += ",[ThresholdBiancoVaristorepin2]";
+                    {
+                        appendSelect += ",[ThresholdBiancoVaristorepin2]";
+                    }
                     if (toggled[15])
-                        output += ",[ThresholdNeroCondensatoreLatPpin1]";
+                    {
+                        appendSelect += ",[ThresholdNeroCondensatoreLatPpin1]";
+                    }
                     if (toggled[16])
-                        output += ",[ThresholdBiancoCondensatoreLatPpin1]";
+                    {
+                        appendSelect += ",[ThresholdBiancoCondensatoreLatPpin1]";
+                    }
                     if (toggled[17])
-                        output += ",[ThresholdNeroCondensatoreLatPpin2]";
+                    {
+                        appendSelect += ",[ThresholdNeroCondensatoreLatPpin2]";
+                    }
                     if (toggled[18])
-                        output += ",[ThresholdBiancoCondensatoreLatPpin2]";
+                    {
+                        appendSelect += ",[ThresholdBiancoCondensatoreLatPpin2]";
+                    }
                     if (toggled[19])
-                        output += ",[ThresholdNeroImpendenzaLatP]";
+                    {
+                        appendSelect += ",[ThresholdNeroImpendenzaLatP]";
+                    }
                     if (toggled[20])
-                        output += ",[ThresholdBiancoImpendenzaLatP]";
+                    {
+                        appendSelect += ",[ThresholdBiancoImpendenzaLatP]";
+                    }
                     break;
                 case "CAM1":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[AllineamentoContatto]";
+                    {
+                        appendSelect += ",[AllineamentoContatto]";
+                    }
                     if (toggled[2])
-                        output += ",[IngombroSX]";
+                    {
+                        appendSelect += ",[IngombroSX]";
+                    }
                     if (toggled[3])
-                        output += ",[IngombroDX]";
+                    {
+                        appendSelect += ",[IngombroDX]";
+                    }
                     break;
                 case "CAM2":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[ColonninaSX]";
+                    {
+                        appendSelect += ",[ColonninaSX]";
+                    }
                     if (toggled[2])
-                        output += ",[TrecciaSX]";
+                    {
+                        appendSelect += ",[TrecciaSX]";
+                    }
                     if (toggled[3])
-                        output += ",[TrecciaDX]";
+                    {
+                        appendSelect += ",[TrecciaDX]";
+                    }
                     if (toggled[4])
-                        output += ",[ColonninaDX]";
+                    {
+                        appendSelect += ",[ColonninaDX]";
+                    }
                     break;
                 case "CAM2_2":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[val1]";
+                    {
+                        appendSelect += ",[val1]";
+                    }
                     if (toggled[2])
-                        output += ",[val2]";
+                    {
+                        appendSelect += ",[val2]";
+                    }
                     if (toggled[3])
-                        output += ",[val3]";
+                    {
+                        appendSelect += ",[val3]";
+                    }
                     if (toggled[4])
-                        output += ",[val4]";
+                    {
+                        appendSelect += ",[val4]";
+                    }
                     break;
                 case "CAM3":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[ZonaLibera]";
+                    {
+                        appendSelect += ",[ZonaLibera]";
+                    }
                     if (toggled[2])
-                        output += ",[MollettaLatM]";
+                    {
+                        appendSelect += ",[MollettaLatM]";
+                    }
                     if (toggled[3])
-                        output += ",[MollettaLatP]";
+                    {
+                        appendSelect += ",[MollettaLatP]";
+                    }
                     if (toggled[4])
-                        output += ",[IngombroSXvaristore]";
+                    {
+                        appendSelect += ",[IngombroSXvaristore]";
+                    }
                     if (toggled[5])
-                        output += ",[IngombroCondensatore]";
+                    {
+                        appendSelect += ",[IngombroCondensatore]";
+                    }
                     if (toggled[6])
-                        output += ",[IngombroSottoVaristore]";
+                    {
+                        appendSelect += ",[IngombroSottoVaristore]";
+                    }
                     if (toggled[7])
-                        output += ",[Diametro]";
+                    {
+                        appendSelect += ",[Diametro]";
+                    }
                     if (toggled[8])
-                        output += ",[Varistore]";
+                    {
+                        appendSelect += ",[Varistore]";
+                    }
                     if (toggled[9])
-                        output += ",[CondensatoreDX]";
+                    {
+                        appendSelect += ",[CondensatoreDX]";
+                    }
                     if (toggled[10])
-                        output += ",[IngombroSopraVaristore]";
+                    {
+                        appendSelect += ",[IngombroSopraVaristore]";
+                    }
                     if (toggled[11])
-                        output += ",[CondensatoreSX]";
+                    {
+                        appendSelect += ",[CondensatoreSX]";
+                    }
                     if (toggled[12])
-                        output += ",[IngombroSXcondensatore]";
+                    {
+                        appendSelect += ",[IngombroSXcondensatore]";
+                    }
                     if (toggled[13])
-                        output += ",[InduttanzaLatP]";
+                    {
+                        appendSelect += ",[InduttanzaLatP]";
+                    }
                     if (toggled[14])
-                        output += ",[InduttanzaLatM]";
+                    {
+                        appendSelect += ",[InduttanzaLatM]";
+                    }
                     if (toggled[15])
-                        output += ",[Diametro2]";
+                    {
+                        appendSelect += ",[Diametro2]";
+                    }
                     break;
                 case "CAM4":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[ControlloForo]";
+                    {
+                        appendSelect += ",[ControlloForo]";
+                    }
                     break;
                 case "CAM4_2":
-                    output += "Data";
                     if (toggled[1])
-                        output += ",[MollettaLatM]";
+                    {
+                        appendSelect += ",[MollettaLatM]";
+                    }
                     break;
             }
-
-            return output;
         }
 
         public static string AddControlloData(DateTime dt)
