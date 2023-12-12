@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QVLEGS.DataType;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -816,5 +817,94 @@ GROUP BY Chiave;";
             return ret;
         }
 
+        public static void RegistraStatisticheDettagliate(ElaborateResult[] risultati)
+        {
+            try
+            {
+                for (int i = 0; i < risultati.Length; i++)
+                {
+                    DataType.StatisticheObj statistiche = risultati[i].StatisticheObj;
+
+                    if (statistiche.Misure.Count == 0)
+                    {
+                        return;
+                    }
+
+                    string query = @"INSERT INTO CAM" + statistiche.IdCamera;
+
+                    if (i == 1)
+                    {
+                        query += "_2";
+                    }
+
+                    query += " VALUES ('" + statistiche.TimeStamp.ToString("yyyy-MM-ddTHH:mm:ss") + "'";
+
+                    if (i == 1 && statistiche.IdCamera == 0)
+                    {
+                        for (int j = 0; j < statistiche.Misure.Count; j++)
+                        {
+                            query += ", " + statistiche.Misure[j].Valore.ToString().Replace(',', '.');
+
+                            if (j + 1 < statistiche.Misure.Count && statistiche.Misure[j + 1].Nome.Contains("_W"))
+                            {
+                                query += ", " + statistiche.Misure[j + 1].Valore.ToString().Replace(',', '.');
+                                j++;
+                            }
+                            else
+                            {
+                                query += ", NULL";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (DataType.StatisticheObj.ObjMisura misura in statistiche.Misure)
+                        {
+                            query += ", " + misura.Valore.ToString().Replace(',', '.');
+                        }
+                    }
+
+                    query += ");";
+
+                    using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
+                    {
+                        mngr.FillDataTable(query);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static DataTable GetStatisticheCAM(string camera, string extraArguments)
+        {
+            try
+            {
+                DataTable dt = null;
+                string query = "SELECT * FROM " + camera;
+
+                if(extraArguments != "")
+                {
+                    query += " WHERE " + extraArguments;
+                }
+
+                query += ";";
+                using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
+                {
+                    dt = mngr.FillDataTable(query);
+                }
+                return dt;
+            } catch
+            {
+                return null;
+            }
+        }
+
+        public static string AddControlloData(DateTime dt)
+        {
+            return "Data > '" + dt.ToString("yyyy-MM-dd") + "T00:00:00.0000000'";
+        }
     }
 }

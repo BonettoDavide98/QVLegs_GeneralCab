@@ -1,7 +1,0 @@
-
-Date and Time: 11/12/2023 08:52:03
-System.DllNotFoundException: Impossibile caricare la DLL 'halconxl': Impossibile trovare il modulo specificato. (Eccezione da HRESULT: 0x8007007E).
-   in HalconDotNet.HalconAPI.CreateProcedure(Int32 procIndex, IntPtr& proc)
-   in HalconDotNet.HalconAPI.PreCall(Int32 procIndex)
-   in HalconDotNet.HSystem.SetSystem(HTuple systemParameter, HTuple value)
-   in QVLEGS.Program.Main(String[] args) in C:\Progetti\QVLEGS_GeneralCab\QVLEGS\Program.cs:riga 41

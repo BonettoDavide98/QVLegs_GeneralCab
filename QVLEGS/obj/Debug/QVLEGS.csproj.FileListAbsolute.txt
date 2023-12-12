@@ -1760,7 +1760,6 @@ C:\Progetti\QVLEGS_GeneralCab\QVLEGS\bin\Debug\ClientEEIP.pdb
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\bin\Debug\ClientEEIP.dll.config
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\bin\Debug\TSWizards.pdb
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\bin\Debug\ViewROI.pdb
-C:\Progetti\QVLEGS_GeneralCab\QVLEGS\bin\Debug\halcondotnetxl.xml
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.csprojResolveAssemblyReference.cache
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.FormNumericInput.resources
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.FormStringInput.resources
@@ -1905,3 +1904,4 @@ C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.csproj.GenerateResource.Ca
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.csproj.CoreCompileInputs.cache
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.exe
 C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.pdb
+C:\Progetti\QVLEGS_GeneralCab\QVLEGS\obj\Debug\QVLEGS.Pagine.UCPaginaQuery.resources

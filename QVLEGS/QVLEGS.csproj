@@ -446,6 +446,12 @@
     <Compile Include="Pagine\UCPaginaLive.Designer.cs">
       <DependentUpon>UCPaginaLive.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagine\UCPaginaQuery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pagine\UCPaginaQuery.Designer.cs">
+      <DependentUpon>UCPaginaQuery.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCEditAlgoritmo\UCEditAlgCam5_Foto2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1141,6 +1147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pagine\UCPaginaLive.resx">
       <DependentUpon>UCPaginaLive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagine\UCPaginaQuery.resx">
+      <DependentUpon>UCPaginaQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCEditAlgoritmo\UCEditAlgCam5_Foto2.resx">
       <DependentUpon>UCEditAlgCam5_Foto2.cs</DependentUpon>

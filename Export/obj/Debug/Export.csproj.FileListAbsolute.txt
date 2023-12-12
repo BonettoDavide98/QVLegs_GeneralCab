@@ -61,3 +61,10 @@ C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Deb
 C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
 C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
 C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb
+C:\Progetti\QVLEGS_GeneralCab\Export\bin\Debug\Export.exe.config
+C:\Progetti\QVLEGS_GeneralCab\Export\bin\Debug\Export.exe
+C:\Progetti\QVLEGS_GeneralCab\Export\bin\Debug\Export.pdb
+C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.csprojResolveAssemblyReference.cache
+C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.exe
+C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.pdb

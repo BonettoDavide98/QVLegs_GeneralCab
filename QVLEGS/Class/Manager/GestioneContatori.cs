@@ -198,6 +198,9 @@ namespace QVLEGS.Class
                         }
                     }
 
+                    //DAVIDE
+                    DBL.StatisticheManager.RegistraStatisticheDettagliate(risultati);
+
                     //tmp.ALG_OK = o.Count(k => k?.ALG_OK == false) == 0;
                     //tmp.ALLINEAMENTO_OK = AndAll(o.Select(k => k.ALLINEAMENTO_OK).ToList());
                     //tmp.TEST_INTEGRITA_OK = AndAll(o.Select(k => k.TEST_INTEGRITA_OK).ToList());

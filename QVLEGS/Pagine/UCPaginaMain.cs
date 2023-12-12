@@ -33,6 +33,7 @@ namespace QVLEGS.Pagine
             Statistiche3,
             Statistiche4,
             Help,
+            Query
         }
 
         private Page prevPage = Page.NN;
@@ -67,6 +68,7 @@ namespace QVLEGS.Pagine
                 ucPaginaViewStat21.Init(this.appManager, this.impostazioni, this.linguaManager);
                 ucPaginaViewStat31.Init(this.appManager, this.impostazioni, this.linguaManager);
                 ucPaginaViewStat41.Init(this.appManager, this.impostazioni, this.linguaManager);
+                ucPaginaQuery1.Init(this.appManager, this.impostazioni, this.linguaManager);
 
                 timerAggiornaStatistiche.Enabled = true;
             }
@@ -148,6 +150,10 @@ namespace QVLEGS.Pagine
                 case Page.Diagnostica:
                     break;
                 case Page.NN:
+                    break;
+                case Page.Query:
+                    //TODO Vuoi salvare prima di uscire?
+                    break;
                 default:
                     okChange = true;
                     break;
@@ -223,6 +229,9 @@ namespace QVLEGS.Pagine
                         break;
                     case Page.Diagnostica:
                         ucTabControlPagine.SelectedTab = tabPageDiagnostica;
+                        break;
+                    case Page.Query:
+                        ucTabControlPagine.SelectedTab = tabPageQuery;
                         break;
                 }
 
@@ -515,6 +524,7 @@ namespace QVLEGS.Pagine
         private void btnHelp_Click(object sender, EventArgs e)
         {
             //ChangePage(Page.Help);
+            ChangePage(Page.Query);
         }
 
         private void timerLampeggio_Tick(object sender, EventArgs e)
@@ -530,6 +540,5 @@ namespace QVLEGS.Pagine
             {
             }
         }
-
     }
 }
