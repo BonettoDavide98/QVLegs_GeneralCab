@@ -983,206 +983,302 @@ GROUP BY Chiave;";
                     if (toggled[1])
                     {
                         appendSelect += ",[ThresholdNeroProtettorepin1]";
+                        if (comparisons[1] != null)
+                            appendWhere += "ThresholdNeroProtettorepin1 " + comparisons[1];
                     }
                     if (toggled[2])
                     {
                         appendSelect += ",[ThresholdBiancoProtettorepin1]";
+                        if (comparisons[2] != null)
+                            appendWhere += "ThresholdBiancoProtettorepin1 " + comparisons[2];
                     }
                     if (toggled[3])
                     {
                         appendSelect += ",[ThresholdNeroProtettorepin2]";
+                        if (comparisons[3] != null)
+                            appendWhere += "ThresholdNeroProtettorepin2 " + comparisons[3];
                     }
                     if (toggled[4])
                     {
                         appendSelect += ",[ThresholdBiancoProtettorepin2]";
+                        if (comparisons[4] != null)
+                            appendWhere += "ThresholdBiancoProtettorepin2 " + comparisons[4];
                     }
                     if (toggled[5])
                     {
                         appendSelect += ",[ThresholdNeroCondensatoreLatMpin1]";
+                        if (comparisons[5] != null)
+                            appendWhere += "ThresholdNeroCondensatoreLatMpin1 " + comparisons[5];
                     }
                     if (toggled[6])
                     {
                         appendSelect += ",[ThresholdBiancoCondensatoreLatMpin1]";
+                        if (comparisons[6] != null)
+                            appendWhere += "ThresholdBiancoCondensatoreLatMpin1 " + comparisons[6];
                     }
                     if (toggled[7])
                     {
                         appendSelect += ",[ThresholdNeroCondensatoreLatMpin2]";
+                        if (comparisons[7] != null)
+                            appendWhere += "ThresholdNeroCondensatoreLatMpin2 " + comparisons[7];
                     }
                     if (toggled[8])
                     {
                         appendSelect += ",[ThresholdBiancoCondensatoreLatMpin2]";
+                        if (comparisons[8] != null)
+                            appendWhere += "ThresholdBiancoCondensatoreLatMpin2 " + comparisons[8];
                     }
                     if (toggled[9])
                     {
                         appendSelect += ",[ThresholdNeroImpendenzaLatM]";
+                        if (comparisons[9] != null)
+                            appendWhere += "ThresholdNeroImpendenzaLatM " + comparisons[9];
                     }
                     if (toggled[10])
                     {
                         appendSelect += ",[ThresholdBiancoImpendenzaLatM]";
+                        if (comparisons[10] != null)
+                            appendWhere += "ThresholdBiancoImpendenzaLatM " + comparisons[10];
                     }
                     if (toggled[11])
                     {
                         appendSelect += ",[ThresholdNeroVaristorepin1]";
+                        if (comparisons[11] != null)
+                            appendWhere += "ThresholdNeroVaristorepin1 " + comparisons[11];
                     }
                     if (toggled[12])
                     {
                         appendSelect += ",[ThresholdBiancoVaristorepin1]";
+                        if (comparisons[12] != null)
+                            appendWhere += "ThresholdBiancoVaristorepin1 " + comparisons[12];
                     }
                     if (toggled[13])
                     {
                         appendSelect += ",[ThresholdNeroVaristorepin2]";
+                        if (comparisons[13] != null)
+                            appendWhere += "ThresholdNeroVaristorepin2 " + comparisons[13];
                     }
                     if (toggled[14])
                     {
                         appendSelect += ",[ThresholdBiancoVaristorepin2]";
+                        if (comparisons[14] != null)
+                            appendWhere += "ThresholdBiancoVaristorepin2 " + comparisons[14];
                     }
                     if (toggled[15])
                     {
                         appendSelect += ",[ThresholdNeroCondensatoreLatPpin1]";
+                        if (comparisons[15] != null)
+                            appendWhere += "ThresholdNeroCondensatoreLatPpin1 " + comparisons[15];
                     }
                     if (toggled[16])
                     {
                         appendSelect += ",[ThresholdBiancoCondensatoreLatPpin1]";
+                        if (comparisons[16] != null)
+                            appendWhere += "ThresholdBiancoCondensatoreLatPpin1 " + comparisons[16];
                     }
                     if (toggled[17])
                     {
                         appendSelect += ",[ThresholdNeroCondensatoreLatPpin2]";
+                        if (comparisons[17] != null)
+                            appendWhere += "ThresholdNeroCondensatoreLatPpin2 " + comparisons[17];
                     }
                     if (toggled[18])
                     {
                         appendSelect += ",[ThresholdBiancoCondensatoreLatPpin2]";
+                        if (comparisons[18] != null)
+                            appendWhere += "ThresholdBiancoCondensatoreLatPpin2 " + comparisons[18];
                     }
                     if (toggled[19])
                     {
                         appendSelect += ",[ThresholdNeroImpendenzaLatP]";
+                        if (comparisons[19] != null)
+                            appendWhere += "ThresholdNeroImpendenzaLatP " + comparisons[19];
                     }
                     if (toggled[20])
                     {
                         appendSelect += ",[ThresholdBiancoImpendenzaLatP]";
+                        if (comparisons[20] != null)
+                            appendWhere += "ThresholdBiancoImpendenzaLatP " + comparisons[20];
                     }
                     break;
                 case "CAM1":
                     if (toggled[1])
                     {
                         appendSelect += ",[AllineamentoContatto]";
+                        if (comparisons[1] != null)
+                            appendWhere += "AllineamentoContatto " + comparisons[1];
                     }
                     if (toggled[2])
                     {
                         appendSelect += ",[IngombroSX]";
+                        if (comparisons[2] != null)
+                            appendWhere += "IngombroSX " + comparisons[2];
                     }
                     if (toggled[3])
                     {
                         appendSelect += ",[IngombroDX]";
+                        if (comparisons[3] != null)
+                            appendWhere += "IngombroDX " + comparisons[3];
                     }
                     break;
                 case "CAM2":
                     if (toggled[1])
                     {
                         appendSelect += ",[ColonninaSX]";
+                        if (comparisons[1] != null)
+                            appendWhere += "ColonninaSX " + comparisons[1];
                     }
                     if (toggled[2])
                     {
                         appendSelect += ",[TrecciaSX]";
+                        if (comparisons[2] != null)
+                            appendWhere += "TrecciaSX " + comparisons[2];
                     }
                     if (toggled[3])
                     {
                         appendSelect += ",[TrecciaDX]";
+                        if (comparisons[3] != null)
+                            appendWhere += "TrecciaDX " + comparisons[3];
                     }
                     if (toggled[4])
                     {
                         appendSelect += ",[ColonninaDX]";
+                        if (comparisons[4] != null)
+                            appendWhere += "ColonninaDX " + comparisons[4];
                     }
                     break;
                 case "CAM2_2":
                     if (toggled[1])
                     {
                         appendSelect += ",[val1]";
+                        if (comparisons[1] != null)
+                            appendWhere += "val1 " + comparisons[1];
                     }
                     if (toggled[2])
                     {
                         appendSelect += ",[val2]";
+                        if (comparisons[2] != null)
+                            appendWhere += "val2 " + comparisons[2];
                     }
                     if (toggled[3])
                     {
                         appendSelect += ",[val3]";
+                        if (comparisons[3] != null)
+                            appendWhere += "val3 " + comparisons[3];
                     }
                     if (toggled[4])
                     {
                         appendSelect += ",[val4]";
+                        if (comparisons[4] != null)
+                            appendWhere += "val4 " + comparisons[4];
                     }
                     break;
                 case "CAM3":
                     if (toggled[1])
                     {
                         appendSelect += ",[ZonaLibera]";
+                        if (comparisons[1] != null)
+                            appendWhere += "ZonaLibera " + comparisons[1];
                     }
                     if (toggled[2])
                     {
                         appendSelect += ",[MollettaLatM]";
+                        if (comparisons[2] != null)
+                            appendWhere += "MollettaLatM " + comparisons[2];
                     }
                     if (toggled[3])
                     {
                         appendSelect += ",[MollettaLatP]";
+                        if (comparisons[3] != null)
+                            appendWhere += "MollettaLatP " + comparisons[3];
                     }
                     if (toggled[4])
                     {
                         appendSelect += ",[IngombroSXvaristore]";
+                        if (comparisons[4] != null)
+                            appendWhere += "IngombroSXvaristore " + comparisons[4];
                     }
                     if (toggled[5])
                     {
                         appendSelect += ",[IngombroCondensatore]";
+                        if (comparisons[5] != null)
+                            appendWhere += "IngombroCondensatore " + comparisons[5];
                     }
                     if (toggled[6])
                     {
                         appendSelect += ",[IngombroSottoVaristore]";
+                        if (comparisons[6] != null)
+                            appendWhere += "IngombroSottoVaristore " + comparisons[6];
                     }
                     if (toggled[7])
                     {
                         appendSelect += ",[Diametro]";
+                        if (comparisons[7] != null)
+                            appendWhere += "Diametro " + comparisons[7];
                     }
                     if (toggled[8])
                     {
                         appendSelect += ",[Varistore]";
+                        if (comparisons[8] != null)
+                            appendWhere += "Varistore " + comparisons[8];
                     }
                     if (toggled[9])
                     {
                         appendSelect += ",[CondensatoreDX]";
+                        if (comparisons[9] != null)
+                            appendWhere += "CondensatoreDX " + comparisons[9];
                     }
                     if (toggled[10])
                     {
                         appendSelect += ",[IngombroSopraVaristore]";
+                        if (comparisons[10] != null)
+                            appendWhere += "IngombroSopraVaristore " + comparisons[10];
                     }
                     if (toggled[11])
                     {
                         appendSelect += ",[CondensatoreSX]";
+                        if (comparisons[11] != null)
+                            appendWhere += "CondensatoreSX " + comparisons[11];
                     }
                     if (toggled[12])
                     {
                         appendSelect += ",[IngombroSXcondensatore]";
+                        if (comparisons[12] != null)
+                            appendWhere += "IngombroSXcondensatore " + comparisons[12];
                     }
                     if (toggled[13])
                     {
                         appendSelect += ",[InduttanzaLatP]";
+                        if (comparisons[13] != null)
+                            appendWhere += "InduttanzaLatP " + comparisons[13];
                     }
                     if (toggled[14])
                     {
                         appendSelect += ",[InduttanzaLatM]";
+                        if (comparisons[14] != null)
+                            appendWhere += "InduttanzaLatM " + comparisons[14];
                     }
                     if (toggled[15])
                     {
                         appendSelect += ",[Diametro2]";
+                        if (comparisons[15] != null)
+                            appendWhere += "Diametro2 " + comparisons[15];
                     }
                     break;
                 case "CAM4":
                     if (toggled[1])
                     {
                         appendSelect += ",[ControlloForo]";
+                        if (comparisons[1] != null)
+                            appendWhere += "ControlloForo " + comparisons[1];
                     }
                     break;
                 case "CAM4_2":
                     if (toggled[1])
                     {
                         appendSelect += ",[MollettaLatM]";
+                        if (comparisons[1] != null)
+                            appendWhere += "MollettaLatM " + comparisons[1];
                     }
                     break;
             }
