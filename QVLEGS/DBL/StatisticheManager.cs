@@ -972,6 +972,80 @@ GROUP BY Chiave;";
                     if (toggled[20])
                         output += ",[ThresholdBiancoImpendenzaLatP]";
                     break;
+                case "CAM1":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[AllineamentoContatto]";
+                    if (toggled[2])
+                        output += ",[IngombroSX]";
+                    if (toggled[3])
+                        output += ",[IngombroDX]";
+                    break;
+                case "CAM2":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[ColonninaSX]";
+                    if (toggled[2])
+                        output += ",[TrecciaSX]";
+                    if (toggled[3])
+                        output += ",[TrecciaDX]";
+                    if (toggled[4])
+                        output += ",[ColonninaDX]";
+                    break;
+                case "CAM2_2":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[val1]";
+                    if (toggled[2])
+                        output += ",[val2]";
+                    if (toggled[3])
+                        output += ",[val3]";
+                    if (toggled[4])
+                        output += ",[val4]";
+                    break;
+                case "CAM3":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[ZonaLibera]";
+                    if (toggled[2])
+                        output += ",[MollettaLatM]";
+                    if (toggled[3])
+                        output += ",[MollettaLatP]";
+                    if (toggled[4])
+                        output += ",[IngombroSXvaristore]";
+                    if (toggled[5])
+                        output += ",[IngombroCondensatore]";
+                    if (toggled[6])
+                        output += ",[IngombroSottoVaristore]";
+                    if (toggled[7])
+                        output += ",[Diametro]";
+                    if (toggled[8])
+                        output += ",[Varistore]";
+                    if (toggled[9])
+                        output += ",[CondensatoreDX]";
+                    if (toggled[10])
+                        output += ",[IngombroSopraVaristore]";
+                    if (toggled[11])
+                        output += ",[CondensatoreSX]";
+                    if (toggled[12])
+                        output += ",[IngombroSXcondensatore]";
+                    if (toggled[13])
+                        output += ",[InduttanzaLatP]";
+                    if (toggled[14])
+                        output += ",[InduttanzaLatM]";
+                    if (toggled[15])
+                        output += ",[Diametro2]";
+                    break;
+                case "CAM4":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[ControlloForo]";
+                    break;
+                case "CAM4_2":
+                    output += "Data";
+                    if (toggled[1])
+                        output += ",[MollettaLatM]";
+                    break;
             }
 
             return output;
