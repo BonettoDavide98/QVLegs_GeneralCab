@@ -41,6 +41,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblOraQuery = new System.Windows.Forms.Label();
             this.lblDataQuery = new System.Windows.Forms.Label();
+            this.tableLayoutPanelToggles = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -95,6 +96,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanelToggles, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(638, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -217,6 +219,21 @@
             this.lblDataQuery.TabIndex = 96;
             this.lblDataQuery.Text = "LBL_INTERVALLO_DATA";
             // 
+            // tableLayoutPanelToggles
+            // 
+            this.tableLayoutPanelToggles.ColumnCount = 4;
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelToggles.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanelToggles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelToggles.Location = new System.Drawing.Point(3, 189);
+            this.tableLayoutPanelToggles.Name = "tableLayoutPanelToggles";
+            this.tableLayoutPanelToggles.RowCount = 1;
+            this.tableLayoutPanelToggles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelToggles.Size = new System.Drawing.Size(261, 289);
+            this.tableLayoutPanelToggles.TabIndex = 103;
+            // 
             // UCPaginaQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,5 +270,6 @@
         private System.Windows.Forms.Label lblDataQuery;
         private System.Windows.Forms.TextBox textBoxOra;
         private System.Windows.Forms.TextBox textBoxData;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelToggles;
     }
 }
