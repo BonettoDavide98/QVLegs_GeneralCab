@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QVLEGS.Pagine
 {
@@ -21,6 +22,16 @@ namespace QVLEGS.Pagine
         public UCPaginaQuery()
         {
             InitializeComponent();
+        }
+
+        public void Translate(DBL.LinguaManager linguaManager)
+        {
+            lblTitolo.Text = linguaManager.GetTranslation("LBL_FRM_QUERY");
+            btnCambiaCAM1.Text = linguaManager.GetTranslation("BTN_CAMBIA_CAM_1");
+            btnCambiaCAM2.Text = linguaManager.GetTranslation("BTN_CAMBIA_CAM_2");
+            btnExecuteQuery.Text = linguaManager.GetTranslation("BTN_ESEGUI_QUERY");
+            btnSave.Text = linguaManager.GetTranslation("BTN_SALVA_RIS_QUERY");
+            btnRemoveWhite.Text = linguaManager.GetTranslation("BTN_RIMUOVI_BIANCO");
         }
 
         public void Init(Class.AppManager appManager, DataType.Impostazioni impostazioni, DBL.LinguaManager linguaManager)
@@ -202,6 +213,11 @@ namespace QVLEGS.Pagine
                     cam += "_2";
                 }
                 dataGridView1.DataSource = DBL.StatisticheManager.GetStatisticheCAM(cam, GetToggled(), GetComparisons());
+
+                foreach(DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.DisplayIndex = col.Index;
+                }
             } catch
             {
                 MessageBox.Show("Errore nei parametri immessi.");
@@ -239,6 +255,7 @@ namespace QVLEGS.Pagine
             CreateToggleRows(1);
             LoadData(appManager.GetIdStazione(), 1);
             currentCam = 1;
+            btnRemoveWhite.Visible = false;
         }
 
         private void btnCambiaCAM2_Click(object sender, EventArgs e)
@@ -246,6 +263,10 @@ namespace QVLEGS.Pagine
             CreateToggleRows(2);
             LoadData(appManager.GetIdStazione(), 2);
             currentCam = 2;
+            if(appManager.GetIdStazione() == 0)
+            {
+                btnRemoveWhite.Visible = true;
+            }
         }
 
         private void btnToggleComparator_Click(object sender, EventArgs e)
@@ -275,7 +296,53 @@ namespace QVLEGS.Pagine
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "CSV (*.csv)|*.csv";
+            sfd.FileName = DateTime.Now.ToString("ddMMyyyy_hhMMss") + "CAM" + appManager.GetIdStazione() + (currentCam == 2 ? "_2" : "") + "Dump.csv";
+            if(sfd.ShowDialog() == DialogResult.OK)
+            {
+                if(File.Exists(sfd.FileName))
+                {
+                    sfd.FileName += 2;
+                }
 
+                try
+                {
+                    string[] csv = new string[dataGridView1.RowCount];
+                    for(int i = 0; i < dataGridView1.ColumnCount; i++)
+                    {
+                        csv[0] += dataGridView1.Columns[i].HeaderText.ToString() + ",";
+                    }
+                    
+                    for(int i = 1; i < dataGridView1.RowCount; i++)
+                    {
+                        for(int j = 0; j < dataGridView1.ColumnCount; j++)
+                        {
+                            csv[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString().Replace(',','.') + ",";
+                        }
+                    }
+
+                    File.WriteAllLines(sfd.FileName, csv, Encoding.UTF8);
+                    MessageBox.Show("File .csv salvato con successo,");
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Errore: " + ex.StackTrace);
+                }
+            }
+        }
+
+        private void btnRemoveWhite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 2; i < 21; i += 2)
+                {
+                    ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, i)).Checked = false;
+                }
+            } catch
+            {
+
+            }
         }
     }
 }

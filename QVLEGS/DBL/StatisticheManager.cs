@@ -907,7 +907,7 @@ GROUP BY Chiave;";
                 return dt;
             } catch
             {
-                return null;
+                throw new Exception();
             }
         }
 

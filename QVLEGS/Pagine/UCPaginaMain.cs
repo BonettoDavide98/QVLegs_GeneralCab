@@ -268,6 +268,7 @@ namespace QVLEGS.Pagine
             btnStatistiche2.Text = linguaManager.GetTranslation("BTN_STATISTICHE_2");
             btnStatistiche3.Text = linguaManager.GetTranslation("BTN_STATISTICHE_3");
             btnStatistiche4.Text = linguaManager.GetTranslation("BTN_STATISTICHE_4");
+            btnLive.Text = linguaManager.GetTranslation("BTN_QUERY");
 
             ucPaginaEditRicetta.Translate(linguaManager);
             ucPaginaLive.Translate(linguaManager);
@@ -279,6 +280,7 @@ namespace QVLEGS.Pagine
             ucPaginaViewStat21.Translate(linguaManager);
             ucPaginaViewStat31.Translate(linguaManager);
             ucPaginaViewStat41.Translate(linguaManager);
+            ucPaginaQuery1.Translate(linguaManager);
         }
 
         private void DisplayPerc(Label label, double perc)
