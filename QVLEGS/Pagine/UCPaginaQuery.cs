@@ -201,6 +201,7 @@ namespace QVLEGS.Pagine
             }
 
             ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, 0)).Visible = false;
+            ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, 0)).Text = DateTime.Now.ToString("dd-MM-yyyy") + " 00:00:00";
         }
 
         private void LoadData(int idStazione, int numCam)
@@ -244,7 +245,10 @@ namespace QVLEGS.Pagine
         {
             string[] comparisons = new string[tableLayoutPanelToggles.RowCount - 1];
 
-            for (int i = 0; i < tableLayoutPanelToggles.RowCount - 1; i++)
+            if (((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, 0)).Text.Length > 0)
+                comparisons[0] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text + " '" + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, 0)).Text + "'";
+
+            for (int i = 1; i < tableLayoutPanelToggles.RowCount - 1; i++)
             {
                 if(((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text.Length > 0)
                     comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text;

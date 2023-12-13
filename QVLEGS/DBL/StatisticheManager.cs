@@ -902,6 +902,8 @@ GROUP BY Chiave;";
                 query += " ORDER BY Data DESC";
 
                 query += ";";
+
+                Console.WriteLine(query);
                 using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                 {
                     dt = mngr.FillDataTable(query);
@@ -936,7 +938,7 @@ GROUP BY Chiave;";
             appendSelect = "Data";
             appendWhere = "";
             if (comparisons[0] != null)
-                appendWhere += " AND Data" + comparisons[1];
+                appendWhere += " AND Data" + comparisons[0];
 
             switch (camera)
             {
