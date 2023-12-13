@@ -735,7 +735,6 @@ C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\TSWizard\obj\D
 C:\Users\Mayer\Desktop\20231031_2_QVLEGS_Sorgenti\QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.pdb
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\bin\Debug\TSWizards.dll
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\bin\Debug\TSWizards.pdb
-C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.csprojResolveAssemblyReference.cache
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.BaseExteriorStep.resources
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.BaseInteriorStep.resources
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.BaseStep.resources

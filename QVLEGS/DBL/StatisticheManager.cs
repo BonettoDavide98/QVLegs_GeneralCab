@@ -899,6 +899,8 @@ GROUP BY Chiave;";
                     query += " WHERE " + appendWhere;
                 }
 
+                query += " ORDER BY Data DESC";
+
                 query += ";";
                 using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                 {

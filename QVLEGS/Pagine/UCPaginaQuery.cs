@@ -218,6 +218,9 @@ namespace QVLEGS.Pagine
                 {
                     col.DisplayIndex = col.Index;
                 }
+
+                dataGridView1.Columns[0].DefaultCellStyle.Format = "dd-MM-yyyy hh:mm:ss";
+                dataGridView1.Columns[0].Width = 110;
             } catch
             {
                 MessageBox.Show("Errore nei parametri immessi.");
@@ -323,7 +326,7 @@ namespace QVLEGS.Pagine
                     }
 
                     File.WriteAllLines(sfd.FileName, csv, Encoding.UTF8);
-                    MessageBox.Show("File .csv salvato con successo,");
+                    MessageBox.Show("File .csv salvato con successo.");
                 } catch (Exception ex)
                 {
                     MessageBox.Show("Errore: " + ex.StackTrace);
