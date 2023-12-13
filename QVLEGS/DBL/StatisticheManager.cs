@@ -855,9 +855,12 @@ GROUP BY Chiave;";
                                 query += ", NULL";
                             }
                         }
-                    }
-                    else
+                    } else
                     {
+                        if (i == 0 && statistiche.IdCamera == 2)
+                        {
+                            statistiche.Misure.RemoveAt(1);
+                        }
                         foreach (DataType.StatisticheObj.ObjMisura misura in statistiche.Misure)
                         {
                             query += ", " + misura.Valore.ToString().Replace(',', '.');
@@ -865,6 +868,8 @@ GROUP BY Chiave;";
                     }
 
                     query += ");";
+
+                    Console.WriteLine(query);
 
                     using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                     {
@@ -1131,53 +1136,47 @@ GROUP BY Chiave;";
                 case"CAM2":
                     if (toggled[1])
                     {
-                        appendSelect +=",[ColonninaSX]";
+                        appendSelect += ",[InduttanzaSX]";
                         if (comparisons[1] != null)
-                            appendWhere +=" AND ColonninaSX" + comparisons[1];
+                            appendWhere += " AND InduttanzaSX" + comparisons[1];
                     }
                     if (toggled[2])
                     {
-                        appendSelect +=",[TrecciaSX]";
+                        appendSelect += ",[Protettore]";
                         if (comparisons[2] != null)
-                            appendWhere +=" AND TrecciaSX" + comparisons[2];
+                            appendWhere += " AND Protettore" + comparisons[2];
                     }
                     if (toggled[3])
                     {
-                        appendSelect +=",[TrecciaDX]";
+                        appendSelect += ",[InduttanzaDX]";
                         if (comparisons[3] != null)
-                            appendWhere +=" AND TrecciaDX" + comparisons[3];
-                    }
-                    if (toggled[4])
-                    {
-                        appendSelect +=",[ColonninaDX]";
-                        if (comparisons[4] != null)
-                            appendWhere +=" AND ColonninaDX" + comparisons[4];
+                            appendWhere += " AND InduttanzaDX" + comparisons[3];
                     }
                     break;
                 case"CAM2_2":
                     if (toggled[1])
                     {
-                        appendSelect +=",[val1]";
+                        appendSelect += ",[ColonninaSX]";
                         if (comparisons[1] != null)
-                            appendWhere +=" AND val1" + comparisons[1];
+                            appendWhere += " AND ColonninaSX" + comparisons[1];
                     }
                     if (toggled[2])
                     {
-                        appendSelect +=",[val2]";
+                        appendSelect += ",[TrecciaSX]";
                         if (comparisons[2] != null)
-                            appendWhere +=" AND val2" + comparisons[2];
+                            appendWhere += " AND TrecciaSX" + comparisons[2];
                     }
                     if (toggled[3])
                     {
-                        appendSelect +=",[val3]";
+                        appendSelect += ",[TrecciaDX]";
                         if (comparisons[3] != null)
-                            appendWhere +=" AND val3" + comparisons[3];
+                            appendWhere += " AND TrecciaDX" + comparisons[3];
                     }
                     if (toggled[4])
                     {
-                        appendSelect +=",[val4]";
+                        appendSelect += ",[ColonninaDX]";
                         if (comparisons[4] != null)
-                            appendWhere +=" AND val4" + comparisons[4];
+                            appendWhere += " AND ColonninaDX" + comparisons[4];
                     }
                     break;
                 case"CAM3":

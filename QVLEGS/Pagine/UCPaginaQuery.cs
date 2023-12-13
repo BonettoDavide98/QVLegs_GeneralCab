@@ -106,12 +106,19 @@ namespace QVLEGS.Pagine
                 case 1:
                     tableLayoutPanelToggles.RowCount = 4;
                     nomiParametri.Add("Data");
-                    nomiParametri.Add("Allineamento COntatto");
+                    nomiParametri.Add("Allineamento Contatto");
                     nomiParametri.Add("Ingombro SX");
                     nomiParametri.Add("Ingombro DX");
                     break;
                 case 2:
                     if (numCam == 1)
+                    {
+                        tableLayoutPanelToggles.RowCount = 4;
+                        nomiParametri.Add("Data");
+                        nomiParametri.Add("InduttanzaSX");
+                        nomiParametri.Add("Protettore");
+                        nomiParametri.Add("InduttanzaDX");
+                    } else
                     {
                         tableLayoutPanelToggles.RowCount = 5;
                         nomiParametri.Add("Data");
@@ -119,14 +126,6 @@ namespace QVLEGS.Pagine
                         nomiParametri.Add("Treccia SX");
                         nomiParametri.Add("Treccia DX");
                         nomiParametri.Add("Colonnina DX");
-                    } else
-                    {
-                        tableLayoutPanelToggles.RowCount = 5;
-                        nomiParametri.Add("Data");
-                        nomiParametri.Add("1");
-                        nomiParametri.Add("2");
-                        nomiParametri.Add("3");
-                        nomiParametri.Add("4");
                     }
                     break;
                 case 3:
@@ -177,6 +176,7 @@ namespace QVLEGS.Pagine
                 Label lbl = new Label();
                 lbl.Text = nomiParametri[i];
                 lbl.Dock = DockStyle.Fill;
+                lbl.Padding = new Padding(0, 12, 0, 0);
                 lbl.ForeColor = Color.White;
                 tableLayoutPanelToggles.Controls.Add(lbl, 0, i);
 
@@ -259,21 +259,42 @@ namespace QVLEGS.Pagine
 
         private void btnCambiaCAM1_Click(object sender, EventArgs e)
         {
-            CreateToggleRows(1);
-            LoadData(appManager.GetIdStazione(), 1);
-            currentCam = 1;
+            if(appManager.GetIdStazione() == 2)
+            {
+                CreateToggleRows(2);
+                LoadData(appManager.GetIdStazione(), 2);
+                currentCam = 2;
+            } else
+            {
+                CreateToggleRows(1);
+                LoadData(appManager.GetIdStazione(), 1);
+                currentCam = 1;
+            }
             btnRemoveWhite.Visible = false;
         }
 
         private void btnCambiaCAM2_Click(object sender, EventArgs e)
         {
-            CreateToggleRows(2);
-            LoadData(appManager.GetIdStazione(), 2);
-            currentCam = 2;
-            if(appManager.GetIdStazione() == 0)
+            if(appManager.GetIdStazione() == 2)
             {
-                btnRemoveWhite.Visible = true;
+                CreateToggleRows(1);
+                LoadData(appManager.GetIdStazione(), 1);
+                currentCam = 1;
+            } else
+            {
+                CreateToggleRows(2);
+                LoadData(appManager.GetIdStazione(), 2);
+                currentCam = 2;
+                if (appManager.GetIdStazione() == 0)
+                {
+                    btnRemoveWhite.Visible = true;
+                }
             }
+        }
+
+        public void UpdateData()
+        {
+            btnCambiaCAM1_Click(null, null);
         }
 
         private void btnToggleComparator_Click(object sender, EventArgs e)

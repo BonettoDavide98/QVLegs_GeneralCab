@@ -231,6 +231,7 @@ namespace QVLEGS.Pagine
                         ucTabControlPagine.SelectedTab = tabPageDiagnostica;
                         break;
                     case Page.Query:
+                        ucPaginaQuery1.UpdateData();
                         ucTabControlPagine.SelectedTab = tabPageQuery;
                         break;
                 }
@@ -268,7 +269,7 @@ namespace QVLEGS.Pagine
             btnStatistiche2.Text = linguaManager.GetTranslation("BTN_STATISTICHE_2");
             btnStatistiche3.Text = linguaManager.GetTranslation("BTN_STATISTICHE_3");
             btnStatistiche4.Text = linguaManager.GetTranslation("BTN_STATISTICHE_4");
-            btnLive.Text = linguaManager.GetTranslation("BTN_QUERY");
+            btnHelp.Text = linguaManager.GetTranslation("BTN_QUERY");
 
             ucPaginaEditRicetta.Translate(linguaManager);
             ucPaginaLive.Translate(linguaManager);
