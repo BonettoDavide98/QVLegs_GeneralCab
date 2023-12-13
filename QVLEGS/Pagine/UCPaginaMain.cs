@@ -259,8 +259,6 @@ namespace QVLEGS.Pagine
 
             btnView.Text = linguaManager.GetTranslation("BTN_VIEW");
             btnEditRicetta.Text = linguaManager.GetTranslation("BTN_EDIT_RICETTA");
-            btnLive.Text = linguaManager.GetTranslation("BTN_LIVE");
-            btnImpostazioni.Text = linguaManager.GetTranslation("BTN_IMPOSTAZIONI");
             btnDiagnostica.Text = linguaManager.GetTranslation("BTN_DIAGNOSTICA");
 
             btnLog.Text = linguaManager.GetTranslation("BTN_LOG");

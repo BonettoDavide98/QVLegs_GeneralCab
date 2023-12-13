@@ -57,14 +57,12 @@
             this.btnEditRicetta = new System.Windows.Forms.Button();
             this.btnSoglie = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.btnImpostazioni = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
             this.btnStatistiche1 = new System.Windows.Forms.Button();
             this.btnStatistiche2 = new System.Windows.Forms.Button();
             this.btnStatistiche3 = new System.Windows.Forms.Button();
             this.btnStatistiche4 = new System.Windows.Forms.Button();
             this.btnDiagnostica = new System.Windows.Forms.Button();
-            this.btnLive = new System.Windows.Forms.Button();
             this.tabPageView = new System.Windows.Forms.TabPage();
             this.tabPageEditRicetta = new System.Windows.Forms.TabPage();
             this.ucPaginaEditRicetta = new QVLEGS.Pagine.UCPaginaEditRicetta();
@@ -451,15 +449,13 @@
             this.tableLayoutPanel1.Controls.Add(this.btnView, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEditRicetta, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSoglie, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnHelp, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnImpostazioni, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnLog, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnStatistiche1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnStatistiche2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnStatistiche3, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnStatistiche4, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnDiagnostica, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnLive, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnHelp, 1, 2);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(131, 236);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -533,7 +529,7 @@
             this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::QVLEGS.Properties.Resources.Ricette_Piccola;
-            this.btnHelp.Location = new System.Drawing.Point(993, 338);
+            this.btnHelp.Location = new System.Drawing.Point(361, 338);
             this.btnHelp.Margin = new System.Windows.Forms.Padding(4);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(225, 96);
@@ -542,25 +538,6 @@
             this.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // btnImpostazioni
-            // 
-            this.btnImpostazioni.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnImpostazioni.FlatAppearance.BorderSize = 0;
-            this.btnImpostazioni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImpostazioni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImpostazioni.ForeColor = System.Drawing.Color.White;
-            this.btnImpostazioni.Image = global::QVLEGS.Properties.Resources.img_impostazioni;
-            this.btnImpostazioni.Location = new System.Drawing.Point(677, 338);
-            this.btnImpostazioni.Margin = new System.Windows.Forms.Padding(4);
-            this.btnImpostazioni.Name = "btnImpostazioni";
-            this.btnImpostazioni.Size = new System.Drawing.Size(225, 96);
-            this.btnImpostazioni.TabIndex = 6;
-            this.btnImpostazioni.Text = "BTN_IMPOSTAZIONI";
-            this.btnImpostazioni.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnImpostazioni.UseVisualStyleBackColor = true;
-            this.btnImpostazioni.Visible = false;
-            this.btnImpostazioni.Click += new System.EventHandler(this.btnImpostazioni_Click);
             // 
             // btnLog
             // 
@@ -670,25 +647,6 @@
             this.btnDiagnostica.UseVisualStyleBackColor = true;
             this.btnDiagnostica.Click += new System.EventHandler(this.btnDiagnostica_Click);
             // 
-            // btnLive
-            // 
-            this.btnLive.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLive.FlatAppearance.BorderSize = 0;
-            this.btnLive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLive.ForeColor = System.Drawing.Color.White;
-            this.btnLive.Image = global::QVLEGS.Properties.Resources.img_live;
-            this.btnLive.Location = new System.Drawing.Point(377, 338);
-            this.btnLive.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLive.Name = "btnLive";
-            this.btnLive.Size = new System.Drawing.Size(193, 96);
-            this.btnLive.TabIndex = 5;
-            this.btnLive.Text = "BTN_LIVE";
-            this.btnLive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLive.UseVisualStyleBackColor = true;
-            this.btnLive.Visible = false;
-            this.btnLive.Click += new System.EventHandler(this.btnLive_Click);
-            // 
             // tabPageView
             // 
             this.tabPageView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -719,7 +677,7 @@
             this.ucPaginaEditRicetta.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaEditRicetta.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaEditRicetta.Name = "ucPaginaEditRicetta";
-            this.ucPaginaEditRicetta.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaEditRicetta.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaEditRicetta.TabIndex = 0;
             // 
             // tabPageLive
@@ -741,7 +699,7 @@
             this.ucPaginaLive.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaLive.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaLive.Name = "ucPaginaLive";
-            this.ucPaginaLive.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaLive.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaLive.TabIndex = 0;
             // 
             // tabPageDiagnostica
@@ -763,7 +721,7 @@
             this.ucPaginaDiagnostica.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaDiagnostica.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaDiagnostica.Name = "ucPaginaDiagnostica";
-            this.ucPaginaDiagnostica.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaDiagnostica.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaDiagnostica.TabIndex = 0;
             // 
             // tabPageOnLine
@@ -785,7 +743,7 @@
             this.ucPaginaOnLine1.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaOnLine1.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaOnLine1.Name = "ucPaginaOnLine1";
-            this.ucPaginaOnLine1.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaOnLine1.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaOnLine1.TabIndex = 0;
             // 
             // tabPageLog
@@ -807,7 +765,7 @@
             this.ucPaginaViewLog1.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaViewLog1.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaViewLog1.Name = "ucPaginaViewLog1";
-            this.ucPaginaViewLog1.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaViewLog1.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaViewLog1.TabIndex = 0;
             // 
             // tabPageSoglie
@@ -829,7 +787,7 @@
             this.ucPaginaViewSoglie1.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaViewSoglie1.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaViewSoglie1.Name = "ucPaginaViewSoglie1";
-            this.ucPaginaViewSoglie1.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaViewSoglie1.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaViewSoglie1.TabIndex = 0;
             // 
             // tabPageStatistiche1
@@ -851,7 +809,7 @@
             this.ucPaginaViewStat11.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaViewStat11.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaViewStat11.Name = "ucPaginaViewStat11";
-            this.ucPaginaViewStat11.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaViewStat11.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaViewStat11.TabIndex = 0;
             // 
             // tabPageStatistiche2
@@ -873,7 +831,7 @@
             this.ucPaginaViewStat21.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaViewStat21.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaViewStat21.Name = "ucPaginaViewStat21";
-            this.ucPaginaViewStat21.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaViewStat21.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaViewStat21.TabIndex = 0;
             // 
             // tabPageStatistiche3
@@ -895,7 +853,7 @@
             this.ucPaginaViewStat31.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaViewStat31.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaViewStat31.Name = "ucPaginaViewStat31";
-            this.ucPaginaViewStat31.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaViewStat31.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaViewStat31.TabIndex = 0;
             // 
             // tabPageStatistiche4
@@ -917,7 +875,7 @@
             this.ucPaginaViewStat41.Location = new System.Drawing.Point(4, 4);
             this.ucPaginaViewStat41.Margin = new System.Windows.Forms.Padding(5);
             this.ucPaginaViewStat41.Name = "ucPaginaViewStat41";
-            this.ucPaginaViewStat41.Size = new System.Drawing.Size(447, 371);
+            this.ucPaginaViewStat41.Size = new System.Drawing.Size(1520, 935);
             this.ucPaginaViewStat41.TabIndex = 0;
             // 
             // tabPageQuery
@@ -936,7 +894,7 @@
             this.ucPaginaQuery1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucPaginaQuery1.Location = new System.Drawing.Point(0, 0);
             this.ucPaginaQuery1.Name = "ucPaginaQuery1";
-            this.ucPaginaQuery1.Size = new System.Drawing.Size(455, 379);
+            this.ucPaginaQuery1.Size = new System.Drawing.Size(1528, 943);
             this.ucPaginaQuery1.TabIndex = 0;
             // 
             // UCPaginaMain
@@ -980,8 +938,6 @@
         private System.Windows.Forms.Button btnDiagnostica;
         private System.Windows.Forms.Button btnEditRicetta;
         private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnLive;
-        private System.Windows.Forms.Button btnImpostazioni;
         private System.Windows.Forms.TabPage tabPageView;
         private System.Windows.Forms.TabPage tabPageEditRicetta;
         private UCPaginaEditRicetta ucPaginaEditRicetta;
