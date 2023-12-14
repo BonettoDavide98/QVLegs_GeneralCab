@@ -744,3 +744,4 @@ C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.csproj.GenerateResour
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.csproj.CoreCompileInputs.cache
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.dll
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.pdb
+C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.csprojResolveAssemblyReference.cache

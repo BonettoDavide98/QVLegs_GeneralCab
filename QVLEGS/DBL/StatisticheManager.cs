@@ -869,8 +869,6 @@ GROUP BY Chiave;";
 
                     query += ");";
 
-                    Console.WriteLine(query);
-
                     using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                     {
                         mngr.FillDataTable(query);
@@ -900,15 +898,13 @@ GROUP BY Chiave;";
 
                 if (appendWhere != "")
                 {
-                    Console.WriteLine(appendWhere);
                     query += " WHERE " + appendWhere;
                 }
 
                 query += " ORDER BY Data DESC";
 
                 query += ";";
-
-                Console.WriteLine(query);
+                
                 using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                 {
                     dt = mngr.FillDataTable(query);

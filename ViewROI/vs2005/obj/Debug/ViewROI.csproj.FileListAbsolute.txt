@@ -402,3 +402,4 @@ C:\Progetti\QVLEGS_GeneralCab\ViewROI\vs2005\bin\Debug\ViewROI.pdb
 C:\Progetti\QVLEGS_GeneralCab\ViewROI\vs2005\obj\Debug\ViewROI.csproj.CoreCompileInputs.cache
 C:\Progetti\QVLEGS_GeneralCab\ViewROI\vs2005\obj\Debug\ViewROI.dll
 C:\Progetti\QVLEGS_GeneralCab\ViewROI\vs2005\obj\Debug\ViewROI.pdb
+C:\Progetti\QVLEGS_GeneralCab\ViewROI\vs2005\obj\Debug\ViewROI.csprojResolveAssemblyReference.cache

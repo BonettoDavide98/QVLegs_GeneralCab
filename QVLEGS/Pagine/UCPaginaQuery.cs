@@ -194,14 +194,74 @@ namespace QVLEGS.Pagine
                 btn.Text = ">";
                 tableLayoutPanelToggles.Controls.Add(btn, 2, i);
 
-                TextBox txb = new TextBox();
-                txb.Name = "txb" + i;
-                txb.Dock = DockStyle.Fill;
-                tableLayoutPanelToggles.Controls.Add(txb, 3, i);
+                if(i != 0)
+                {
+                    TextBox txb = new TextBox();
+                    txb.Name = "txb" + i;
+                    txb.Dock = DockStyle.Fill;
+                    txb.Click += OpenVirtualKeyboard;
+                    tableLayoutPanelToggles.Controls.Add(txb, 3, i);
+                } else
+                {
+                    TableLayoutPanel tlp = new TableLayoutPanel();
+                    tlp.RowCount = 1;
+                    tlp.ColumnCount = 9;
+                    tlp.Dock = DockStyle.Fill;
+                    tableLayoutPanelToggles.Controls.Add(tlp, 3, i);
+
+                    for (int j = 0; j < 8; j++)
+                    {
+                        if(j == 0)
+                        {
+                            Label lbl2 = new Label();
+                            lbl2.Text = "DATA";
+                            lbl2.Dock = DockStyle.Fill;
+                            lbl2.Padding = new Padding(0, 6, 0, 0);
+                            lbl2.ForeColor = Color.White;
+                            tlp.Controls.Add(lbl2, j, 0);
+                        } else if (j == 4)
+                        {
+                            Label lbl3 = new Label();
+                            lbl3.Text = "ORA";
+                            lbl3.Dock = DockStyle.Fill;
+                            lbl3.Padding = new Padding(0, 6, 0, 0);
+                            lbl3.ForeColor = Color.White;
+                            tlp.Controls.Add(lbl3, j, 0);
+                        } else
+                        {
+                            TextBox datetime = new TextBox();
+                            datetime.Name = "datetime" + j;
+                            datetime.Dock = DockStyle.Fill;
+                            datetime.Click += OpenVirtualKeyboard;
+                            tlp.Controls.Add(datetime, j, 0);
+                        }
+                    }
+
+                    tlp.ColumnStyles.Clear();
+                    for(int j = 0; j < 8; j++)
+                    {
+                        if(j == 0)
+                        {
+                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 45));
+                        } else if(j == 3 || j == 4)
+                        {
+                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40));
+                        } else
+                        {
+                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 25));
+                        }
+                    }
+                }
             }
 
             ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, 0)).Visible = false;
-            ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, 0)).Text = DateTime.Now.ToString("dd-MM-yyyy") + " 00:00:00";
+            TableLayoutPanel datetimepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(3, 0));
+            ((TextBox)(datetimepanel.GetControlFromPosition(1, 0))).Text = DateTime.Now.Day.ToString();
+            ((TextBox)(datetimepanel.GetControlFromPosition(2, 0))).Text = DateTime.Now.Month.ToString();
+            ((TextBox)(datetimepanel.GetControlFromPosition(3, 0))).Text = DateTime.Now.Year.ToString();
+            ((TextBox)(datetimepanel.GetControlFromPosition(5, 0))).Text = "00";
+            ((TextBox)(datetimepanel.GetControlFromPosition(6, 0))).Text = "00";
+            ((TextBox)(datetimepanel.GetControlFromPosition(7, 0))).Text = "00";
         }
 
         private void LoadData(int idStazione, int numCam)
@@ -220,7 +280,7 @@ namespace QVLEGS.Pagine
                     col.DisplayIndex = col.Index;
                 }
 
-                dataGridView1.Columns[0].DefaultCellStyle.Format = "dd-MM-yyyy hh:mm:ss";
+                dataGridView1.Columns[0].DefaultCellStyle.Format = "dd-MM-yyyy HH:mm:ss";
                 dataGridView1.Columns[0].Width = 110;
             } catch
             {
@@ -245,8 +305,23 @@ namespace QVLEGS.Pagine
         {
             string[] comparisons = new string[tableLayoutPanelToggles.RowCount - 1];
 
-            if (((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, 0)).Text.Length > 0)
-                comparisons[0] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text + " '" + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, 0)).Text + "'";
+            TableLayoutPanel datetimepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(3, 0));
+            comparisons[0] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text + " '";
+            comparisons[0] += ((TextBox)(datetimepanel.GetControlFromPosition(1, 0))).Text;
+            comparisons[0] += "-";
+            comparisons[0] += ((TextBox)(datetimepanel.GetControlFromPosition(2, 0))).Text;
+            comparisons[0] += "-";
+            comparisons[0] += ((TextBox)(datetimepanel.GetControlFromPosition(3, 0))).Text;
+            if(((TextBox)(datetimepanel.GetControlFromPosition(5, 0))).Text != "")
+            {
+                comparisons[0] += " ";
+                comparisons[0] += ((TextBox)(datetimepanel.GetControlFromPosition(5, 0))).Text;
+                comparisons[0] += ":";
+                comparisons[0] += ((TextBox)(datetimepanel.GetControlFromPosition(6, 0))).Text != "" ? ((TextBox)(datetimepanel.GetControlFromPosition(6, 0))).Text : "00";
+                comparisons[0] += ":";
+                comparisons[0] += ((TextBox)(datetimepanel.GetControlFromPosition(7, 0))).Text != "" ? ((TextBox)(datetimepanel.GetControlFromPosition(7, 0))).Text : "00";
+            }
+            comparisons[0] += "'";
 
             for (int i = 1; i < tableLayoutPanelToggles.RowCount - 1; i++)
             {
@@ -371,6 +446,12 @@ namespace QVLEGS.Pagine
             {
 
             }
+        }
+
+        private void OpenVirtualKeyboard(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("osk.exe");
+            ((TextBox)sender).Focus();
         }
     }
 }
