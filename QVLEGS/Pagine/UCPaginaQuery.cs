@@ -199,7 +199,10 @@ namespace QVLEGS.Pagine
                     TextBox txb = new TextBox();
                     txb.Name = "txb" + i;
                     txb.Dock = DockStyle.Fill;
-                    txb.Click += OpenVirtualKeyboard;
+                    if((appManager.GetIdStazione() == 0 && numCam == 1) || appManager.GetIdStazione() == 2)
+                        txb.Click += OpenVirtualKeyboard;
+                    else
+                        txb.Click += OpenVirtualKeyboardInt;
                     tableLayoutPanelToggles.Controls.Add(txb, 3, i);
                 } else
                 {
@@ -232,7 +235,7 @@ namespace QVLEGS.Pagine
                             TextBox datetime = new TextBox();
                             datetime.Name = "datetime" + j;
                             datetime.Dock = DockStyle.Fill;
-                            datetime.Click += OpenVirtualKeyboard;
+                            datetime.Click += OpenVirtualKeyboardInt;
                             tlp.Controls.Add(datetime, j, 0);
                         }
                     }
@@ -245,7 +248,7 @@ namespace QVLEGS.Pagine
                             tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 45));
                         } else if(j == 3 || j == 4)
                         {
-                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40));
+                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 37));
                         } else
                         {
                             tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 25));
@@ -450,8 +453,20 @@ namespace QVLEGS.Pagine
 
         private void OpenVirtualKeyboard(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("osk.exe");
-            ((TextBox)sender).Focus();
+            FormNumericInput fni = new FormNumericInput(-1_0000.0m, 1_0000.0m, ((TextBox)sender).Text != "" ? (decimal)(float.Parse(((TextBox)sender).Text)) : 0.0m, 3);
+            if (fni.ShowDialog() == DialogResult.OK)
+            {
+                ((TextBox)sender).Text = fni.Value.ToString().Replace(',','.');
+            }
+        }
+
+        private void OpenVirtualKeyboardInt(object sender, EventArgs e)
+        {
+            FormNumericInput fni = new FormNumericInput(-1_0000.0m, 1_0000.0m, ((TextBox)sender).Text != "" ? (decimal)(float.Parse(((TextBox)sender).Text)) : 0.0m, 0);
+            if (fni.ShowDialog() == DialogResult.OK)
+            {
+                ((TextBox)sender).Text = fni.Value.ToString().Replace(',', '.');
+            }
         }
     }
 }
