@@ -1624,6 +1624,11 @@
     <None Include="Resources\logoTrasparente.png" />
     <None Include="Resources\RiferimentoFeedback.png" />
     <None Include="Resources\LoadFrom_32x32.png" />
+    <None Include="Resources\arrow_right.png" />
+    <None Include="Resources\arrow_up.png" />
+    <None Include="Resources\arrow_left.png" />
+    <None Include="Resources\arrow_down.png" />
+    <Content Include="Resources\right-arrow.png" />
     <Content Include="video_camera.ico" />
   </ItemGroup>
   <ItemGroup>

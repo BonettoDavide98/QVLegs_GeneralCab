@@ -332,9 +332,11 @@ namespace QVLEGS.Pagine
 
                 foreach (DataGridViewColumn col in dataGridView1.Columns)
                 {
-                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
                     col.DisplayIndex = col.Index;
                 }
+
+                dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
                 dataGridView1.Columns[0].DefaultCellStyle.Format = "dd-MM-yyyy HH:mm:ss";
                 dataGridView1.Columns[0].Width = 110;
@@ -546,6 +548,59 @@ namespace QVLEGS.Pagine
             if (fni.ShowDialog() == DialogResult.OK)
             {
                 ((TextBox)sender).Text = fni.Value.ToString().Replace(',', '.');
+            }
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.HorizontalScrollingOffset >= 200)
+                    dataGridView1.HorizontalScrollingOffset -= 200;
+                else
+                    dataGridView1.HorizontalScrollingOffset = 0;
+            } catch
+            {
+
+            }
+        }
+
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView1.HorizontalScrollingOffset += 200;
+            } catch
+            {
+
+            }
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.FirstDisplayedScrollingRowIndex > 10)
+                    dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.FirstDisplayedScrollingRowIndex - 10;
+                else
+                    dataGridView1.FirstDisplayedScrollingRowIndex = 0;
+            } catch
+            {
+
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.RowCount - dataGridView1.FirstDisplayedScrollingRowIndex > 0)
+                    dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.FirstDisplayedScrollingRowIndex + 10;
+                else
+                    dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount;
+            } catch
+            {
+
             }
         }
     }

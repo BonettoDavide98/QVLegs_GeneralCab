@@ -1004,163 +1004,163 @@ GROUP BY Chiave;";
                 case"CAM0_2":
                     if (toggled[1])
                     {
-                        appendSelect +=",[ThresholdNeroProtettorepin1]";
+                        appendSelect +=",[NeroProtettorepin1]";
                         if (comparisons[1] != null)
-                            appendWhere +=" AND ThresholdNeroProtettorepin1" + comparisons[1];
+                            appendWhere +=" AND NeroProtettorepin1" + comparisons[1];
                         if (additionalComparisons[1] != null)
-                            appendWhere += " AND ThresholdNeroProtettorepin1" + additionalComparisons[1];
+                            appendWhere += " AND NeroProtettorepin1" + additionalComparisons[1];
                     }
                     if (toggled[2])
                     {
-                        appendSelect +=",[ThresholdBiancoProtettorepin1]";
+                        appendSelect +=",[BiancoProtettorepin1]";
                         if (comparisons[2] != null)
-                            appendWhere +=" AND ThresholdBiancoProtettorepin1" + comparisons[2];
+                            appendWhere +=" AND BiancoProtettorepin1" + comparisons[2];
                         if (additionalComparisons[2] != null)
-                            appendWhere += " AND ThresholdBiancoProtettorepin1" + additionalComparisons[2];
+                            appendWhere += " AND BiancoProtettorepin1" + additionalComparisons[2];
                     }
                     if (toggled[3])
                     {
-                        appendSelect +=",[ThresholdNeroProtettorepin2]";
+                        appendSelect +=",[NeroProtettorepin2]";
                         if (comparisons[3] != null)
-                            appendWhere +=" AND ThresholdNeroProtettorepin2" + comparisons[3];
+                            appendWhere +=" AND NeroProtettorepin2" + comparisons[3];
                         if (additionalComparisons[3] != null)
-                            appendWhere += " AND ThresholdNeroProtettorepin2" + additionalComparisons[3];
+                            appendWhere += " AND NeroProtettorepin2" + additionalComparisons[3];
                     }
                     if (toggled[4])
                     {
-                        appendSelect +=",[ThresholdBiancoProtettorepin2]";
+                        appendSelect +=",[BiancoProtettorepin2]";
                         if (comparisons[4] != null)
-                            appendWhere +=" AND ThresholdBiancoProtettorepin2" + comparisons[4];
+                            appendWhere +=" AND BiancoProtettorepin2" + comparisons[4];
                         if (additionalComparisons[4] != null)
-                            appendWhere += " AND ThresholdBiancoProtettorepin2" + additionalComparisons[4];
+                            appendWhere += " AND BiancoProtettorepin2" + additionalComparisons[4];
                     }
                     if (toggled[5])
                     {
-                        appendSelect +=",[ThresholdNeroCondensatoreLatMpin1]";
+                        appendSelect +=",[NeroCondensatoreLatMpin1]";
                         if (comparisons[5] != null)
-                            appendWhere +=" AND ThresholdNeroCondensatoreLatMpin1" + comparisons[5];
+                            appendWhere +=" AND NeroCondensatoreLatMpin1" + comparisons[5];
                         if (additionalComparisons[5] != null)
-                            appendWhere += " AND ThresholdNeroCondensatoreLatMpin1" + additionalComparisons[5];
+                            appendWhere += " AND NeroCondensatoreLatMpin1" + additionalComparisons[5];
                     }
                     if (toggled[6])
                     {
-                        appendSelect +=",[ThresholdBiancoCondensatoreLatMpin1]";
+                        appendSelect +=",[BiancoCondensatoreLatMpin1]";
                         if (comparisons[6] != null)
-                            appendWhere +=" AND ThresholdBiancoCondensatoreLatMpin1" + comparisons[6];
+                            appendWhere +=" AND BiancoCondensatoreLatMpin1" + comparisons[6];
                         if (additionalComparisons[6] != null)
-                            appendWhere += " AND ThresholdBiancoCondensatoreLatMpin1" + additionalComparisons[6];
+                            appendWhere += " AND BiancoCondensatoreLatMpin1" + additionalComparisons[6];
                     }
                     if (toggled[7])
                     {
-                        appendSelect +=",[ThresholdNeroCondensatoreLatMpin2]";
+                        appendSelect +=",[NeroCondensatoreLatMpin2]";
                         if (comparisons[7] != null)
-                            appendWhere += " AND ThresholdNeroCondensatoreLatMpin2" + comparisons[7];
+                            appendWhere += " AND NeroCondensatoreLatMpin2" + comparisons[7];
                         if (additionalComparisons[7] != null)
-                            appendWhere += " AND ThresholdNeroCondensatoreLatMpin2" + additionalComparisons[7];
+                            appendWhere += " AND NeroCondensatoreLatMpin2" + additionalComparisons[7];
                     }
                     if (toggled[8])
                     {
-                        appendSelect +=",[ThresholdBiancoCondensatoreLatMpin2]";
+                        appendSelect +=",[BiancoCondensatoreLatMpin2]";
                         if (comparisons[8] != null)
-                            appendWhere +=" AND ThresholdBiancoCondensatoreLatMpin2" + comparisons[8];
+                            appendWhere +=" AND BiancoCondensatoreLatMpin2" + comparisons[8];
                         if (additionalComparisons[8] != null)
-                            appendWhere += " AND ThresholdBiancoCondensatoreLatMpin2" + additionalComparisons[8];
+                            appendWhere += " AND BiancoCondensatoreLatMpin2" + additionalComparisons[8];
                     }
                     if (toggled[9])
                     {
-                        appendSelect +=",[ThresholdNeroImpendenzaLatM]";
+                        appendSelect +=",[NeroImpendenzaLatM]";
                         if (comparisons[9] != null)
-                            appendWhere +=" AND ThresholdNeroImpendenzaLatM" + comparisons[9];
+                            appendWhere +=" AND NeroImpendenzaLatM" + comparisons[9];
                         if (additionalComparisons[9] != null)
-                            appendWhere += " AND ThresholdNeroImpendenzaLatM" + additionalComparisons[9];
+                            appendWhere += " AND NeroImpendenzaLatM" + additionalComparisons[9];
                     }
                     if (toggled[10])
                     {
-                        appendSelect +=",[ThresholdBiancoImpendenzaLatM]";
+                        appendSelect +=",[BiancoImpendenzaLatM]";
                         if (comparisons[10] != null)
-                            appendWhere +=" AND ThresholdBiancoImpendenzaLatM" + comparisons[10];
+                            appendWhere +=" AND BiancoImpendenzaLatM" + comparisons[10];
                         if (additionalComparisons[10] != null)
-                            appendWhere += " AND ThresholdBiancoImpendenzaLatM" + additionalComparisons[10];
+                            appendWhere += " AND BiancoImpendenzaLatM" + additionalComparisons[10];
                     }
                     if (toggled[11])
                     {
-                        appendSelect +=",[ThresholdNeroVaristorepin1]";
+                        appendSelect +=",[NeroVaristorepin1]";
                         if (comparisons[11] != null)
-                            appendWhere +=" AND ThresholdNeroVaristorepin1" + comparisons[11];
+                            appendWhere +=" AND NeroVaristorepin1" + comparisons[11];
                         if (additionalComparisons[11] != null)
-                            appendWhere += " AND ThresholdNeroVaristorepin1" + additionalComparisons[11];
+                            appendWhere += " AND NeroVaristorepin1" + additionalComparisons[11];
                     }
                     if (toggled[12])
                     {
-                        appendSelect +=",[ThresholdBiancoVaristorepin1]";
+                        appendSelect +=",[BiancoVaristorepin1]";
                         if (comparisons[12] != null)
-                            appendWhere +=" AND ThresholdBiancoVaristorepin1" + comparisons[12];
+                            appendWhere +=" AND BiancoVaristorepin1" + comparisons[12];
                         if (additionalComparisons[12] != null)
-                            appendWhere += " AND ThresholdBiancoVaristorepin1" + additionalComparisons[12];
+                            appendWhere += " AND BiancoVaristorepin1" + additionalComparisons[12];
                     }
                     if (toggled[13])
                     {
-                        appendSelect +=",[ThresholdNeroVaristorepin2]";
+                        appendSelect +=",[NeroVaristorepin2]";
                         if (comparisons[13] != null)
-                            appendWhere +=" AND ThresholdNeroVaristorepin2" + comparisons[13];
+                            appendWhere +=" AND NeroVaristorepin2" + comparisons[13];
                         if (additionalComparisons[13] != null)
-                            appendWhere += " AND ThresholdNeroVaristorepin2" + additionalComparisons[13];
+                            appendWhere += " AND NeroVaristorepin2" + additionalComparisons[13];
                     }
                     if (toggled[14])
                     {
-                        appendSelect +=",[ThresholdBiancoVaristorepin2]";
+                        appendSelect +=",[BiancoVaristorepin2]";
                         if (comparisons[14] != null)
-                            appendWhere +=" AND ThresholdBiancoVaristorepin2" + comparisons[14];
+                            appendWhere +=" AND BiancoVaristorepin2" + comparisons[14];
                         if (additionalComparisons[14] != null)
-                            appendWhere += " AND ThresholdBiancoVaristorepin2" + additionalComparisons[14];
+                            appendWhere += " AND BiancoVaristorepin2" + additionalComparisons[14];
                     }
                     if (toggled[15])
                     {
-                        appendSelect +=",[ThresholdNeroCondensatoreLatPpin1]";
+                        appendSelect +=",[NeroCondensatoreLatPpin1]";
                         if (comparisons[15] != null)
-                            appendWhere +=" AND ThresholdNeroCondensatoreLatPpin1" + comparisons[15];
+                            appendWhere +=" AND NeroCondensatoreLatPpin1" + comparisons[15];
                         if (additionalComparisons[15] != null)
-                            appendWhere += " AND ThresholdNeroCondensatoreLatPpin1" + additionalComparisons[15];
+                            appendWhere += " AND NeroCondensatoreLatPpin1" + additionalComparisons[15];
                     }
                     if (toggled[16])
                     {
-                        appendSelect +=",[ThresholdBiancoCondensatoreLatPpin1]";
+                        appendSelect +=",[BiancoCondensatoreLatPpin1]";
                         if (comparisons[16] != null)
-                            appendWhere +=" AND ThresholdBiancoCondensatoreLatPpin1" + comparisons[16];
+                            appendWhere +=" AND BiancoCondensatoreLatPpin1" + comparisons[16];
                         if (additionalComparisons[16] != null)
-                            appendWhere += " AND ThresholdBiancoCondensatoreLatPpin1" + additionalComparisons[16];
+                            appendWhere += " AND BiancoCondensatoreLatPpin1" + additionalComparisons[16];
                     }
                     if (toggled[17])
                     {
-                        appendSelect +=",[ThresholdNeroCondensatoreLatPpin2]";
+                        appendSelect +=",[NeroCondensatoreLatPpin2]";
                         if (comparisons[17] != null)
-                            appendWhere +=" AND ThresholdNeroCondensatoreLatPpin2" + comparisons[17];
+                            appendWhere +=" AND NeroCondensatoreLatPpin2" + comparisons[17];
                         if (additionalComparisons[17] != null)
-                            appendWhere += " AND ThresholdNeroCondensatoreLatPpin2" + additionalComparisons[17];
+                            appendWhere += " AND NeroCondensatoreLatPpin2" + additionalComparisons[17];
                     }
                     if (toggled[18])
                     {
-                        appendSelect +=",[ThresholdBiancoCondensatoreLatPpin2]";
+                        appendSelect +=",[BiancoCondensatoreLatPpin2]";
                         if (comparisons[18] != null)
-                            appendWhere +=" AND ThresholdBiancoCondensatoreLatPpin2" + comparisons[18];
+                            appendWhere +=" AND BiancoCondensatoreLatPpin2" + comparisons[18];
                         if (additionalComparisons[18] != null)
-                            appendWhere += " AND ThresholdBiancoCondensatoreLatPpin2" + additionalComparisons[18];
+                            appendWhere += " AND BiancoCondensatoreLatPpin2" + additionalComparisons[18];
                     }
                     if (toggled[19])
                     {
-                        appendSelect +=",[ThresholdNeroImpendenzaLatP]";
+                        appendSelect +=",[NeroImpendenzaLatP]";
                         if (comparisons[19] != null)
-                            appendWhere +=" AND ThresholdNeroImpendenzaLatP" + comparisons[19];
+                            appendWhere +=" AND NeroImpendenzaLatP" + comparisons[19];
                         if (additionalComparisons[19] != null)
-                            appendWhere += " AND ThresholdNeroImpendenzaLatP" + additionalComparisons[19];
+                            appendWhere += " AND NeroImpendenzaLatP" + additionalComparisons[19];
                     }
                     if (toggled[20])
                     {
-                        appendSelect +=",[ThresholdBiancoImpendenzaLatP]";
+                        appendSelect +=",[BiancoImpendenzaLatP]";
                         if (comparisons[20] != null)
-                            appendWhere +=" AND ThresholdBiancoImpendenzaLatP" + comparisons[20];
+                            appendWhere +=" AND BiancoImpendenzaLatP" + comparisons[20];
                         if (additionalComparisons[20] != null)
-                            appendWhere += " AND ThresholdBiancoImpendenzaLatP" + additionalComparisons[20];
+                            appendWhere += " AND BiancoImpendenzaLatP" + additionalComparisons[20];
                     }
                     break;
                 case"CAM1":
