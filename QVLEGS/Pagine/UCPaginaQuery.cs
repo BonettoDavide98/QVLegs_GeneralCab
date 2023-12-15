@@ -619,6 +619,9 @@ namespace QVLEGS.Pagine
             if (fni.ShowDialog() == DialogResult.OK)
             {
                 ((TextBox)sender).Text = fni.Value.ToString().Replace(',','.');
+            } else
+            {
+                ((TextBox)sender).Text = "";
             }
         }
 
@@ -628,6 +631,9 @@ namespace QVLEGS.Pagine
             if (fni.ShowDialog() == DialogResult.OK)
             {
                 ((TextBox)sender).Text = fni.Value.ToString().Replace(',', '.');
+            } else
+            {
+                ((TextBox)sender).Text = "";
             }
         }
 
