@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using QVLEGS.DataType;
 
 namespace QVLEGS.Pagine
 {
@@ -171,6 +172,8 @@ namespace QVLEGS.Pagine
                 style.Height = 30;
             }
 
+            tableLayoutPanelToggles.RowStyles[0].Height = 60;
+
             for (int i = 0; i < nomiParametri.Count; i++)
             {
                 Label lbl = new Label();
@@ -186,17 +189,17 @@ namespace QVLEGS.Pagine
                 chb.Checked = true;
                 tableLayoutPanelToggles.Controls.Add(chb, 1, i);
 
-                Button btn = new Button();
-                btn.Name = "btn" + i;
-                btn.Dock = DockStyle.Fill;
-                btn.Click += btnToggleComparator_Click;
-                btn.BackColor = Color.White;
-                btn.Text = ">";
-                tableLayoutPanelToggles.Controls.Add(btn, 2, i);
-
                 //riga normale
                 if(i != 0)
                 {
+                    Button btn = new Button();
+                    btn.Name = "btn" + i;
+                    btn.Dock = DockStyle.Fill;
+                    btn.Click += btnToggleComparator_Click;
+                    btn.BackColor = Color.White;
+                    btn.Text = ">";
+                    tableLayoutPanelToggles.Controls.Add(btn, 2, i);
+
                     TextBox txb = new TextBox();
                     txb.Name = "txb" + i;
                     txb.Dock = DockStyle.Fill;
@@ -211,7 +214,7 @@ namespace QVLEGS.Pagine
                     btn2.Dock = DockStyle.Fill;
                     btn2.Click += btnToggleComparator_Click;
                     btn2.BackColor = Color.White;
-                    btn2.Text = ">";
+                    btn2.Text = "<";
                     tableLayoutPanelToggles.Controls.Add(btn2, 4, i);
 
                     TextBox txb2 = new TextBox();
@@ -225,8 +228,16 @@ namespace QVLEGS.Pagine
                 } else
                 //prima riga con data
                 {
+                    Button btn = new Button();
+                    btn.Name = "btn" + i;
+                    btn.Dock = DockStyle.Fill;
+                    btn.Click += btnToggleComparatorData_Click;
+                    btn.BackColor = Color.White;
+                    btn.Text = "<>";
+                    tableLayoutPanelToggles.Controls.Add(btn, 2, i);
+
                     TableLayoutPanel tlp = new TableLayoutPanel();
-                    tlp.RowCount = 1;
+                    tlp.RowCount = 2;
                     tlp.ColumnCount = 5;
                     tlp.Dock = DockStyle.Fill;
                     tableLayoutPanelToggles.Controls.Add(tlp, 3, i);
@@ -236,11 +247,18 @@ namespace QVLEGS.Pagine
                         if(j == 0)
                         {
                             Label lbl2 = new Label();
-                            lbl2.Text = "DATA";
+                            lbl2.Text = "DAL";
                             lbl2.Dock = DockStyle.Fill;
                             lbl2.Padding = new Padding(0, 6, 0, 0);
                             lbl2.ForeColor = Color.White;
                             tlp.Controls.Add(lbl2, j, 0);
+
+                            Label lbl22 = new Label();
+                            lbl22.Text = "AL";
+                            lbl22.Dock = DockStyle.Fill;
+                            lbl22.Padding = new Padding(0, 6, 0, 0);
+                            lbl22.ForeColor = Color.White;
+                            tlp.Controls.Add(lbl22, j, 1);
                         } else
                         {
                             TextBox datetime = new TextBox();
@@ -248,16 +266,19 @@ namespace QVLEGS.Pagine
                             datetime.Dock = DockStyle.Fill;
                             datetime.Click += OpenVirtualKeyboardInt;
                             tlp.Controls.Add(datetime, j, 0);
+                            
+                            TextBox datetime2 = new TextBox();
+                            datetime2.Name = "date" + j;
+                            datetime2.Dock = DockStyle.Fill;
+                            datetime2.Click += OpenVirtualKeyboardInt;
+                            tlp.Controls.Add(datetime2, j, 1);
                         }
                     }
 
                     tlp.ColumnStyles.Clear();
                     for(int j = 0; j < 4; j++)
                     {
-                        if(j == 0)
-                        {
-                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 42));
-                        } else if(j == 3)
+                        if(j == 0 ||j == 3)
                         {
                             tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 36));
                         } else
@@ -267,7 +288,7 @@ namespace QVLEGS.Pagine
                     }
 
                     TableLayoutPanel tlp2 = new TableLayoutPanel();
-                    tlp2.RowCount = 1;
+                    tlp2.RowCount = 2;
                     tlp2.ColumnCount = 5;
                     tlp2.Dock = DockStyle.Fill;
                     tableLayoutPanelToggles.Controls.Add(tlp2, 5, i);
@@ -282,6 +303,13 @@ namespace QVLEGS.Pagine
                             lbl2.Padding = new Padding(0, 6, 0, 0);
                             lbl2.ForeColor = Color.White;
                             tlp2.Controls.Add(lbl2, j, 0);
+
+                            Label lbl22 = new Label();
+                            lbl22.Text = "ORA";
+                            lbl22.Dock = DockStyle.Fill;
+                            lbl22.Padding = new Padding(0, 6, 0, 0);
+                            lbl22.ForeColor = Color.White;
+                            tlp2.Controls.Add(lbl22, j, 1);
                         }
                         else
                         {
@@ -290,6 +318,12 @@ namespace QVLEGS.Pagine
                             datetime.Dock = DockStyle.Fill;
                             datetime.Click += OpenVirtualKeyboardInt;
                             tlp2.Controls.Add(datetime, j, 0);
+
+                            TextBox datetime2 = new TextBox();
+                            datetime2.Name = "time" + j;
+                            datetime2.Dock = DockStyle.Fill;
+                            datetime2.Click += OpenVirtualKeyboardInt;
+                            tlp2.Controls.Add(datetime2, j, 1);
                         }
                     }
 
@@ -309,14 +343,26 @@ namespace QVLEGS.Pagine
             }
 
             ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, 0)).Visible = false;
+
+            DateTime date = DateTime.Now;
+
             TableLayoutPanel datepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(3, 0));
-            ((TextBox)(datepanel.GetControlFromPosition(1, 0))).Text = DateTime.Now.Day.ToString();
-            ((TextBox)(datepanel.GetControlFromPosition(2, 0))).Text = DateTime.Now.Month.ToString();
-            ((TextBox)(datepanel.GetControlFromPosition(3, 0))).Text = DateTime.Now.Year.ToString();
+            ((TextBox)(datepanel.GetControlFromPosition(1, 0))).Text = date.Day.ToString();
+            ((TextBox)(datepanel.GetControlFromPosition(2, 0))).Text = date.Month.ToString();
+            ((TextBox)(datepanel.GetControlFromPosition(3, 0))).Text = date.Year.ToString();
+            
+            ((TextBox)(datepanel.GetControlFromPosition(1, 1))).Text = date.Day.ToString();
+            ((TextBox)(datepanel.GetControlFromPosition(2, 1))).Text = date.Month.ToString();
+            ((TextBox)(datepanel.GetControlFromPosition(3, 1))).Text = date.Year.ToString();
+
             TableLayoutPanel timepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(5, 0));
             ((TextBox)(timepanel.GetControlFromPosition(1, 0))).Text = "00";
             ((TextBox)(timepanel.GetControlFromPosition(2, 0))).Text = "00";
             ((TextBox)(timepanel.GetControlFromPosition(3, 0))).Text = "00";
+            
+            ((TextBox)(timepanel.GetControlFromPosition(1, 1))).Text = "23";
+            ((TextBox)(timepanel.GetControlFromPosition(2, 1))).Text = "59";
+            ((TextBox)(timepanel.GetControlFromPosition(3, 1))).Text = "59";
         }
 
         private void LoadData(int idStazione, int numCam)
@@ -363,8 +409,8 @@ namespace QVLEGS.Pagine
         {
             string[] comparisons = new string[tableLayoutPanelToggles.RowCount - 1];
 
+            comparisons[0] = (((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text == "<>" ? ">" : "<") + " '";
             TableLayoutPanel datepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(3, 0));
-            comparisons[0] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text + " '";
             comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(1, 0))).Text;
             comparisons[0] += "-";
             comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(2, 0))).Text;
@@ -392,21 +438,21 @@ namespace QVLEGS.Pagine
         {
             string[] comparisons = new string[tableLayoutPanelToggles.RowCount - 1];
 
-            //TableLayoutPanel datepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(3, 0));
-            //comparisons[0] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text + " '";
-            //comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(1, 0))).Text;
-            //comparisons[0] += "-";
-            //comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(2, 0))).Text;
-            //comparisons[0] += "-";
-            //comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(3, 0))).Text;
-            //comparisons[0] += " ";
-            //TableLayoutPanel timepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(5, 0));
-            //comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(1, 0))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(1, 0))).Text : "00";
-            //comparisons[0] += ":";
-            //comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(2, 0))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(2, 0))).Text : "00";
-            //comparisons[0] += ":";
-            //comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(3, 0))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(3, 0))).Text : "00";
-            //comparisons[0] += "'";
+            comparisons[0] = (((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text == "<>" ? "<" : ">") + " '";
+            TableLayoutPanel datepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(3, 0));
+            comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(1, 1))).Text;
+            comparisons[0] += "-";
+            comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(2, 1))).Text;
+            comparisons[0] += "-";
+            comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(3, 1))).Text;
+            comparisons[0] += " ";
+            TableLayoutPanel timepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(5, 0));
+            comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(1, 1))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(1, 1))).Text : "00";
+            comparisons[0] += ":";
+            comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(2, 1))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(2, 1))).Text : "00";
+            comparisons[0] += ":";
+            comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(3, 1))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(3, 1))).Text : "00";
+            comparisons[0] += "'";
 
             for (int i = 1; i < tableLayoutPanelToggles.RowCount - 1; i++)
             {
@@ -474,6 +520,20 @@ namespace QVLEGS.Pagine
             else if (b.Text == "<>")
             {
                 b.Text = ">";
+            }
+        }
+
+        private void btnToggleComparatorData_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if (b.Text == "<>")
+            {
+                b.Text = "><";
+            }
+            else if (b.Text == "><")
+            {
+                b.Text = "<>";
             }
         }
 

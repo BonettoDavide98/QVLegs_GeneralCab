@@ -904,6 +904,8 @@ GROUP BY Chiave;";
                 query += " ORDER BY Data DESC";
 
                 query += ";";
+
+                Console.WriteLine(query);
                 
                 using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                 {
@@ -916,30 +918,14 @@ GROUP BY Chiave;";
             }
         }
 
-        public static DataTable GetStatisticheCAM(string camera)
-        {
-            try
-            {
-                DataTable dt = null;
-                string query = "SELECT * FROM " + camera + ";";
-                using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
-                {
-                    dt = mngr.FillDataTable(query);
-                }
-                return dt;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
         private static void AppendToggled(bool[] toggled, string[] comparisons, string[] additionalComparisons, string camera, out string appendSelect, out string appendWhere)
         {
             appendSelect = "Data";
             appendWhere = "";
             if (comparisons[0] != null)
                 appendWhere += " AND Data" + comparisons[0];
+            if (additionalComparisons[0] != null)
+                appendWhere += " AND Data" + additionalComparisons[0];
 
             switch (camera)
             {
