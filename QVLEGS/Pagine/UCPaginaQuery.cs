@@ -278,9 +278,12 @@ namespace QVLEGS.Pagine
                     tlp.ColumnStyles.Clear();
                     for(int j = 0; j < 4; j++)
                     {
-                        if(j == 0 ||j == 3)
+                        if(j == 3)
                         {
-                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 36));
+                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 37));
+                        } else if (j == 0)
+                        {
+                            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35));
                         } else
                         {
                             tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 25));
@@ -465,36 +468,53 @@ namespace QVLEGS.Pagine
 
         private void btnCambiaCAM1_Click(object sender, EventArgs e)
         {
-            if(appManager.GetIdStazione() == 2)
+            try
             {
-                CreateToggleRows(2);
-                LoadData(appManager.GetIdStazione(), 2);
-                currentCam = 2;
-            } else
+                if (appManager.GetIdStazione() == 2)
+                {
+                    CreateToggleRows(2);
+                    LoadData(appManager.GetIdStazione(), 2);
+                    currentCam = 2;
+                }
+                else
+                {
+                    CreateToggleRows(1);
+                    LoadData(appManager.GetIdStazione(), 1);
+                    currentCam = 1;
+                }
+                btnRemoveWhite.Visible = false;
+                GoTop();
+            } catch
             {
-                CreateToggleRows(1);
-                LoadData(appManager.GetIdStazione(), 1);
-                currentCam = 1;
+                MessageBox.Show("Errore in selezione CAM.");
             }
-            btnRemoveWhite.Visible = false;
         }
 
         private void btnCambiaCAM2_Click(object sender, EventArgs e)
         {
-            if(appManager.GetIdStazione() == 2)
+            try
             {
-                CreateToggleRows(1);
-                LoadData(appManager.GetIdStazione(), 1);
-                currentCam = 1;
-            } else
-            {
-                CreateToggleRows(2);
-                LoadData(appManager.GetIdStazione(), 2);
-                currentCam = 2;
-                if (appManager.GetIdStazione() == 0)
+                if (appManager.GetIdStazione() == 2)
                 {
-                    btnRemoveWhite.Visible = true;
+                    CreateToggleRows(1);
+                    LoadData(appManager.GetIdStazione(), 1);
+                    currentCam = 1;
                 }
+                else
+                {
+                    CreateToggleRows(2);
+                    LoadData(appManager.GetIdStazione(), 2);
+                    currentCam = 2;
+                    if (appManager.GetIdStazione() == 0)
+                    {
+                        btnRemoveWhite.Visible = true;
+                    }
+                }
+                GoTop();
+            }
+            catch
+            {
+                MessageBox.Show("Errore in selezione CAM.");
             }
         }
 
@@ -546,7 +566,7 @@ namespace QVLEGS.Pagine
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "CSV (*.csv)|*.csv";
-            sfd.FileName = DateTime.Now.ToString("ddMMyyyy_hhMMss") + "CAM" + appManager.GetIdStazione() + (currentCam == 2 ? "_2" : "") + "Dump.csv";
+            sfd.FileName = DateTime.Now.ToString("ddMMyyyyhhMMss") + "_CAM" + appManager.GetIdStazione() + (currentCam == 2 ? "_2" : "") + "Dump.csv";
             if(sfd.ShowDialog() == DialogResult.OK)
             {
                 if(File.Exists(sfd.FileName))
@@ -662,6 +682,27 @@ namespace QVLEGS.Pagine
             {
 
             }
+        }
+
+        private void btnDownParamList_Click(object sender, EventArgs e)
+        {
+            Point current = tableLayoutPanelToggles.AutoScrollPosition;
+            Point scrolled = new Point(current.X, -current.Y + 100);
+            tableLayoutPanelToggles.AutoScrollPosition = scrolled;
+        }
+
+        private void btnUpParamList_Click(object sender, EventArgs e)
+        {
+            Point current = tableLayoutPanelToggles.AutoScrollPosition;
+            Point scrolled = new Point(current.X, -current.Y - 100);
+            tableLayoutPanelToggles.AutoScrollPosition = scrolled;
+        }
+
+        private void GoTop()
+        {
+            Point current = tableLayoutPanelToggles.AutoScrollPosition;
+            Point scrolled = new Point(current.X, -current.Y - 1000);
+            tableLayoutPanelToggles.AutoScrollPosition = scrolled;
         }
     }
 }

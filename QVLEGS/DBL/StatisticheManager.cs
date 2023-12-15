@@ -1045,15 +1045,13 @@ GROUP BY Chiave;";
             for(int i = 0; i < columnNames.Length; i++)
             {
                 if(toggled[i])
-                {
                     appendSelect += ",[" + columnNames[i] + "]";
 
-                    if(comparisons[i] != null && comparisons[i] != "")
-                        appendWhere += " AND " + columnNames[i] + " " + comparisons[i];
+                if(comparisons[i] != null && comparisons[i] != "")
+                    appendWhere += " AND " + columnNames[i] + " " + comparisons[i];
 
-                    if (additionalComparisons[i] != null && additionalComparisons[i] != "")
-                        appendWhere += " AND " + columnNames[i] + " " + additionalComparisons[i];
-                }
+                if (additionalComparisons[i] != null && additionalComparisons[i] != "")
+                    appendWhere += " AND " + columnNames[i] + " " + additionalComparisons[i];
             }
 
             if (appendSelect != "")
