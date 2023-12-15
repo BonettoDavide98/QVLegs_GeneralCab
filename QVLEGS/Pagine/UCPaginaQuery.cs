@@ -194,6 +194,7 @@ namespace QVLEGS.Pagine
                 btn.Text = ">";
                 tableLayoutPanelToggles.Controls.Add(btn, 2, i);
 
+                //riga normale
                 if(i != 0)
                 {
                     TextBox txb = new TextBox();
@@ -222,6 +223,7 @@ namespace QVLEGS.Pagine
                         txb2.Click += OpenVirtualKeyboardInt;
                     tableLayoutPanelToggles.Controls.Add(txb2, 5, i);
                 } else
+                //prima riga con data
                 {
                     TableLayoutPanel tlp = new TableLayoutPanel();
                     tlp.RowCount = 1;
@@ -263,14 +265,6 @@ namespace QVLEGS.Pagine
                             tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 25));
                         }
                     }
-
-                    Button btn2 = new Button();
-                    btn2.Name = "btn2" + i;
-                    btn2.Dock = DockStyle.Fill;
-                    btn2.Click += btnToggleComparator_Click;
-                    btn2.BackColor = Color.White;
-                    btn2.Text = ">";
-                    tableLayoutPanelToggles.Controls.Add(btn2, 4, i);
 
                     TableLayoutPanel tlp2 = new TableLayoutPanel();
                     tlp2.RowCount = 1;
@@ -334,10 +328,11 @@ namespace QVLEGS.Pagine
                 {
                     cam += "_2";
                 }
-                dataGridView1.DataSource = DBL.StatisticheManager.GetStatisticheCAM(cam, GetToggled(), GetComparisons());
+                dataGridView1.DataSource = DBL.StatisticheManager.GetStatisticheCAM(cam, GetToggled(), GetComparisons(), GetAdditionalComparisons());
 
-                foreach(DataGridViewColumn col in dataGridView1.Columns)
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
                 {
+                    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
                     col.DisplayIndex = col.Index;
                 }
 
@@ -386,6 +381,35 @@ namespace QVLEGS.Pagine
             {
                 if(((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text.Length > 0)
                     comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text;
+            }
+
+            return comparisons;
+        }
+
+        private string[] GetAdditionalComparisons()
+        {
+            string[] comparisons = new string[tableLayoutPanelToggles.RowCount - 1];
+
+            //TableLayoutPanel datepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(3, 0));
+            //comparisons[0] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, 0)).Text + " '";
+            //comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(1, 0))).Text;
+            //comparisons[0] += "-";
+            //comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(2, 0))).Text;
+            //comparisons[0] += "-";
+            //comparisons[0] += ((TextBox)(datepanel.GetControlFromPosition(3, 0))).Text;
+            //comparisons[0] += " ";
+            //TableLayoutPanel timepanel = ((TableLayoutPanel)tableLayoutPanelToggles.GetControlFromPosition(5, 0));
+            //comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(1, 0))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(1, 0))).Text : "00";
+            //comparisons[0] += ":";
+            //comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(2, 0))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(2, 0))).Text : "00";
+            //comparisons[0] += ":";
+            //comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(3, 0))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(3, 0))).Text : "00";
+            //comparisons[0] += "'";
+
+            for (int i = 1; i < tableLayoutPanelToggles.RowCount - 1; i++)
+            {
+                if (((TextBox)tableLayoutPanelToggles.GetControlFromPosition(5, i)).Text.Length > 0)
+                    comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(4, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(5, i)).Text;
             }
 
             return comparisons;
