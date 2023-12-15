@@ -615,7 +615,7 @@ namespace QVLEGS.Pagine
 
         private void OpenVirtualKeyboard(object sender, EventArgs e)
         {
-            FormNumericInput fni = new FormNumericInput(-1_0000.0m, 1_0000.0m, ((TextBox)sender).Text != "" ? (decimal)(float.Parse(((TextBox)sender).Text)) : 0.0m, 3);
+            FormNumericInput fni = new FormNumericInput(-1_000000.0m, 1_000000.0m, ((TextBox)sender).Text != "" ? (decimal)(float.Parse(((TextBox)sender).Text)) : 0.0m, 3);
             if (fni.ShowDialog() == DialogResult.OK)
             {
                 ((TextBox)sender).Text = fni.Value.ToString().Replace(',','.');
@@ -624,7 +624,7 @@ namespace QVLEGS.Pagine
 
         private void OpenVirtualKeyboardInt(object sender, EventArgs e)
         {
-            FormNumericInput fni = new FormNumericInput(-1_0000.0m, 1_0000.0m, ((TextBox)sender).Text != "" ? (decimal)(float.Parse(((TextBox)sender).Text)) : 0.0m, 0);
+            FormNumericInput fni = new FormNumericInput(-1_000000.0m, 1_000000.0m, ((TextBox)sender).Text != "" ? (decimal)(float.Parse(((TextBox)sender).Text)) : 0.0m, 0);
             if (fni.ShowDialog() == DialogResult.OK)
             {
                 ((TextBox)sender).Text = fni.Value.ToString().Replace(',', '.');
