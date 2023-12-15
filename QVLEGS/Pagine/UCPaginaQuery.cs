@@ -51,6 +51,12 @@ namespace QVLEGS.Pagine
                 CreateToggleRows(1);
 
                 LoadData(appManager.GetIdStazione(), 1);
+
+                if(tableLayoutPanelToggles.VerticalScroll.Visible)
+                {
+                    btnDownParamList.Visible = true;
+                    btnUpParamList.Visible = true;
+                }
             }
             catch (Exception ex)
             {
@@ -566,7 +572,7 @@ namespace QVLEGS.Pagine
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "CSV (*.csv)|*.csv";
-            sfd.FileName = DateTime.Now.ToString("ddMMyyyyhhMMss") + "_CAM" + appManager.GetIdStazione() + (currentCam == 2 ? "_2" : "") + "Dump.csv";
+            sfd.FileName = DateTime.Now.ToString("ddMMyyyyHHmmss") + "_CAM" + appManager.GetIdStazione() + (currentCam == 2 ? "_2" : "") + "Dump.csv";
             if(sfd.ShowDialog() == DialogResult.OK)
             {
                 if(File.Exists(sfd.FileName))
@@ -579,14 +585,14 @@ namespace QVLEGS.Pagine
                     string[] csv = new string[dataGridView1.RowCount];
                     for(int i = 0; i < dataGridView1.ColumnCount; i++)
                     {
-                        csv[0] += dataGridView1.Columns[i].HeaderText.ToString() + ",";
+                        csv[0] += dataGridView1.Columns[i].HeaderText.ToString() + ";";
                     }
                     
                     for(int i = 1; i < dataGridView1.RowCount; i++)
                     {
                         for(int j = 0; j < dataGridView1.ColumnCount; j++)
                         {
-                            csv[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString().Replace(',','.') + ",";
+                            csv[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString() + ";";
                         }
                     }
 
@@ -693,14 +699,14 @@ namespace QVLEGS.Pagine
         private void btnDownParamList_Click(object sender, EventArgs e)
         {
             Point current = tableLayoutPanelToggles.AutoScrollPosition;
-            Point scrolled = new Point(current.X, -current.Y + 100);
+            Point scrolled = new Point(current.X, -current.Y + 500);
             tableLayoutPanelToggles.AutoScrollPosition = scrolled;
         }
 
         private void btnUpParamList_Click(object sender, EventArgs e)
         {
             Point current = tableLayoutPanelToggles.AutoScrollPosition;
-            Point scrolled = new Point(current.X, -current.Y - 100);
+            Point scrolled = new Point(current.X, -current.Y - 500);
             tableLayoutPanelToggles.AutoScrollPosition = scrolled;
         }
 

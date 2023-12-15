@@ -86,13 +86,13 @@
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(593, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 600F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(312, 1004);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
@@ -113,7 +113,7 @@
             this.tableLayoutPanelToggles.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.tableLayoutPanelToggles.RowCount = 1;
             this.tableLayoutPanelToggles.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelToggles.Size = new System.Drawing.Size(306, 594);
+            this.tableLayoutPanelToggles.Size = new System.Drawing.Size(306, 732);
             this.tableLayoutPanelToggles.TabIndex = 104;
             // 
             // tableLayoutPanel3
@@ -167,7 +167,7 @@
             // 
             // btnRemoveWhite
             // 
-            this.btnRemoveWhite.Location = new System.Drawing.Point(3, 829);
+            this.btnRemoveWhite.Location = new System.Drawing.Point(3, 967);
             this.btnRemoveWhite.Name = "btnRemoveWhite";
             this.btnRemoveWhite.Size = new System.Drawing.Size(168, 30);
             this.btnRemoveWhite.TabIndex = 106;
@@ -184,7 +184,7 @@
             this.tableLayoutPanel4.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnExecuteQuery, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 749);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 887);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -235,7 +235,7 @@
             this.tableLayoutPanel7.Controls.Add(this.btnUpParamList, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnDownParamList, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 709);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 847);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -252,6 +252,7 @@
             this.btnUpParamList.Size = new System.Drawing.Size(147, 28);
             this.btnUpParamList.TabIndex = 4;
             this.btnUpParamList.UseVisualStyleBackColor = true;
+            this.btnUpParamList.Visible = false;
             this.btnUpParamList.Click += new System.EventHandler(this.btnUpParamList_Click);
             // 
             // btnDownParamList
@@ -264,6 +265,7 @@
             this.btnDownParamList.Size = new System.Drawing.Size(147, 28);
             this.btnDownParamList.TabIndex = 3;
             this.btnDownParamList.UseVisualStyleBackColor = true;
+            this.btnDownParamList.Visible = false;
             this.btnDownParamList.Click += new System.EventHandler(this.btnDownParamList_Click);
             // 
             // tableLayoutPanel5
