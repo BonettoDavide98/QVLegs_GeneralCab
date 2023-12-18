@@ -900,7 +900,7 @@ namespace QVLEGS.Algoritmi
             {
                 if (parametri.Cam1_Foto2Param.bigRegion_7 == null)
                     parametri.Cam1_Foto2Param.bigRegion_7 = new HRegion();
-                parametri.Cam1_Foto2Param.bigRegion_1 = data;
+                parametri.Cam1_Foto2Param.bigRegion_7 = data;
             }
             else
             {

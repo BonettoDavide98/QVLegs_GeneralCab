@@ -822,7 +822,7 @@ namespace QVLEGS.Class
             schedaIO.adlink_1.WriteDO(9, GetResult(finalRes, "DO8", 0));//out 8 condensatore Grande dx
             schedaIO.adlink_0.WriteDO(7, GetResult(finalRes, "DO9", 0));//out 9 condensatore piccolo sx
             schedaIO.adlink_0.WriteDO(6, GetResult(finalRes, "DO10", 0));//out 10 posizione molle
-            schedaIO.adlink_0.WriteDO(5, GetResult(finalRes, "DO11", 0));//out 11 protettore
+            //schedaIO.adlink_0.WriteDO(5, GetResult(finalRes, "DO11", 0));//out 11 protettore
             schedaIO.adlink_0.WriteDO(1, GetResult(finalRes, "DO15", 0));//out 15 posizione boccola
             schedaIO.adlink_0.WriteDO(4, GetResult(finalRes, "DO12", 0));//out 12 gambi induttori
                                                                          //schedaIO.adlink_0.WriteDO(0, GetResult(finalRes, "DO14", 0));//out 14 contatto massa

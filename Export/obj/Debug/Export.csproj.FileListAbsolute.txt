@@ -68,3 +68,10 @@ C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.csprojResolveAssemblyRefer
 C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
 C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.exe
 C:\Progetti\QVLEGS_GeneralCab\Export\obj\Debug\Export.pdb
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\Export\bin\Debug\Export.exe.config
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\Export\bin\Debug\Export.exe
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\Export\bin\Debug\Export.pdb
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\Export\obj\Debug\Export.csprojAssemblyReference.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\Export\obj\Debug\Export.csproj.CoreCompileInputs.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\Export\obj\Debug\Export.exe
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\Export\obj\Debug\Export.pdb

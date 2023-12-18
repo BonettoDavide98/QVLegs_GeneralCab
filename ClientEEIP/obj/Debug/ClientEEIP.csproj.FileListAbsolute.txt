@@ -424,3 +424,12 @@ C:\Progetti\QVLEGS_GeneralCab\ClientEEIP\obj\Debug\ClientEEIP.csproj.GenerateRes
 C:\Progetti\QVLEGS_GeneralCab\ClientEEIP\obj\Debug\ClientEEIP.csproj.CoreCompileInputs.cache
 C:\Progetti\QVLEGS_GeneralCab\ClientEEIP\obj\Debug\ClientEEIP.dll
 C:\Progetti\QVLEGS_GeneralCab\ClientEEIP\obj\Debug\ClientEEIP.pdb
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\bin\Debug\ClientEEIP.dll.config
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\bin\Debug\ClientEEIP.dll
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\bin\Debug\ClientEEIP.pdb
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\obj\Debug\ClientEEIP.csprojAssemblyReference.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\obj\Debug\ClientEEIP.Properties.Resources.resources
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\obj\Debug\ClientEEIP.csproj.GenerateResource.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\obj\Debug\ClientEEIP.csproj.CoreCompileInputs.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\obj\Debug\ClientEEIP.dll
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\ClientEEIP\obj\Debug\ClientEEIP.pdb

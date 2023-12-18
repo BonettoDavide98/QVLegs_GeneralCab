@@ -30,9 +30,6 @@
         {
             this.lblTitolo = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.panelContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitolo
@@ -42,46 +39,30 @@
             this.lblTitolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitolo.ForeColor = System.Drawing.Color.White;
             this.lblTitolo.Location = new System.Drawing.Point(0, 0);
-            this.lblTitolo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitolo.Name = "lblTitolo";
-            this.lblTitolo.Size = new System.Drawing.Size(939, 39);
+            this.lblTitolo.Size = new System.Drawing.Size(704, 32);
             this.lblTitolo.TabIndex = 43;
-            this.lblTitolo.Text = "TABELLA STATISTICHE";
+            this.lblTitolo.Text = "LOG";
             this.lblTitolo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.dataGridView);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 39);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContainer.Location = new System.Drawing.Point(0, 32);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(939, 575);
+            this.panelContainer.Size = new System.Drawing.Size(704, 467);
             this.panelContainer.TabIndex = 49;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(939, 575);
-            this.dataGridView.TabIndex = 0;
             // 
             // UCPaginaViewLog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.lblTitolo);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCPaginaViewLog";
-            this.Size = new System.Drawing.Size(939, 614);
-            this.panelContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Size = new System.Drawing.Size(704, 499);
             this.ResumeLayout(false);
 
         }
@@ -89,6 +70,5 @@
         #endregion
         private System.Windows.Forms.Label lblTitolo;
         private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.DataGridView dataGridView;
     }
 }

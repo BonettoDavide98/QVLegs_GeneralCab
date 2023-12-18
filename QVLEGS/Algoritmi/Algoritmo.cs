@@ -1084,6 +1084,11 @@ namespace QVLEGS.Algoritmi
 
                 ret = ret1 && ret2;
 
+                if (idx == 5 || idx == 6 || idx == 10)
+                {
+                    ret = !ret;
+                }
+
                 string strOut = string.Empty;
 
                 switch (idx)
@@ -3224,13 +3229,13 @@ namespace QVLEGS.Algoritmi
 
                     res.TestiOutAlgoritmi.Add(new Tuple<string, string>(string.Format(linguaManager.GetTranslation("MSG_OUT_CAM4_FOTO1_STEP6"), valueToShow, param.AreaMaxYellowRight), ret ? "green" : "red"));
                     res.StatisticheObj.AddMisura("TEST_6_CAM_4_FOTO_1", valueToShow);
-                    if (res.ResultOutput.ContainsKey("DO11"))
+                    if (res.ResultOutput.ContainsKey("DO8"))
                     {
-                        if (res.ResultOutput["DO11"] != (ret ? 1 : 0))
-                            res.ResultOutput["DO11"] = 0;
+                        if (res.ResultOutput["DO8"] != (ret ? 1 : 0))
+                            res.ResultOutput["DO8"] = 0;
                     }
                     else
-                        res.ResultOutput.Add("DO11", (ret ? ushort.Parse("1") : ushort.Parse("0")));
+                        res.ResultOutput.Add("DO8", (ret ? ushort.Parse("1") : ushort.Parse("0")));
                 }
             }
             catch (Exception)

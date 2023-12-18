@@ -745,3 +745,15 @@ C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.csproj.CoreCompileInp
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.dll
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.pdb
 C:\Progetti\QVLEGS_GeneralCab\TSWizard\obj\Debug\TSWizards.csprojResolveAssemblyReference.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\bin\Debug\TSWizards.dll
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\bin\Debug\TSWizards.pdb
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.csprojAssemblyReference.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.BaseExteriorStep.resources
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.BaseInteriorStep.resources
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.BaseStep.resources
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.BaseWizard.resources
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.Controls.EtchedLine.resources
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.csproj.GenerateResource.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.csproj.CoreCompileInputs.cache
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.dll
+C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\TSWizard\obj\Debug\TSWizards.pdb
