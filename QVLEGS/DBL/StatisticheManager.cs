@@ -839,6 +839,8 @@ GROUP BY Chiave;";
 
                     query += " VALUES ('" + statistiche.TimeStamp.ToString("yyyy-MM-ddTHH:mm:ss") + "'";
 
+                    query += ", " + (risultati[i].Success ? "1" : "0");
+
                     if (i == 1 && statistiche.IdCamera == 0)
                     {
                         for (int j = 0; j < statistiche.Misure.Count; j++)
@@ -846,6 +848,16 @@ GROUP BY Chiave;";
                             query += ", " + statistiche.Misure[j].Valore.ToString().Replace(',', '.');
 
                             if (j + 1 < statistiche.Misure.Count && statistiche.Misure[j + 1].Nome.Contains("_W"))
+                            {
+                                query += ", " + statistiche.Misure[j + 1].Valore.ToString().Replace(',', '.');
+                                j++;
+                            }
+                            else
+                            {
+                                query += ", NULL";
+                            }
+
+                            if (j + 1 < statistiche.Misure.Count && statistiche.Misure[j + 1].Nome.Contains("_B2"))
                             {
                                 query += ", " + statistiche.Misure[j + 1].Valore.ToString().Replace(',', '.');
                                 j++;
@@ -868,6 +880,7 @@ GROUP BY Chiave;";
                     }
 
                     query += ");";
+                    Console.WriteLine(query);
 
                     using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                     {
@@ -919,37 +932,57 @@ GROUP BY Chiave;";
         #region enum colonne tabelle
         enum CAM0
         {
-            Data, CondLatMpin1, CondLatMpin2, CondLatPpin1, CondLatPpin2, SpazzolaSX, SpazzolaDX, Diametro
+            Data,
+            OK,
+            CondLatMpin1,
+            CondLatMpin2,
+            CondLatPpin1,
+            CondLatPpin2,
+            SpazzolaSX,
+            SpazzolaDX,
+            Diametro
         }
 
         enum CAM0_2
         {
             Data,
+            OK,
             NeroProtettorepin1,
             BiancoProtettorepin1,
+            Nero2Protettorepin1,
             NeroProtettorepin2,
             BiancoProtettorepin2,
+            Nero2Protettorepin2,
             NeroCondensatoreLatMpin1,
             BiancoCondensatoreLatMpin1,
+            Nero2CondensatoreLatMpin1,
             NeroCondensatoreLatMpin2,
             BiancoCondensatoreLatMpin2,
+            Nero2CondensatoreLatMpin2,
             NeroImpendenzaLatM,
             BiancoImpendenzaLatM,
+            Nero2ImpendenzaLatM,
             NeroVaristorepin1,
             BiancoVaristorepin1,
+            Nero2Varistorepin1,
             NeroVaristorepin2,
             BiancoVaristorepin2,
+            Nero2Varistorepin2,
             NeroCondensatoreLatPpin1,
             BiancoCondensatoreLatPpin1,
+            Nero2CondensatoreLatPpin1,
             NeroCondensatoreLatPpin2,
             BiancoCondensatoreLatPpin2,
+            Nero2CondensatoreLatPpin2,
             NeroImpendenzaLatP,
-            BiancoImpendenzaLatP
+            BiancoImpendenzaLatP,
+            Nero2ImpendenzaLatP
         }
 
         enum CAM1
         {
             Data,
+            OK,
             AllineamentoContatto,
             IngombroSX,
             IngombroDX
@@ -958,6 +991,7 @@ GROUP BY Chiave;";
         enum CAM2
         {
             Data,
+            OK,
             InduttanzaSX,
             Protettore,
             InduttanzaDX
@@ -966,6 +1000,7 @@ GROUP BY Chiave;";
         enum CAM2_2
         {
             Data,
+            OK,
             ColonninaSX,
             TrecciaSX,
             TrecciaDX,
@@ -975,6 +1010,7 @@ GROUP BY Chiave;";
         enum CAM3
         {
             Data,
+            OK,
             ZonaLibera,
             MollettaLatM,
             MollettaLatP,
@@ -995,12 +1031,14 @@ GROUP BY Chiave;";
         enum CAM4
         {
             Data,
+            OK,
             ControlloForo
         }
 
         enum CAM4_2
         {
             Data,
+            OK,
             MollettaLatM
         }
         #endregion

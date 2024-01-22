@@ -1027,6 +1027,12 @@ namespace QVLEGS.Algoritmi
             , double AreaMAxBig2
             , double AreaMinBig2
             , bool invertedWhite
+            , bool blackEnabled2
+            , HRegion bigRegion3
+            , double ThresholdBig3
+            , double AreaMAxBig3
+            , double AreaMinBig3
+            , bool invertedBlack2
             , int idx
             , bool isWizard
             , ref DataType.ElaborateResult res
@@ -1035,6 +1041,7 @@ namespace QVLEGS.Algoritmi
             bool ret = false;
             bool ret1 = false;
             bool ret2 = false;
+            bool ret3 = false;
 
             HImage imageReducedRect1 = null;
             HRegion regionThreshold = null;
@@ -1070,7 +1077,7 @@ namespace QVLEGS.Algoritmi
                     ret2 = area <= AreaMAxBig2 && area >= AreaMinBig2 ? true : false;
                     if (invertedWhite)
                         ret2 = !ret2;
-                    
+
                     workingList.Add(new Utilities.ObjectToDisplay(regionThreshold.Clone(), ret2 ? "blue" : "red", 2) { DrawMode = "fill" });
                     messageString = string.Format("Threshold bianco " + linguaManager.GetTranslation($"MSG_OUT_CAM1_FOTO2_STEP_{idx}"), area, AreaMinBig2, AreaMAxBig2);
                     res.TestiOutAlgoritmi.Add(new Tuple<string, string>(messageString, ret2 ? "green" : "red"));
@@ -1082,7 +1089,29 @@ namespace QVLEGS.Algoritmi
                     ret2 = true;
                 }
 
-                ret = ret1 && ret2;
+                if (blackEnabled2)
+                {
+                    imageReducedRect1 = inputAlg.ImageRotate.ReduceDomain(bigRegion3);
+                    regionThreshold = imageReducedRect1.Threshold(0.0, ThresholdBig3);
+                    HOperatorSet.AreaCenter(regionThreshold, out area, out row, out column);
+                    workingList.Add(new Utilities.ObjectToDisplay(bigRegion3.Clone(), "green", 2) { DrawMode = "margin" });
+
+                    ret3 = area <= AreaMAxBig3 && area >= AreaMinBig3 ? true : false;
+                    if (invertedBlack2)
+                        ret3 = !ret3;
+
+                    workingList.Add(new Utilities.ObjectToDisplay(regionThreshold.Clone(), ret3 ? "blue" : "red", 2) { DrawMode = "fill" });
+                    messageString = string.Format("Threshold nero 2 " + linguaManager.GetTranslation($"MSG_OUT_CAM1_FOTO2_STEP_{idx}"), area, AreaMinBig3, AreaMAxBig3);
+                    res.TestiOutAlgoritmi.Add(new Tuple<string, string>(messageString, ret3 ? "green" : "red"));
+
+                    res.StatisticheObj.AddMisura($"TEST_{idx}_CAM_1_FOTO_2_B2", area);
+                }
+                else
+                {
+                    ret3 = true;
+                }
+
+                ret = ret1 && ret2 && ret3;
 
                 if (idx == 5 || idx == 6 || idx == 10)
                 {
@@ -1129,123 +1158,55 @@ namespace QVLEGS.Algoritmi
             }
             return ret;
         }
-        
+
         protected bool TestCam1_Step1_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList)
         {
-            //bool ret = false;
-            //bool ret2 = false;
-
-            //HImage imageReducedRect1 = null;
-            //HRegion regionThreshold = null;
-            //HXLDCont controurStartGood = null;
-            //HXLDCont controurStartBad = null;
-            //HXLDCont controurEndGood = null;
-            //HXLDCont controurEndBad = null;
-
-            //try
-            //{
-            //    imageReducedRect1 = inputAlg.ImageRotate.ReduceDomain(param.bigRegion_1);
-
-            //    regionThreshold = imageReducedRect1.Threshold(0.0, param.ThresholdBig_1);
-            //    HOperatorSet.AreaCenter(regionThreshold, out HTuple area, out HTuple row, out HTuple column);
-
-            //    workingList.Add(new Utilities.ObjectToDisplay(param.bigRegion_1.Clone(), "green", 2) { DrawMode = "margin" });
-            //    workingList.Add(new Utilities.ObjectToDisplay(regionThreshold.Clone(), area <= param.AreaMAxBig_1 && area >= param.AreaMinBig_1 ? "blue" : "red", 2) { DrawMode = "fill" });
-            //    ret = area <= param.AreaMAxBig_1 && area >= param.AreaMinBig_1 ? true : false;
-            //    if (invertedBlack)
-            //        ret = !ret;
-            //    res.TestiOutAlgoritmi.Add(new Tuple<string, string>(string.Format("Threshold nero " + linguaManager.GetTranslation("MSG_OUT_CAM1_FOTO2_STEP_1"), area, param.AreaMinBig_1, param.AreaMAxBig_1), ret ? "green" : "red"));
-
-            //    res.StatisticheObj.AddMisura("TEST_1_CAM_1_FOTO_2", area);
-
-            //    if (whiteEnabled)
-            //    {
-            //        imageReducedRect1 = inputAlg.ImageRotate.ReduceDomain(param.bigRegion2_1);
-
-            //        regionThreshold = imageReducedRect1.Threshold(param.ThresholdBig2_1, 255.0);
-            //        HOperatorSet.AreaCenter(regionThreshold, out area, out row, out column);
-
-            //        workingList.Add(new Utilities.ObjectToDisplay(param.bigRegion2_1.Clone(), "green", 2) { DrawMode = "margin" });
-            //        workingList.Add(new Utilities.ObjectToDisplay(regionThreshold.Clone(), area <= param.AreaMAxBig2_1 && area >= param.AreaMinBig2_1 ? "blue" : "red", 2) { DrawMode = "fill" });
-            //        ret2 = area <= param.AreaMAxBig2_1 && area >= param.AreaMinBig2_1 ? true : false;
-            //        if (invertedWhite)
-            //            ret2 = !ret2;
-            //        res.TestiOutAlgoritmi.Add(new Tuple<string, string>(string.Format("Threshold bianco " + linguaManager.GetTranslation("MSG_OUT_CAM1_FOTO2_STEP_1"), area, param.AreaMinBig2_1, param.AreaMAxBig2_1), ret2 ? "green" : "red"));
-
-            //        res.StatisticheObj.AddMisura("TEST_1_CAM_1_FOTO_2", area);
-
-            //        ret = ret && ret2;
-            //    }
-
-            //    if (res.ResultOutput.ContainsKey("DO14"))
-            //    {
-            //        if (res.ResultOutput["DO14"] != (ret ? 1 : 0))
-            //            res.ResultOutput["DO14"] = 0;
-            //    }
-            //    else
-            //        res.ResultOutput.Add("DO14", (ret ? ushort.Parse("1") : ushort.Parse("0")));
-            //}
-            //catch (Exception)
-            //{
-            //    ret = false;
-            //}
-            //finally
-            //{
-            //    imageReducedRect1?.Dispose();
-            //    regionThreshold?.Dispose();
-            //    controurStartGood?.Dispose();
-            //    controurEndBad?.Dispose();
-            //    controurStartBad?.Dispose();
-            //    controurEndGood?.Dispose();
-            //}
-            //return ret;
-            
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_1, param.ThresholdBig_1, param.AreaMAxBig_1, param.AreaMinBig_1, param.invertedBlack1, param.checked1, param.bigRegion2_1, param.ThresholdBig2_1, param.AreaMAxBig2_1, param.AreaMinBig2_1, param.invertedWhite1, 1, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_1, param.ThresholdBig_1, param.AreaMAxBig_1, param.AreaMinBig_1, param.invertedBlack1, param.checked1, param.bigRegion2_1, param.ThresholdBig2_1, param.AreaMAxBig2_1, param.AreaMinBig2_1, param.invertedWhite1, param.checked1_2, param.bigRegion3_1, param.ThresholdBig3_1, param.AreaMAxBig3_1, param.AreaMinBig3_1, param.invertedBlack2, 1, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step2_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_2, param.ThresholdBig_2, param.AreaMAxBig_2, param.AreaMinBig_2, param.invertedBlack2, param.checked2, param.bigRegion2_2, param.ThresholdBig2_2, param.AreaMAxBig2_2, param.AreaMinBig2_2, param.invertedWhite2, 2, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_2, param.ThresholdBig_2, param.AreaMAxBig_2, param.AreaMinBig_2, param.invertedBlack2, param.checked2, param.bigRegion2_2, param.ThresholdBig2_2, param.AreaMAxBig2_2, param.AreaMinBig2_2, param.invertedWhite2, param.checked2_2, param.bigRegion3_2, param.ThresholdBig3_2, param.AreaMAxBig3_2, param.AreaMinBig3_2, param.invertedBlack2_2, 2, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step3_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_3, param.ThresholdBig_3, param.AreaMAxBig_3, param.AreaMinBig_3, param.invertedBlack3, param.checked3, param.bigRegion2_3, param.ThresholdBig2_3, param.AreaMAxBig2_3, param.AreaMinBig2_3, param.invertedWhite3, 3, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_3, param.ThresholdBig_3, param.AreaMAxBig_3, param.AreaMinBig_3, param.invertedBlack3, param.checked3, param.bigRegion2_3, param.ThresholdBig2_3, param.AreaMAxBig2_3, param.AreaMinBig2_3, param.invertedWhite3, param.checked3_2, param.bigRegion3_3, param.ThresholdBig3_3, param.AreaMAxBig3_3, param.AreaMinBig3_3, param.invertedBlack3_2, 3, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step4_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_4, param.ThresholdBig_4, param.AreaMAxBig_4, param.AreaMinBig_4, param.invertedBlack4, param.checked4, param.bigRegion2_4, param.ThresholdBig2_4, param.AreaMAxBig2_4, param.AreaMinBig2_4, param.invertedWhite4, 4, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_4, param.ThresholdBig_4, param.AreaMAxBig_4, param.AreaMinBig_4, param.invertedBlack4, param.checked4, param.bigRegion2_4, param.ThresholdBig2_4, param.AreaMAxBig2_4, param.AreaMinBig2_4, param.invertedWhite4, param.checked4_2, param.bigRegion3_4, param.ThresholdBig3_4, param.AreaMAxBig3_4, param.AreaMinBig3_4, param.invertedBlack4_2, 4, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step5_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_5, param.ThresholdBig_5, param.AreaMAxBig_5, param.AreaMinBig_5, param.invertedBlack5, param.checked5, param.bigRegion2_5, param.ThresholdBig2_5, param.AreaMAxBig2_5, param.AreaMinBig2_5, param.invertedWhite5, 5, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_5, param.ThresholdBig_5, param.AreaMAxBig_5, param.AreaMinBig_5, param.invertedBlack5, param.checked5, param.bigRegion2_5, param.ThresholdBig2_5, param.AreaMAxBig2_5, param.AreaMinBig2_5, param.invertedWhite5, param.checked5_2, param.bigRegion3_5, param.ThresholdBig3_5, param.AreaMAxBig3_5, param.AreaMinBig3_5, param.invertedBlack5_2, 5, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step6_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_6, param.ThresholdBig_6, param.AreaMAxBig_6, param.AreaMinBig_6, param.invertedBlack6, param.checked6, param.bigRegion2_6, param.ThresholdBig2_6, param.AreaMAxBig2_6, param.AreaMinBig2_6, param.invertedWhite6, 6, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_6, param.ThresholdBig_6, param.AreaMAxBig_6, param.AreaMinBig_6, param.invertedBlack6, param.checked6, param.bigRegion2_6, param.ThresholdBig2_6, param.AreaMAxBig2_6, param.AreaMinBig2_6, param.invertedWhite6, param.checked6_2, param.bigRegion3_6, param.ThresholdBig3_6, param.AreaMAxBig3_6, param.AreaMinBig3_6, param.invertedBlack6_2, 6, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step7_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_7, param.ThresholdBig_7, param.AreaMAxBig_7, param.AreaMinBig_7, param.invertedBlack7, param.checked7, param.bigRegion2_7, param.ThresholdBig2_7, param.AreaMAxBig2_7, param.AreaMinBig2_7, param.invertedWhite7, 7, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_7, param.ThresholdBig_7, param.AreaMAxBig_7, param.AreaMinBig_7, param.invertedBlack7, param.checked7, param.bigRegion2_7, param.ThresholdBig2_7, param.AreaMAxBig2_7, param.AreaMinBig2_7, param.invertedWhite7, param.checked7_2, param.bigRegion3_7, param.ThresholdBig3_7, param.AreaMAxBig3_7, param.AreaMinBig3_7, param.invertedBlack7_2, 7, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step8_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_8, param.ThresholdBig_8, param.AreaMAxBig_8, param.AreaMinBig_8, param.invertedBlack8, param.checked8, param.bigRegion2_8, param.ThresholdBig2_8, param.AreaMAxBig2_8, param.AreaMinBig2_8, param.invertedWhite8, 8, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_8, param.ThresholdBig_8, param.AreaMAxBig_8, param.AreaMinBig_8, param.invertedBlack8, param.checked8, param.bigRegion2_8, param.ThresholdBig2_8, param.AreaMAxBig2_8, param.AreaMinBig2_8, param.invertedWhite8, param.checked8_2, param.bigRegion3_8, param.ThresholdBig3_8, param.AreaMAxBig3_8, param.AreaMinBig3_8, param.invertedBlack8_2, 8, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step9_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_9, param.ThresholdBig_9, param.AreaMAxBig_9, param.AreaMinBig_9, param.invertedBlack9, param.checked9, param.bigRegion2_9, param.ThresholdBig2_9, param.AreaMAxBig2_9, param.AreaMinBig2_9, param.invertedWhite9, 9, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_9, param.ThresholdBig_9, param.AreaMAxBig_9, param.AreaMinBig_9, param.invertedBlack9, param.checked9, param.bigRegion2_9, param.ThresholdBig2_9, param.AreaMAxBig2_9, param.AreaMinBig2_9, param.invertedWhite9, param.checked9_2, param.bigRegion3_9, param.ThresholdBig3_9, param.AreaMAxBig3_9, param.AreaMinBig3_9, param.invertedBlack9_2, 9, isWizard, ref res, ref workingList);
         }
 
         protected bool TestCam1_Step10_Foto2(ClassInputAlgoritmi inputAlg, DataType.Cam1_Foto2Param param, bool isWizard, ref DataType.ElaborateResult res, ref ArrayList workingList, bool whiteEnabled, bool invertedBlack, bool invertedWhite)
         {
-            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_10, param.ThresholdBig_10, param.AreaMAxBig_10, param.AreaMinBig_10, param.invertedBlack10, param.checked10, param.bigRegion2_10, param.ThresholdBig2_10, param.AreaMAxBig2_10, param.AreaMinBig2_10, param.invertedWhite10, 10, isWizard, ref res, ref workingList);
+            return TestCam1_Step1_10_Foto2(inputAlg, param.bigRegion_10, param.ThresholdBig_10, param.AreaMAxBig_10, param.AreaMinBig_10, param.invertedBlack10, param.checked10, param.bigRegion2_10, param.ThresholdBig2_10, param.AreaMAxBig2_10, param.AreaMinBig2_10, param.invertedWhite10, param.checked10_2, param.bigRegion3_10, param.ThresholdBig3_10, param.AreaMAxBig3_10, param.AreaMinBig3_10, param.invertedBlack10_2, 10, isWizard, ref res, ref workingList);
         }
 
         private bool AnalyzeHole(HImage image, HRegion RegionAffineTransHole, HXLDCont ContoursAffineTransHole, double thresholdGray)
@@ -3256,17 +3217,24 @@ namespace QVLEGS.Algoritmi
             bool ret = false;
 
             HRegion regionCircle = null;
+            HRegion regionCircle2 = null;
+            HRegion regionDonut = null;
             HImage imageReducedCircle1 = null;
             HRegion regionThresholdCircle1 = null;
 
             try
             {
                 regionCircle = new HRegion();
-                regionCircle.GenCircle(param.CircleYellowCenter.Row, param.CircleYellowCenter.Column, param.CircleYellowCenter.Radius);
+                regionCircle2 = new HRegion();
 
-                imageReducedCircle1 = inputAlg.ImageRotate.ReduceDomain(regionCircle);
+                regionCircle.GenCircle(param.CircleYellowCenter.Row, param.CircleYellowCenter.Column, param.CircleYellowCenter.RadiusOuter);
+                regionCircle2.GenCircle(param.CircleYellowCenter.Row, param.CircleYellowCenter.Column, param.CircleYellowCenter.RadiusInner);
+                regionDonut = regionCircle.Difference(regionCircle2);
+
+                imageReducedCircle1 = inputAlg.ImageRotate.ReduceDomain(regionDonut);
 
                 regionThresholdCircle1 = lutYellowCenter.ClassifyImageClassLut(imageReducedCircle1);
+                regionThresholdCircle1 = regionThresholdCircle1.Union1();
                 regionThresholdCircle1 = regionThresholdCircle1.ErosionCircle((HTuple)3);
                 regionThresholdCircle1 = regionThresholdCircle1.DilationCircle((HTuple)10);
 

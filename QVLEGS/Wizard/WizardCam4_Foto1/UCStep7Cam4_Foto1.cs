@@ -22,7 +22,7 @@ namespace QVLEGS.Wizard
         private HalconDotNet.HImage lastTestImage = null;
         private DataType.PrevImageData lastPrevImageData = null;
 
-        private ViewROI.ROICircle roi1 = null;
+        private ViewROI.ROIBulleye roi1 = null;
 
         #endregion Variabili Private
 
@@ -96,8 +96,8 @@ namespace QVLEGS.Wizard
             nudThresholdMin.Value = (decimal)param.ThresholdYellowCenter;
             nudAreaMaxCircle.Value = (decimal)param.AreaMaxYellowCenter;
 
-            this.roi1 = new ViewROI.ROICircle();
-            this.roi1.setModelData(new HalconDotNet.HTuple(param.CircleYellowCenter.Row, param.CircleYellowCenter.Column, param.CircleYellowCenter.Radius));
+            this.roi1 = new ViewROI.ROIBulleye();
+            this.roi1.setModelData(new HalconDotNet.HTuple(param.CircleYellowCenter.Row, param.CircleYellowCenter.Column, param.CircleYellowCenter.RadiusInner, param.CircleYellowCenter.RadiusOuter));
             this.hWndCtrlManager.SetRoiWithValueNoReset(roi1, ROI_MAIN1);
 
             propertyGrid1.SelectedObject = param;
@@ -139,7 +139,7 @@ namespace QVLEGS.Wizard
                 if (roiId == ROI_MAIN1)
                 {
                     this.algoritmoWizard.SetRoiCam4_Foto1_YellowCenter(data);
-                    this.roi1 = (ViewROI.ROICircle)roi;
+                    this.roi1 = (ViewROI.ROIBulleye)roi;
                 }
             }
             catch (Exception) { }
@@ -254,7 +254,7 @@ namespace QVLEGS.Wizard
                 this.hWndCtrlManager.NessunaModalita();
                 this.hWndCtrlManager.SetDraw(false, Utilities.UCHWndCtrlManager.ToolType.None);
 
-                this.hWndCtrlManager.SetRoiNoReset(new ViewROI.ROICircle(), ROI_MAIN1);
+                this.hWndCtrlManager.SetRoiNoReset(new ViewROI.ROIBulleye(), ROI_MAIN1);
                 this.roi1 = null;
             }
             catch (Exception ex)

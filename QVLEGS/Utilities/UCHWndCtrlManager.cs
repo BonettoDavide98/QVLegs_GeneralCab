@@ -520,10 +520,15 @@ namespace QVLEGS.Utilities
                         hWindowControl.HalconWindow.SetColor("#FFFF0080");
                         hWindowControl.HalconWindow.DispObj(mask.Clone());
                     }
-                    else
+                    else if(index == 1)
                     {
                         hWindowControl.HalconWindow.SetDraw("fill");
                         hWindowControl.HalconWindow.SetColor("#FF00FF80");
+                        hWindowControl.HalconWindow.DispObj(mask.Clone());
+                    } else
+                    {
+                        hWindowControl.HalconWindow.SetDraw("fill");
+                        hWindowControl.HalconWindow.SetColor("#FF888080");
                         hWindowControl.HalconWindow.DispObj(mask.Clone());
                     }
                 }
@@ -540,10 +545,15 @@ namespace QVLEGS.Utilities
                             hWindowControl.HalconWindow.SetDraw("fill");
                             hWindowControl.HalconWindow.SetColor("#FFFF0090");
                             hWindowControl.HalconWindow.DispObj(circle);
-                        } else
+                        } else if(index == 1)
                         {
                             hWindowControl.HalconWindow.SetDraw("fill");
                             hWindowControl.HalconWindow.SetColor("#FF00FF90");
+                            hWindowControl.HalconWindow.DispObj(circle);
+                        } else
+                        {
+                            hWindowControl.HalconWindow.SetDraw("fill");
+                            hWindowControl.HalconWindow.SetColor("#FF999090");
                             hWindowControl.HalconWindow.DispObj(circle);
                         }
                     }
@@ -699,12 +709,16 @@ namespace QVLEGS.Utilities
 
         public void ClearMask()
         {
-            if (maskRegion != null)
+            try
             {
-                maskRegion[0].Dispose();
-                maskRegion[1].Dispose();
-                maskRegion = null;
-            }
+                if (maskRegion != null)
+                {
+                    maskRegion[0].Dispose();
+                    maskRegion[1].Dispose();
+                    maskRegion[2].Dispose();
+                    maskRegion = null;
+                }
+            } catch { }
         }
 
         private void AddMaskPart(HRegion region)

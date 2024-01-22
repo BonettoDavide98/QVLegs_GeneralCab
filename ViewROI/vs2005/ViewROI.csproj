@@ -104,6 +104,7 @@
     <Compile Include="..\source\ROIRectangle2.cs">
       <Link>ROIRectangle2.cs</Link>
     </Compile>
+    <Compile Include="QV\ROIBulleye.cs" />
     <Compile Include="QV\ROIRakeDimensioneLato.cs" />
     <Compile Include="QV\ROIRectangle1Cross.cs" />
     <Compile Include="QV\ROIRectangle1Grid.cs" />

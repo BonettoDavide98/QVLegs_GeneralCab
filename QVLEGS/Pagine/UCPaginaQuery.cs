@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using QVLEGS.DataType;
 
 namespace QVLEGS.Pagine
 {
@@ -33,6 +28,7 @@ namespace QVLEGS.Pagine
             btnExecuteQuery.Text = linguaManager.GetTranslation("BTN_ESEGUI_QUERY");
             btnSave.Text = linguaManager.GetTranslation("BTN_SALVA_RIS_QUERY");
             btnRemoveWhite.Text = linguaManager.GetTranslation("BTN_RIMUOVI_BIANCO");
+            btnRemoveBlack2.Text = linguaManager.GetTranslation("BTN_RIMUOVI_NERO2");
         }
 
         public void Init(Class.AppManager appManager, DataType.Impostazioni impostazioni, DBL.LinguaManager linguaManager)
@@ -75,8 +71,9 @@ namespace QVLEGS.Pagine
                 case 0:
                     if(numCam == 1)
                     {
-                        tableLayoutPanelToggles.RowCount = 8;
+                        tableLayoutPanelToggles.RowCount = 9;
                         nomiParametri.Add("Data");
+                        nomiParametri.Add("OK");
                         nomiParametri.Add("Condensatore Laterale M Pin 1");
                         nomiParametri.Add("Condensatore Laterale M Pin 2");
                         nomiParametri.Add("Condensatore Laterale P Pin 1");
@@ -86,33 +83,45 @@ namespace QVLEGS.Pagine
                         nomiParametri.Add("Diametro");
                     } else
                     {
-                        tableLayoutPanelToggles.RowCount = 21;
+                        tableLayoutPanelToggles.RowCount = 32;
                         nomiParametri.Add("Data");
+                        nomiParametri.Add("OK");
                         nomiParametri.Add("Nero Protettore Pin 1");
                         nomiParametri.Add("Bianco Protettore Pin 1");
+                        nomiParametri.Add("Nero2 Protettore Pin 1");
                         nomiParametri.Add("Nero Protettore Pin 2");
                         nomiParametri.Add("Bianco Protettore Pin 2");
+                        nomiParametri.Add("Nero2 Protettore Pin 2");
                         nomiParametri.Add("Nero Condensatore Lat M Pin 1");
                         nomiParametri.Add("Bianco Condensatore Lat M Pin 1");
+                        nomiParametri.Add("Nero2 Condensatore Lat M Pin 1");
                         nomiParametri.Add("Nero Condensatore Lat M Pin 2");
                         nomiParametri.Add("Bianco Condensatore Lat M Pin 2");
+                        nomiParametri.Add("Nero2 Condensatore Lat M Pin 2");
                         nomiParametri.Add("Nero Impendenza Lat M");
                         nomiParametri.Add("Bianco Impendenza Lat M");
+                        nomiParametri.Add("Nero2 Impendenza Lat M");
                         nomiParametri.Add("Nero Varistore Pin 1");
                         nomiParametri.Add("Bianco Varistore Pin 1");
+                        nomiParametri.Add("Nero2 Varistore Pin 1");
                         nomiParametri.Add("Nero Varistore Pin 2");
                         nomiParametri.Add("Bianco Varistore Pin 2");
+                        nomiParametri.Add("Nero2 Varistore Pin 2");
                         nomiParametri.Add("Nero Condensatore Lat P Pin 1");
                         nomiParametri.Add("Bianco Condensatore Lat P Pin 1");
+                        nomiParametri.Add("Nero2 Condensatore Lat P Pin 1");
                         nomiParametri.Add("Nero Condensatore Lat P Pin 2");
                         nomiParametri.Add("Bianco Condensatore Lat P Pin 2");
+                        nomiParametri.Add("Nero2 Condensatore Lat P Pin 2");
                         nomiParametri.Add("Nero Impendenza Lat P");
                         nomiParametri.Add("Bianco Impendenza Lat P");
+                        nomiParametri.Add("Nero2 Impendenza Lat P");
                     }
                     break;
                 case 1:
-                    tableLayoutPanelToggles.RowCount = 4;
+                    tableLayoutPanelToggles.RowCount = 5;
                     nomiParametri.Add("Data");
+                    nomiParametri.Add("OK");
                     nomiParametri.Add("Allineamento Contatto");
                     nomiParametri.Add("Ingombro SX");
                     nomiParametri.Add("Ingombro DX");
@@ -120,15 +129,17 @@ namespace QVLEGS.Pagine
                 case 2:
                     if (numCam == 1)
                     {
-                        tableLayoutPanelToggles.RowCount = 4;
+                        tableLayoutPanelToggles.RowCount = 5;
                         nomiParametri.Add("Data");
+                        nomiParametri.Add("OK");
                         nomiParametri.Add("InduttanzaSX");
                         nomiParametri.Add("Protettore");
                         nomiParametri.Add("InduttanzaDX");
                     } else
                     {
-                        tableLayoutPanelToggles.RowCount = 5;
+                        tableLayoutPanelToggles.RowCount = 6;
                         nomiParametri.Add("Data");
+                        nomiParametri.Add("OK");
                         nomiParametri.Add("Colonnina SX");
                         nomiParametri.Add("Treccia SX");
                         nomiParametri.Add("Treccia DX");
@@ -136,8 +147,9 @@ namespace QVLEGS.Pagine
                     }
                     break;
                 case 3:
-                    tableLayoutPanelToggles.RowCount = 16;
+                    tableLayoutPanelToggles.RowCount = 17;
                     nomiParametri.Add("Data");
+                    nomiParametri.Add("OK");
                     nomiParametri.Add("Zona Libera");
                     nomiParametri.Add("Molletta Lam M");
                     nomiParametri.Add("Molletta Lam P");
@@ -157,13 +169,15 @@ namespace QVLEGS.Pagine
                 case 4:
                     if (numCam == 1)
                     {
-                        tableLayoutPanelToggles.RowCount = 2;
+                        tableLayoutPanelToggles.RowCount = 3;
                         nomiParametri.Add("Data");
+                        nomiParametri.Add("OK");
                         nomiParametri.Add("Controllo Foro");
                     } else
                     {
-                        tableLayoutPanelToggles.RowCount = 2;
+                        tableLayoutPanelToggles.RowCount = 3;
                         nomiParametri.Add("Data");
+                        nomiParametri.Add("OK");
                         nomiParametri.Add("Molletta Lat M");
                     }
                     break;
@@ -196,7 +210,7 @@ namespace QVLEGS.Pagine
                 tableLayoutPanelToggles.Controls.Add(chb, 1, i);
 
                 //riga normale
-                if(i != 0)
+                if(i > 1)
                 {
                     Button btn = new Button();
                     btn.Name = "btn" + i;
@@ -231,7 +245,7 @@ namespace QVLEGS.Pagine
                     else
                         txb2.Click += OpenVirtualKeyboardInt;
                     tableLayoutPanelToggles.Controls.Add(txb2, 5, i);
-                } else
+                } else if(i == 0)
                 //prima riga con data
                 {
                     Button btn = new Button();
@@ -348,6 +362,16 @@ namespace QVLEGS.Pagine
                             tlp2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 25));
                         }
                     }
+                } else if(i == 1)
+                {
+                    Button btn = new Button();
+                    btn.Name = "btn" + i;
+                    btn.Dock = DockStyle.Fill;
+                    btn.Click += btnToggleComparatorOK_Click;
+                    btn.BackColor = Color.Green;
+                    btn.ForeColor = Color.White;
+                    btn.Text = "OK";
+                    tableLayoutPanelToggles.Controls.Add(btn, 3, i);
                 }
             }
 
@@ -434,7 +458,14 @@ namespace QVLEGS.Pagine
             comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(3, 0))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(3, 0))).Text : "00";
             comparisons[0] += "'";
 
-            for (int i = 1; i < tableLayoutPanelToggles.RowCount - 1; i++)
+            if (((Button)tableLayoutPanelToggles.GetControlFromPosition(3, 1)).Text == "OK")
+                comparisons[1] = "= 1";
+            else if (((Button)tableLayoutPanelToggles.GetControlFromPosition(3, 1)).Text == "KO")
+                comparisons[1] = "= 0";
+            else
+                comparisons[1] = "< 2";
+
+            for (int i = 2; i < tableLayoutPanelToggles.RowCount - 1; i++)
             {
                 if(((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text.Length > 0)
                     comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(2, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(3, i)).Text;
@@ -463,7 +494,14 @@ namespace QVLEGS.Pagine
             comparisons[0] += ((TextBox)(timepanel.GetControlFromPosition(3, 1))).Text != "" ? ((TextBox)(timepanel.GetControlFromPosition(3, 1))).Text : "00";
             comparisons[0] += "'";
 
-            for (int i = 1; i < tableLayoutPanelToggles.RowCount - 1; i++)
+            if (((Button)tableLayoutPanelToggles.GetControlFromPosition(3, 1)).Text == "OK")
+                comparisons[1] = "= 1";
+            else if (((Button)tableLayoutPanelToggles.GetControlFromPosition(3, 1)).Text == "KO")
+                comparisons[1] = "= 0";
+            else
+                comparisons[1] = "< 2";
+
+            for (int i = 2; i < tableLayoutPanelToggles.RowCount - 1; i++)
             {
                 if (((TextBox)tableLayoutPanelToggles.GetControlFromPosition(5, i)).Text.Length > 0)
                     comparisons[i] = ((Button)tableLayoutPanelToggles.GetControlFromPosition(4, i)).Text + " " + ((TextBox)tableLayoutPanelToggles.GetControlFromPosition(5, i)).Text;
@@ -489,6 +527,7 @@ namespace QVLEGS.Pagine
                     currentCam = 1;
                 }
                 btnRemoveWhite.Visible = false;
+                btnRemoveBlack2.Visible = false;
                 GoTop();
             } catch
             {
@@ -514,6 +553,7 @@ namespace QVLEGS.Pagine
                     if (appManager.GetIdStazione() == 0)
                     {
                         btnRemoveWhite.Visible = true;
+                        btnRemoveBlack2.Visible = true;
                     }
                 }
                 GoTop();
@@ -563,6 +603,27 @@ namespace QVLEGS.Pagine
             }
         }
 
+        private void btnToggleComparatorOK_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+
+            if (b.Text == "OK")
+            {
+                b.Text = "KO";
+                b.BackColor = Color.Red;
+            }
+            else if (b.Text == "KO")
+            {
+                b.Text = "TUTTI";
+                b.BackColor = Color.Gray;
+            }
+            else if (b.Text == "TUTTI")
+            {
+                b.Text = "OK";
+                b.BackColor = Color.Green;
+            }
+        }
+
         private void btnExecuteQuery_Click(object sender, EventArgs e)
         {
             LoadData(appManager.GetIdStazione(), currentCam);
@@ -609,11 +670,26 @@ namespace QVLEGS.Pagine
         {
             try
             {
-                for (int i = 2; i < 21; i += 2)
+                for (int i = 3; i < 32; i += 3)
                 {
                     ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, i)).Checked = false;
                 }
             } catch
+            {
+
+            }
+        }
+
+        private void btnRemoveBlack2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 4; i < 32; i += 3)
+                {
+                    ((CheckBox)tableLayoutPanelToggles.GetControlFromPosition(1, i)).Checked = false;
+                }
+            }
+            catch
             {
 
             }

@@ -1220,14 +1220,6 @@ C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep15Cam1_F
 C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep16Cam1_Foto2.resources
 C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep17Cam1_Foto2.resources
 C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep18Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep9Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep8Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep7Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep6Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep5Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep4Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep3Cam1_Foto2.resources
-C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep2Cam1_Foto2.resources
 C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep3Cam2_Foto1.resources
 C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep2Cam2_Foto1.resources
 C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Wizard.UCStep6Cam3_Foto1.resources
@@ -2062,3 +2054,5 @@ C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.csproj.CoreC
 C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.csproj.CopyComplete
 C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.exe
 C:\qualivision\SRC\20231215_QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.pdb
+C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Pagine.UCPaginaQuery.resources
+C:\qualivision\SRC\QVLEGS_Sorgenti\QVLEGS\obj\Debug\QVLEGS.Utilities.FormFeedback.resources

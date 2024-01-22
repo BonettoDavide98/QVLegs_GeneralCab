@@ -36,7 +36,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WIN64;_Simulazione_</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WIN64;_Simulazione</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -121,6 +121,7 @@
     <Compile Include="DataType\Formati\Cam3_Foto2Param.cs" />
     <Compile Include="DataType\Formati\Cam3_Foto1Param.cs" />
     <Compile Include="DataType\Formati\Cam2_Foto1Param.cs" />
+    <Compile Include="DataType\Formati\ROI\BullEyeParam.cs" />
     <Compile Include="DataType\Formati\ROI\CircleParam.cs" />
     <Compile Include="DataType\PrevImageData.cs" />
     <Compile Include="Forms\FormInfo.cs">

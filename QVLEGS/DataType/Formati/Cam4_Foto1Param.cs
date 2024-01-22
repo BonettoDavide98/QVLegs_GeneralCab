@@ -46,7 +46,7 @@ namespace QVLEGS.DataType
         public double ThresholdYellowRight { get; set; }
         public double AreaMaxYellowRight { get; set; }
 
-        public CircleParam CircleYellowCenter { get; set; }
+        public BullEyeParam CircleYellowCenter { get; set; }
         public double ThresholdYellowCenter { get; set; }
         public double AreaMaxYellowCenter { get; set; }
 
@@ -89,7 +89,7 @@ namespace QVLEGS.DataType
             this.ThresholdCircleCenter = 50;
             this.AreaMaxCircleCenter = 20;
 
-            this.CircleYellowCenter = new CircleParam();
+            this.CircleYellowCenter = new BullEyeParam();
             this.ThresholdYellowCenter = 50;
             this.AreaMaxYellowCenter = 10;
 

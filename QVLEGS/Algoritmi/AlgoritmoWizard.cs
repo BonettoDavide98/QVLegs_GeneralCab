@@ -769,11 +769,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_1 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_1 = data;
             }
-            else
+            else if(index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_1 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_1 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_1 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_1 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_1 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_1 = data;
             }
 
             //if (parametri.Cam1_Foto2Param.bigRect_1 == null)
@@ -792,11 +797,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_2 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_2 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_2 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_2 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_2 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_2 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_2 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_2 = data;
             }
             //if (parametri.Cam1_Foto2Param.bigRect_2 == null)
             //    parametri.Cam1_Foto2Param.bigRect_2 = new DataType.Rectangle1Param();
@@ -814,11 +824,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_3 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_3 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_3 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_3 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_3 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_3 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_3 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_3 = data;
             }
             //    if (parametri.Cam1_Foto2Param.bigRect_3 == null)
             //        parametri.Cam1_Foto2Param.bigRect_3 = new DataType.Rectangle1Param();
@@ -836,11 +851,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_4 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_4 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_4 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_4 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_4 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_4 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_4 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_4 = data;
             }
             //    if (parametri.Cam1_Foto2Param.bigRect_4 == null)
             //        parametri.Cam1_Foto2Param.bigRect_4 = new DataType.Rectangle1Param();
@@ -858,11 +878,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_5 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_5 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_5 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_5 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_5 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_5 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_5 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_5 = data;
             }
             //if (parametri.Cam1_Foto2Param.bigRect_5 == null)
             //    parametri.Cam1_Foto2Param.bigRect_5 = new DataType.Rectangle1Param();
@@ -880,11 +905,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_6 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_6 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_6 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_6 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_6 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_6 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_6 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_6 = data;
             }
             //if (parametri.Cam1_Foto2Param.bigRect_6 == null)
             //    parametri.Cam1_Foto2Param.bigRect_6 = new DataType.Rectangle1Param();
@@ -902,11 +932,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_7 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_7 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_7 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_7 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_7 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_7 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_7 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_7 = data;
             }
             //if (parametri.Cam1_Foto2Param.bigRect_7 == null)
             //    parametri.Cam1_Foto2Param.bigRect_7 = new DataType.Rectangle1Param();
@@ -924,11 +959,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_8 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_8 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_8 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_8 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_8 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_8 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_8 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_8 = data;
             }
             //if (parametri.Cam1_Foto2Param.bigRect_8 == null)
             //    parametri.Cam1_Foto2Param.bigRect_8 = new DataType.Rectangle1Param();
@@ -946,11 +986,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_9 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_9 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_9 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_9 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_9 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_9 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_9 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_9 = data;
             }
             //if (parametri.Cam1_Foto2Param.bigRect_9 == null)
             //    parametri.Cam1_Foto2Param.bigRect_9 = new DataType.Rectangle1Param();
@@ -968,11 +1013,16 @@ namespace QVLEGS.Algoritmi
                     parametri.Cam1_Foto2Param.bigRegion_10 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion_10 = data;
             }
-            else
+            else if (index == 1)
             {
                 if (parametri.Cam1_Foto2Param.bigRegion2_10 == null)
                     parametri.Cam1_Foto2Param.bigRegion2_10 = new HRegion();
                 parametri.Cam1_Foto2Param.bigRegion2_10 = data;
+            } else
+            {
+                if (parametri.Cam1_Foto2Param.bigRegion3_10 == null)
+                    parametri.Cam1_Foto2Param.bigRegion3_10 = new HRegion();
+                parametri.Cam1_Foto2Param.bigRegion3_10 = data;
             }
             //if (parametri.Cam1_Foto2Param.bigRect_10 == null)
             //    parametri.Cam1_Foto2Param.bigRect_10 = new DataType.Rectangle1Param();
@@ -1866,10 +1916,11 @@ namespace QVLEGS.Algoritmi
         public void SetRoiCam4_Foto1_YellowCenter(HTuple data)
         {
             if (parametri.Cam4_Foto1Param.CircleYellowCenter == null)
-                parametri.Cam4_Foto1Param.CircleYellowCenter = new DataType.CircleParam();
+                parametri.Cam4_Foto1Param.CircleYellowCenter = new DataType.BullEyeParam();
             parametri.Cam4_Foto1Param.CircleYellowCenter.Row = data.DArr[0];
             parametri.Cam4_Foto1Param.CircleYellowCenter.Column = data.DArr[1];
-            parametri.Cam4_Foto1Param.CircleYellowCenter.Radius = data.DArr[2];
+            parametri.Cam4_Foto1Param.CircleYellowCenter.RadiusInner = data.DArr[2];
+            parametri.Cam4_Foto1Param.CircleYellowCenter.RadiusOuter = data.DArr[3];
         }
 
         public void SetRoiCam4_Foto1_BlueCenter(HTuple data)

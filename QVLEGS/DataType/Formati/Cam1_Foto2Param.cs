@@ -677,6 +677,337 @@ namespace QVLEGS.DataType
             }
         }
 
+        [XmlIgnore]
+        public HRegion bigRegion3_1 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_2 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_3 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_4 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_5 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_6 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_7 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_8 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_9 { get; set; }
+        [XmlIgnore]
+        public HRegion bigRegion3_10 { get; set; }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_1")]
+        public byte[] BigRectSerialized3_1
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_1 == null)
+                    return null;
+                else
+                    return this.bigRegion3_1.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_1 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_1 = new HalconDotNet.HRegion();
+                        this.bigRegion3_1.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_2")]
+        public byte[] BigRectSerialized3_2
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_2 == null)
+                    return null;
+                else
+                    return this.bigRegion3_2.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_2 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_2 = new HalconDotNet.HRegion();
+                        this.bigRegion3_2.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_3")]
+        public byte[] BigRectSerialized3_3
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_3 == null)
+                    return null;
+                else
+                    return this.bigRegion3_3.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_3 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_3 = new HalconDotNet.HRegion();
+                        this.bigRegion3_3.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_4")]
+        public byte[] BigRectSerialized3_4
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_4 == null)
+                    return null;
+                else
+                    return this.bigRegion3_4.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_4 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_4 = new HalconDotNet.HRegion();
+                        this.bigRegion3_4.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_5")]
+        public byte[] BigRectSerialized3_5
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_5 == null)
+                    return null;
+                else
+                    return this.bigRegion3_5.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_5 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_5 = new HalconDotNet.HRegion();
+                        this.bigRegion3_5.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_6")]
+        public byte[] BigRectSerialized3_6
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_6 == null)
+                    return null;
+                else
+                    return this.bigRegion3_6.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_6 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_6 = new HalconDotNet.HRegion();
+                        this.bigRegion3_6.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_7")]
+        public byte[] BigRectSerialized3_7
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_7 == null)
+                    return null;
+                else
+                    return this.bigRegion3_7.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_7 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_7 = new HalconDotNet.HRegion();
+                        this.bigRegion3_7.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_8")]
+        public byte[] BigRectSerialized3_8
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_8 == null)
+                    return null;
+                else
+                    return this.bigRegion3_8.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_8 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_8 = new HalconDotNet.HRegion();
+                        this.bigRegion3_8.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_9")]
+        public byte[] BigRectSerialized3_9
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_9 == null)
+                    return null;
+                else
+                    return this.bigRegion3_9.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_9 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_9 = new HalconDotNet.HRegion();
+                        this.bigRegion3_9.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("bigRegion3_10")]
+        public byte[] BigRectSerialized3_10
+        {
+            get
+            {
+                // serialize
+                if (bigRegion3_10 == null)
+                    return null;
+                else
+                    return this.bigRegion3_10.SerializeRegion();
+            }
+            set
+            {
+                // deserialize
+                if (value == null)
+                {
+                    this.bigRegion3_10 = null;
+                }
+                else
+                {
+                    try
+                    {
+                        this.bigRegion3_10 = new HalconDotNet.HRegion();
+                        this.bigRegion3_10.DeserializeRegion(new HalconDotNet.HSerializedItem(value));
+                    }
+                    catch (Exception) { }
+                }
+            }
+        }
+
 
         public Rectangle1Param smallRect_1 { get; set; }
         public Rectangle1Param smallRect_2 { get; set; }
@@ -751,37 +1082,88 @@ namespace QVLEGS.DataType
         public double AreaMAxBig2_10 { get; set; }
         public double AreaMinBig2_10 { get; set; }
 
+        public double ThresholdBig3_1 { get; set; }
+        public double AreaMAxBig3_1 { get; set; }
+        public double AreaMinBig3_1 { get; set; }
+        public double ThresholdBig3_2 { get; set; }
+        public double AreaMAxBig3_2 { get; set; }
+        public double AreaMinBig3_2 { get; set; }
+        public double ThresholdBig3_3 { get; set; }
+        public double AreaMAxBig3_3 { get; set; }
+        public double AreaMinBig3_3 { get; set; }
+        public double ThresholdBig3_4 { get; set; }
+        public double AreaMAxBig3_4 { get; set; }
+        public double AreaMinBig3_4 { get; set; }
+        public double ThresholdBig3_5 { get; set; }
+        public double AreaMAxBig3_5 { get; set; }
+        public double AreaMinBig3_5 { get; set; }
+        public double ThresholdBig3_6 { get; set; }
+        public double AreaMAxBig3_6 { get; set; }
+        public double AreaMinBig3_6 { get; set; }
+        public double ThresholdBig3_7 { get; set; }
+        public double AreaMAxBig3_7 { get; set; }
+        public double AreaMinBig3_7 { get; set; }
+        public double ThresholdBig3_8 { get; set; }
+        public double AreaMAxBig3_8 { get; set; }
+        public double AreaMinBig3_8 { get; set; }
+        public double ThresholdBig3_9 { get; set; }
+        public double AreaMAxBig3_9 { get; set; }
+        public double AreaMinBig3_9 { get; set; }
+        public double ThresholdBig3_10 { get; set; }
+        public double AreaMAxBig3_10 { get; set; }
+        public double AreaMinBig3_10 { get; set; }
+
 
         public bool checked1 { get; set; }
+        public bool checked1_2 { get; set; }
         public bool invertedBlack1 { get; set; }
+        public bool invertedBlack1_2 { get; set; }
         public bool invertedWhite1 { get; set; }
         public bool checked2 { get; set; }
+        public bool checked2_2 { get; set; }
         public bool invertedBlack2 { get; set; }
         public bool invertedWhite2 { get; set; }
+        public bool invertedBlack2_2 { get; set; }
         public bool checked3 { get; set; }
+        public bool checked3_2 { get; set; }
         public bool invertedBlack3 { get; set; }
         public bool invertedWhite3 { get; set; }
+        public bool invertedBlack3_2 { get; set; }
         public bool checked4 { get; set; }
+        public bool checked4_2 { get; set; }
         public bool invertedBlack4 { get; set; }
         public bool invertedWhite4 { get; set; }
+        public bool invertedBlack4_2 { get; set; }
         public bool checked5 { get; set; }
+        public bool checked5_2 { get; set; }
         public bool invertedBlack5 { get; set; }
         public bool invertedWhite5 { get; set; }
+        public bool invertedBlack5_2 { get; set; }
         public bool checked6 { get; set; }
+        public bool checked6_2 { get; set; }
         public bool invertedBlack6 { get; set; }
         public bool invertedWhite6 { get; set; }
+        public bool invertedBlack6_2 { get; set; }
         public bool checked7 { get; set; }
+        public bool checked7_2 { get; set; }
         public bool invertedBlack7 { get; set; }
         public bool invertedWhite7 { get; set; }
+        public bool invertedBlack7_2 { get; set; }
         public bool checked8 { get; set; }
+        public bool checked8_2 { get; set; }
         public bool invertedBlack8 { get; set; }
         public bool invertedWhite8 { get; set; }
+        public bool invertedBlack8_2 { get; set; }
         public bool checked9 { get; set; }
+        public bool checked9_2 { get; set; }
         public bool invertedBlack9 { get; set; }
         public bool invertedWhite9 { get; set; }
+        public bool invertedBlack9_2 { get; set; }
         public bool checked10 { get; set; }
+        public bool checked10_2 { get; set; }
         public bool invertedBlack10 { get; set; }
         public bool invertedWhite10 { get; set; }
+        public bool invertedBlack10_2 { get; set; }
 
 
         public double ThresholdSmall_1 { get; set; }
@@ -819,29 +1201,6 @@ namespace QVLEGS.DataType
         public bool Hole_8 { get; set; }
         public Cam1_Foto2Param()
         {
-            // this.bigRegion_1 = new HRegion();
-            //// bigRegion_1.SerializeRegion();
-            // this.bigRegion_2 = new HRegion();
-            // this.bigRegion_3 = new HRegion();
-            // this.bigRegion_4 = new HRegion();
-            // this.bigRegion_5 = new HRegion();
-            // this.bigRegion_6 = new HRegion();
-            // this.bigRegion_7 = new HRegion();
-            // this.bigRegion_8 = new HRegion();
-            // this.bigRegion_9 = new HRegion();
-            // this.bigRegion_10 = new HRegion();
-            
-            //this.bigRegion2_1 = new HRegion();
-            //this.bigRegion2_2 = new HRegion();
-            //this.bigRegion2_3 = new HRegion();
-            //this.bigRegion2_4 = new HRegion();
-            //this.bigRegion2_5 = new HRegion();
-            //this.bigRegion2_6 = new HRegion();
-            //this.bigRegion2_7 = new HRegion();
-            //this.bigRegion2_8 = new HRegion();
-            //this.bigRegion2_9 = new HRegion();
-            //this.bigRegion2_10 = new HRegion();
-
             this.smallRect_1 = new Rectangle1Param();
             this.smallRect_2 = new Rectangle1Param();
             this.smallRect_3 = new Rectangle1Param();
@@ -948,6 +1307,56 @@ namespace QVLEGS.DataType
             this.ThresholdBig2_10 = 200;
             this.AreaMAxBig2_10 = 10000;
             this.AreaMinBig2_10 = 1000;
+
+
+            this.ThresholdBig3_1 = 200;
+            this.AreaMAxBig3_1 = 10000;
+            this.AreaMinBig3_1 = 1000;
+
+
+            this.ThresholdBig3_2 = 200;
+            this.AreaMAxBig3_2 = 10000;
+            this.AreaMinBig3_2 = 1000;
+
+
+            this.ThresholdBig3_3 = 200;
+            this.AreaMAxBig3_3 = 10000;
+            this.AreaMinBig3_3 = 1000;
+
+
+            this.ThresholdBig3_4 = 200;
+            this.AreaMAxBig3_4 = 10000;
+            this.AreaMinBig3_4 = 1000;
+
+
+            this.ThresholdBig3_5 = 200;
+            this.AreaMAxBig3_5 = 10000;
+            this.AreaMinBig3_5 = 1000;
+
+
+            this.ThresholdBig3_6 = 200;
+            this.AreaMAxBig3_6 = 10000;
+            this.AreaMinBig3_6 = 1000;
+
+
+            this.ThresholdBig3_7 = 200;
+            this.AreaMAxBig3_7 = 10000;
+            this.AreaMinBig3_7 = 1000;
+
+
+            this.ThresholdBig3_8 = 200;
+            this.AreaMAxBig3_8 = 10000;
+            this.AreaMinBig3_8 = 1000;
+
+
+            this.ThresholdBig3_9 = 200;
+            this.AreaMAxBig3_9 = 10000;
+            this.AreaMinBig3_9 = 1000;
+
+
+            this.ThresholdBig3_10 = 300;
+            this.AreaMAxBig3_10 = 10000;
+            this.AreaMinBig3_10 = 1000;
 
 
             this.ThresholdSmall_1 = 100;

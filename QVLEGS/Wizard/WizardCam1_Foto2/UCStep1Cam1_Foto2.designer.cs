@@ -30,6 +30,12 @@
         {
             this.panelContainer = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.chbInvertBlack2 = new System.Windows.Forms.CheckBox();
+            this.chbInvertWhite = new System.Windows.Forms.CheckBox();
+            this.chbInvertBlack = new System.Windows.Forms.CheckBox();
+            this.btnDisegnaManoAdd3 = new System.Windows.Forms.Button();
+            this.lblAreaMax3 = new System.Windows.Forms.Label();
+            this.lblAreaMin3 = new System.Windows.Forms.Label();
             this.chbEnableWhite = new System.Windows.Forms.CheckBox();
             this.btnDisegnaManoAdd2 = new System.Windows.Forms.Button();
             this.btnDisegnaManoAdd = new System.Windows.Forms.Button();
@@ -42,6 +48,9 @@
             this.lblThresholdMin = new System.Windows.Forms.Label();
             this.btnDisegnaManoRem = new System.Windows.Forms.Button();
             this.lblAreaMin2 = new System.Windows.Forms.Label();
+            this.chbEnableBlack2 = new System.Windows.Forms.CheckBox();
+            this.lblThresholdMin3 = new System.Windows.Forms.Label();
+            this.btnDisegnaManoRem3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUltimaFoto = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,9 +59,9 @@
             this.btnLog = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnSnap = new System.Windows.Forms.Button();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.chbInvertWhite = new System.Windows.Forms.CheckBox();
-            this.chbInvertBlack = new System.Windows.Forms.CheckBox();
+            this.nudAreaMaxBlack2 = new QVLEGS.UCNumericUpDown();
+            this.nudAreaMinBlack2 = new QVLEGS.UCNumericUpDown();
+            this.nudThresholdBlack2 = new QVLEGS.UCNumericUpDown();
             this.nudAreaMinBlack = new QVLEGS.UCNumericUpDown();
             this.nudAreaMinWhite = new QVLEGS.UCNumericUpDown();
             this.nudThresholdWhite = new QVLEGS.UCNumericUpDown();
@@ -86,12 +95,19 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.chbInvertWhite, 0, 19);
-            this.tableLayoutPanel1.Controls.Add(this.chbInvertBlack, 0, 18);
-            this.tableLayoutPanel1.Controls.Add(this.propertyGrid1, 0, 20);
+            this.tableLayoutPanel1.Controls.Add(this.chbInvertBlack2, 0, 29);
+            this.tableLayoutPanel1.Controls.Add(this.chbInvertWhite, 0, 28);
+            this.tableLayoutPanel1.Controls.Add(this.chbInvertBlack, 0, 27);
+            this.tableLayoutPanel1.Controls.Add(this.btnDisegnaManoAdd3, 0, 26);
+            this.tableLayoutPanel1.Controls.Add(this.nudAreaMaxBlack2, 0, 24);
+            this.tableLayoutPanel1.Controls.Add(this.lblAreaMax3, 0, 23);
+            this.tableLayoutPanel1.Controls.Add(this.nudAreaMinBlack2, 0, 22);
+            this.tableLayoutPanel1.Controls.Add(this.lblAreaMin3, 0, 21);
+            this.tableLayoutPanel1.Controls.Add(this.nudThresholdBlack2, 0, 20);
             this.tableLayoutPanel1.Controls.Add(this.chbEnableWhite, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.btnDisegnaManoAdd2, 0, 17);
             this.tableLayoutPanel1.Controls.Add(this.btnDisegnaManoAdd, 0, 8);
@@ -110,9 +126,12 @@
             this.tableLayoutPanel1.Controls.Add(this.lblAreaMin2, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.nudAreaMaxWhite, 0, 15);
             this.tableLayoutPanel1.Controls.Add(this.nudAreaMaxBlack, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.chbEnableBlack2, 0, 18);
+            this.tableLayoutPanel1.Controls.Add(this.lblThresholdMin3, 0, 19);
+            this.tableLayoutPanel1.Controls.Add(this.btnDisegnaManoRem3, 0, 25);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1034, 41);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 21;
+            this.tableLayoutPanel1.RowCount = 30;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -133,9 +152,103 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(340, 999);
             this.tableLayoutPanel1.TabIndex = 12;
+            // 
+            // chbInvertBlack2
+            // 
+            this.chbInvertBlack2.AutoSize = true;
+            this.chbInvertBlack2.Enabled = false;
+            this.chbInvertBlack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.chbInvertBlack2.Location = new System.Drawing.Point(3, 1233);
+            this.chbInvertBlack2.Name = "chbInvertBlack2";
+            this.chbInvertBlack2.Size = new System.Drawing.Size(204, 24);
+            this.chbInvertBlack2.TabIndex = 70;
+            this.chbInvertBlack2.Text = "LBL_INVERT_BLACK_2";
+            this.chbInvertBlack2.UseVisualStyleBackColor = true;
+            this.chbInvertBlack2.Visible = false;
+            // 
+            // chbInvertWhite
+            // 
+            this.chbInvertWhite.AutoSize = true;
+            this.chbInvertWhite.Enabled = false;
+            this.chbInvertWhite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.chbInvertWhite.Location = new System.Drawing.Point(3, 1203);
+            this.chbInvertWhite.Name = "chbInvertWhite";
+            this.chbInvertWhite.Size = new System.Drawing.Size(186, 24);
+            this.chbInvertWhite.TabIndex = 3;
+            this.chbInvertWhite.Text = "LBL_INVERT_WHITE";
+            this.chbInvertWhite.UseVisualStyleBackColor = true;
+            this.chbInvertWhite.Visible = false;
+            // 
+            // chbInvertBlack
+            // 
+            this.chbInvertBlack.AutoSize = true;
+            this.chbInvertBlack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.chbInvertBlack.Location = new System.Drawing.Point(3, 1173);
+            this.chbInvertBlack.Name = "chbInvertBlack";
+            this.chbInvertBlack.Size = new System.Drawing.Size(186, 24);
+            this.chbInvertBlack.TabIndex = 4;
+            this.chbInvertBlack.Text = "LBL_INVERT_BLACK";
+            this.chbInvertBlack.UseVisualStyleBackColor = true;
+            // 
+            // btnDisegnaManoAdd3
+            // 
+            this.btnDisegnaManoAdd3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDisegnaManoAdd3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnDisegnaManoAdd3.FlatAppearance.BorderSize = 0;
+            this.btnDisegnaManoAdd3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisegnaManoAdd3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisegnaManoAdd3.Image = global::QVLEGS.Properties.Resources.imgDisegna;
+            this.btnDisegnaManoAdd3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDisegnaManoAdd3.Location = new System.Drawing.Point(3, 1107);
+            this.btnDisegnaManoAdd3.Name = "btnDisegnaManoAdd3";
+            this.btnDisegnaManoAdd3.Size = new System.Drawing.Size(334, 60);
+            this.btnDisegnaManoAdd3.TabIndex = 69;
+            this.btnDisegnaManoAdd3.Text = "BTN_MANO_LIBERA_3";
+            this.btnDisegnaManoAdd3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDisegnaManoAdd3.UseVisualStyleBackColor = false;
+            this.btnDisegnaManoAdd3.Visible = false;
+            this.btnDisegnaManoAdd3.Click += new System.EventHandler(this.btnDisegnaManoAdd3_Click);
+            // 
+            // lblAreaMax3
+            // 
+            this.lblAreaMax3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAreaMax3.AutoSize = true;
+            this.lblAreaMax3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.lblAreaMax3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAreaMax3.ForeColor = System.Drawing.Color.White;
+            this.lblAreaMax3.Location = new System.Drawing.Point(3, 966);
+            this.lblAreaMax3.Name = "lblAreaMax3";
+            this.lblAreaMax3.Size = new System.Drawing.Size(250, 20);
+            this.lblAreaMax3.TabIndex = 66;
+            this.lblAreaMax3.Text = "LBL_AREA_MAX_BLACK_CAM2";
+            this.lblAreaMax3.Visible = false;
+            // 
+            // lblAreaMin3
+            // 
+            this.lblAreaMin3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAreaMin3.AutoSize = true;
+            this.lblAreaMin3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.lblAreaMin3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAreaMin3.ForeColor = System.Drawing.Color.White;
+            this.lblAreaMin3.Location = new System.Drawing.Point(3, 894);
+            this.lblAreaMin3.Name = "lblAreaMin3";
+            this.lblAreaMin3.Size = new System.Drawing.Size(244, 20);
+            this.lblAreaMin3.TabIndex = 64;
+            this.lblAreaMin3.Text = "LBL_AREA_MIN_BLACK_CAM2";
+            this.lblAreaMin3.Visible = false;
             // 
             // chbEnableWhite
             // 
@@ -165,6 +278,7 @@
             this.btnDisegnaManoAdd2.Text = "BTN_MANO_LIBERA_2";
             this.btnDisegnaManoAdd2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDisegnaManoAdd2.UseVisualStyleBackColor = false;
+            this.btnDisegnaManoAdd2.Visible = false;
             this.btnDisegnaManoAdd2.Click += new System.EventHandler(this.btnDisegnaManoAdd2_Click);
             // 
             // btnDisegnaManoAdd
@@ -202,6 +316,7 @@
             this.btnDisegnaManoRem2.Text = "BTN_GOMMA_2";
             this.btnDisegnaManoRem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDisegnaManoRem2.UseVisualStyleBackColor = false;
+            this.btnDisegnaManoRem2.Visible = false;
             this.btnDisegnaManoRem2.Click += new System.EventHandler(this.btnDisegnaManoRem2_Click);
             // 
             // lblAreaMax2
@@ -217,6 +332,7 @@
             this.lblAreaMax2.Size = new System.Drawing.Size(250, 20);
             this.lblAreaMax2.TabIndex = 54;
             this.lblAreaMax2.Text = "LBL_AREA_MAX_WHITE_CAM2";
+            this.lblAreaMax2.Visible = false;
             // 
             // lblAreaMin
             // 
@@ -277,6 +393,7 @@
             this.lblThresholdMin2.Size = new System.Drawing.Size(208, 20);
             this.lblThresholdMin2.TabIndex = 52;
             this.lblThresholdMin2.Text = "LBL_THRESHOLD_WHITE";
+            this.lblThresholdMin2.Visible = false;
             // 
             // lblThresholdMin
             // 
@@ -322,6 +439,51 @@
             this.lblAreaMin2.Size = new System.Drawing.Size(244, 20);
             this.lblAreaMin2.TabIndex = 56;
             this.lblAreaMin2.Text = "LBL_AREA_MIN_WHITE_CAM2";
+            this.lblAreaMin2.Visible = false;
+            // 
+            // chbEnableBlack2
+            // 
+            this.chbEnableBlack2.AutoSize = true;
+            this.chbEnableBlack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.chbEnableBlack2.Location = new System.Drawing.Point(3, 795);
+            this.chbEnableBlack2.Name = "chbEnableBlack2";
+            this.chbEnableBlack2.Size = new System.Drawing.Size(209, 24);
+            this.chbEnableBlack2.TabIndex = 61;
+            this.chbEnableBlack2.Text = "LBL_ENABLE_BLACK_2";
+            this.chbEnableBlack2.UseVisualStyleBackColor = true;
+            // 
+            // lblThresholdMin3
+            // 
+            this.lblThresholdMin3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblThresholdMin3.AutoSize = true;
+            this.lblThresholdMin3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.lblThresholdMin3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThresholdMin3.ForeColor = System.Drawing.Color.White;
+            this.lblThresholdMin3.Location = new System.Drawing.Point(3, 822);
+            this.lblThresholdMin3.Name = "lblThresholdMin3";
+            this.lblThresholdMin3.Size = new System.Drawing.Size(226, 20);
+            this.lblThresholdMin3.TabIndex = 62;
+            this.lblThresholdMin3.Text = "LBL_THRESHOLD_BLACK_2";
+            this.lblThresholdMin3.Visible = false;
+            // 
+            // btnDisegnaManoRem3
+            // 
+            this.btnDisegnaManoRem3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDisegnaManoRem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnDisegnaManoRem3.FlatAppearance.BorderSize = 0;
+            this.btnDisegnaManoRem3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisegnaManoRem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisegnaManoRem3.Image = global::QVLEGS.Properties.Resources.imgGomma;
+            this.btnDisegnaManoRem3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDisegnaManoRem3.Location = new System.Drawing.Point(3, 1041);
+            this.btnDisegnaManoRem3.Name = "btnDisegnaManoRem3";
+            this.btnDisegnaManoRem3.Size = new System.Drawing.Size(334, 60);
+            this.btnDisegnaManoRem3.TabIndex = 68;
+            this.btnDisegnaManoRem3.Text = "BTN_GOMMA_3";
+            this.btnDisegnaManoRem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDisegnaManoRem3.UseVisualStyleBackColor = false;
+            this.btnDisegnaManoRem3.Visible = false;
+            this.btnDisegnaManoRem3.Click += new System.EventHandler(this.btnDisegnaManoRem3_Click);
             // 
             // panel1
             // 
@@ -453,36 +615,116 @@
             this.btnSnap.Visible = false;
             this.btnSnap.Click += new System.EventHandler(this.btnSnap_Click);
             // 
-            // propertyGrid1
+            // nudAreaMaxBlack2
             // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(3, 855);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(334, 141);
-            this.propertyGrid1.TabIndex = 61;
+            this.nudAreaMaxBlack2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.nudAreaMaxBlack2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.nudAreaMaxBlack2.DecimalPlaces = 0;
+            this.nudAreaMaxBlack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudAreaMaxBlack2.ForeColor = System.Drawing.Color.White;
+            this.nudAreaMaxBlack2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudAreaMaxBlack2.Location = new System.Drawing.Point(45, 992);
+            this.nudAreaMaxBlack2.Margin = new System.Windows.Forms.Padding(6);
+            this.nudAreaMaxBlack2.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudAreaMaxBlack2.MaximumSize = new System.Drawing.Size(250, 40);
+            this.nudAreaMaxBlack2.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudAreaMaxBlack2.MinimumSize = new System.Drawing.Size(250, 40);
+            this.nudAreaMaxBlack2.Name = "nudAreaMaxBlack2";
+            this.nudAreaMaxBlack2.Size = new System.Drawing.Size(250, 40);
+            this.nudAreaMaxBlack2.TabIndex = 67;
+            this.nudAreaMaxBlack2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudAreaMaxBlack2.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.nudAreaMaxBlack2.Visible = false;
             // 
-            // chbInvertWhite
+            // nudAreaMinBlack2
             // 
-            this.chbInvertWhite.AutoSize = true;
-            this.chbInvertWhite.Enabled = false;
-            this.chbInvertWhite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chbInvertWhite.Location = new System.Drawing.Point(3, 825);
-            this.chbInvertWhite.Name = "chbInvertWhite";
-            this.chbInvertWhite.Size = new System.Drawing.Size(186, 24);
-            this.chbInvertWhite.TabIndex = 3;
-            this.chbInvertWhite.Text = "LBL_INVERT_WHITE";
-            this.chbInvertWhite.UseVisualStyleBackColor = true;
+            this.nudAreaMinBlack2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.nudAreaMinBlack2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.nudAreaMinBlack2.DecimalPlaces = 0;
+            this.nudAreaMinBlack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudAreaMinBlack2.ForeColor = System.Drawing.Color.White;
+            this.nudAreaMinBlack2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudAreaMinBlack2.Location = new System.Drawing.Point(45, 920);
+            this.nudAreaMinBlack2.Margin = new System.Windows.Forms.Padding(6);
+            this.nudAreaMinBlack2.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudAreaMinBlack2.MaximumSize = new System.Drawing.Size(250, 40);
+            this.nudAreaMinBlack2.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudAreaMinBlack2.MinimumSize = new System.Drawing.Size(250, 40);
+            this.nudAreaMinBlack2.Name = "nudAreaMinBlack2";
+            this.nudAreaMinBlack2.Size = new System.Drawing.Size(250, 40);
+            this.nudAreaMinBlack2.TabIndex = 65;
+            this.nudAreaMinBlack2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudAreaMinBlack2.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudAreaMinBlack2.Visible = false;
             // 
-            // chbInvertBlack
+            // nudThresholdBlack2
             // 
-            this.chbInvertBlack.AutoSize = true;
-            this.chbInvertBlack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.chbInvertBlack.Location = new System.Drawing.Point(3, 795);
-            this.chbInvertBlack.Name = "chbInvertBlack";
-            this.chbInvertBlack.Size = new System.Drawing.Size(186, 24);
-            this.chbInvertBlack.TabIndex = 4;
-            this.chbInvertBlack.Text = "LBL_INVERT_BLACK";
-            this.chbInvertBlack.UseVisualStyleBackColor = true;
+            this.nudThresholdBlack2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.nudThresholdBlack2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.nudThresholdBlack2.DecimalPlaces = 0;
+            this.nudThresholdBlack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudThresholdBlack2.ForeColor = System.Drawing.Color.White;
+            this.nudThresholdBlack2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudThresholdBlack2.Location = new System.Drawing.Point(45, 848);
+            this.nudThresholdBlack2.Margin = new System.Windows.Forms.Padding(6);
+            this.nudThresholdBlack2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudThresholdBlack2.MaximumSize = new System.Drawing.Size(250, 40);
+            this.nudThresholdBlack2.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudThresholdBlack2.MinimumSize = new System.Drawing.Size(250, 40);
+            this.nudThresholdBlack2.Name = "nudThresholdBlack2";
+            this.nudThresholdBlack2.Size = new System.Drawing.Size(250, 40);
+            this.nudThresholdBlack2.TabIndex = 63;
+            this.nudThresholdBlack2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudThresholdBlack2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudThresholdBlack2.Visible = false;
             // 
             // nudAreaMinBlack
             // 
@@ -556,6 +798,7 @@
             0,
             0,
             0});
+            this.nudAreaMinWhite.Visible = false;
             // 
             // nudThresholdWhite
             // 
@@ -593,6 +836,7 @@
             0,
             0,
             0});
+            this.nudThresholdWhite.Visible = false;
             // 
             // nudThresholdBlack
             // 
@@ -666,6 +910,7 @@
             0,
             0,
             0});
+            this.nudAreaMaxWhite.Visible = false;
             // 
             // nudAreaMaxBlack
             // 
@@ -759,6 +1004,15 @@
         private System.Windows.Forms.CheckBox chbEnableWhite;
         private System.Windows.Forms.CheckBox chbInvertWhite;
         private System.Windows.Forms.CheckBox chbInvertBlack;
-        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.Button btnDisegnaManoAdd3;
+        private UCNumericUpDown nudAreaMaxBlack2;
+        private System.Windows.Forms.Label lblAreaMax3;
+        private UCNumericUpDown nudAreaMinBlack2;
+        private System.Windows.Forms.Label lblAreaMin3;
+        private UCNumericUpDown nudThresholdBlack2;
+        private System.Windows.Forms.CheckBox chbEnableBlack2;
+        private System.Windows.Forms.Label lblThresholdMin3;
+        private System.Windows.Forms.Button btnDisegnaManoRem3;
+        private System.Windows.Forms.CheckBox chbInvertBlack2;
     }
 }
