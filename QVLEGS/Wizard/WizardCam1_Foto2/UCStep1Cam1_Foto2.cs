@@ -672,7 +672,7 @@ namespace QVLEGS.Wizard
                     param.checked1_2 = chbEnableBlack2.Checked;
                     param.invertedBlack1 = chbInvertBlack.Checked;
                     param.invertedWhite1 = chbInvertWhite.Checked;
-                    param.invertedBlack1_2 = chbInvertBlack.Checked;
+                    param.invertedBlack1_2 = chbInvertBlack2.Checked;
                 }
 
                 if (numRect == 2)
@@ -690,7 +690,7 @@ namespace QVLEGS.Wizard
                     param.checked2_2 = chbEnableBlack2.Checked;
                     param.invertedBlack2 = chbInvertBlack.Checked;
                     param.invertedWhite2 = chbInvertWhite.Checked;
-                    param.invertedBlack2_2 = chbInvertBlack.Checked;
+                    param.invertedBlack2_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 3)
                 {
@@ -707,7 +707,7 @@ namespace QVLEGS.Wizard
                     param.checked3_2 = chbEnableBlack2.Checked;
                     param.invertedBlack3 = chbInvertBlack.Checked;
                     param.invertedWhite3 = chbInvertWhite.Checked;
-                    param.invertedBlack3_2 = chbInvertBlack.Checked;
+                    param.invertedBlack3_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 4)
                 {
@@ -724,7 +724,7 @@ namespace QVLEGS.Wizard
                     param.checked4_2 = chbEnableBlack2.Checked;
                     param.invertedBlack4 = chbInvertBlack.Checked;
                     param.invertedWhite4 = chbInvertWhite.Checked;
-                    param.invertedBlack4_2 = chbInvertBlack.Checked;
+                    param.invertedBlack4_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 5)
                 {
@@ -741,7 +741,7 @@ namespace QVLEGS.Wizard
                     param.checked5_2 = chbEnableBlack2.Checked;
                     param.invertedBlack5 = chbInvertBlack.Checked;
                     param.invertedWhite5 = chbInvertWhite.Checked;
-                    param.invertedBlack5_2 = chbInvertBlack.Checked;
+                    param.invertedBlack5_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 6)
                 {
@@ -758,7 +758,7 @@ namespace QVLEGS.Wizard
                     param.checked6_2 = chbEnableBlack2.Checked;
                     param.invertedBlack6 = chbInvertBlack.Checked;
                     param.invertedWhite6 = chbInvertWhite.Checked;
-                    param.invertedBlack6_2 = chbInvertBlack.Checked;
+                    param.invertedBlack6_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 7)
                 {
@@ -775,7 +775,7 @@ namespace QVLEGS.Wizard
                     param.checked7_2 = chbEnableBlack2.Checked;
                     param.invertedBlack7 = chbInvertBlack.Checked;
                     param.invertedWhite7 = chbInvertWhite.Checked;
-                    param.invertedBlack7_2 = chbInvertBlack.Checked;
+                    param.invertedBlack7_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 8)
                 {
@@ -792,7 +792,7 @@ namespace QVLEGS.Wizard
                     param.checked8_2 = chbEnableBlack2.Checked;
                     param.invertedBlack8 = chbInvertBlack.Checked;
                     param.invertedWhite8 = chbInvertWhite.Checked;
-                    param.invertedBlack8_2 = chbInvertBlack.Checked;
+                    param.invertedBlack8_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 9)
                 {
@@ -809,7 +809,7 @@ namespace QVLEGS.Wizard
                     param.checked9_2 = chbEnableBlack2.Checked;
                     param.invertedBlack9 = chbInvertBlack.Checked;
                     param.invertedWhite9 = chbInvertWhite.Checked;
-                    param.invertedBlack9_2 = chbInvertBlack.Checked;
+                    param.invertedBlack9_2 = chbInvertBlack2.Checked;
                 }
                 if (numRect == 10)
                 {
@@ -826,7 +826,7 @@ namespace QVLEGS.Wizard
                     param.checked10_2 = chbEnableBlack2.Checked;
                     param.invertedBlack10 = chbInvertBlack.Checked;
                     param.invertedWhite10 = chbInvertWhite.Checked;
-                    param.invertedBlack10_2 = chbInvertBlack.Checked;
+                    param.invertedBlack10_2 = chbInvertBlack2.Checked;
                 }
                 
                 if (!chbEnableWhite.Checked)
@@ -887,8 +887,11 @@ namespace QVLEGS.Wizard
                 HalconDotNet.HImage image = null;
                 try
                 {
-                    image = this.lastTestImage.Clone();
-                    EseguiStep(image, this.lastPrevImageData);
+                    if(this.lastTestImage != null)
+                    {
+                        image = this.lastTestImage.Clone();
+                        EseguiStep(image, this.lastPrevImageData);
+                    }
                 }
                 catch (Exception ex)
                 {

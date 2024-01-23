@@ -880,7 +880,6 @@ GROUP BY Chiave;";
                     }
 
                     query += ");";
-                    Console.WriteLine(query);
 
                     using (DBLBaseManager mngr = new DBLBaseManager(ConnectionString, false))
                     {

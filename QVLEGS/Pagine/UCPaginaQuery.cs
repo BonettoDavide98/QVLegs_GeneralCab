@@ -653,7 +653,13 @@ namespace QVLEGS.Pagine
                     {
                         for(int j = 0; j < dataGridView1.ColumnCount; j++)
                         {
-                            csv[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString() + ";";
+                            if(j == 1)
+                                if(dataGridView1.Rows[i - 1].Cells[j].Value.ToString().Equals("True"))
+                                    csv[i] += "Buono;";
+                                else
+                                    csv[i] += "Scarto;";
+                            else
+                                csv[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString() + ";";
                         }
                     }
 
